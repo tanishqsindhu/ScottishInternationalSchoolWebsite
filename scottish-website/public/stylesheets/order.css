@@ -1,0 +1,79 @@
+.card {
+    flex-direction: row;
+    align-self: center;
+  }
+  #id-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    overflow: hidden;
+    }
+    #id-card-option4 {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      overflow: hidden;
+      }
+    #id-card h2 {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 10px;
+    }
+    
+    .id-card-content {
+    display: flex;
+    flex-direction: row;
+    }
+    
+    .id-card-image {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    }
+    
+    .id-card-image img {
+    max-height: 300px;
+    max-width: 300px;
+    object-fit: cover;
+    }
+    
+    .id-card-details {
+    flex: 2;
+    padding: 10px;
+    }
+    
+    .id-card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+    
+    .id-card-col {
+    flex: 1;
+    margin-right: 10px;
+    }
+    
+    .id-card-details p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 5px 0;
+    }
+    
+    .btn-square {
+        width: 200px; /* adjust the width to your desired size */
+        height: 200px; /* adjust the height to your desired size */
+        border-radius: 5; /* remove the default button border radius */
+        align-self: center;
+      }
+      

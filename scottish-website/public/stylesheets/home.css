@@ -1,0 +1,991 @@
+/* .nav-on-scroll{
+    margin-top:-70px;
+} */
+
+@keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1,1);
+    }
+    100% {
+        transform: scale(1.25,1.25);
+    }
+}
+
+@keyframes zoomoutsinglefeatured {
+    100% {
+        transform: scale(1,1);
+    }
+    0% {
+        transform: scale(1.25,1.25);
+    }
+}
+
+@keyframes colorChange {
+    0%{
+        background: #2e2f90;
+        border: 6px solid #2e2f90;
+    }
+    100%{
+        background: #eabd57;
+        border: 6px solid #eabd57;
+    }
+}
+@keyframes colorChangeInverted {
+    0%{
+        background: #eabd57;
+        border: 6px solid #eabd57;
+    }
+    100%{
+        background: #2e2f90;
+        border: 6px solid #2e2f90;
+    }
+}
+
+@keyframes backgroundImageColorInverted{
+    0%{
+        background:#eabd57 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    }
+    100%{
+        background:#2E2F90 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    }
+}
+@keyframes backgroundImageColor{
+    0%{
+        
+        background:#2E2F90 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    }
+    100%{
+        background:#eabd57 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    }
+}
+
+.carousel-item img {
+	animation: zoominoutsinglefeatured 7s infinite ;
+}
+.main-title h2::before{
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 1px;
+    height: 60px;
+    z-index: 1;
+    transform: rotate(0deg);
+    content: "";
+    background: #cdcdcd;
+    margin: 0 auto;
+    top: 0;
+}
+
+.main-title{
+    margin: 0 0 30px 0;
+position: relative;
+padding-top: 80px;
+}
+
+.main-title h2 {
+    font-size: 32px;
+color: #424242;
+text-transform: uppercase;
+margin: 0;
+}
+
+.home-entry{
+    padding: 50px 0 50px 0;
+}
+
+.bg1{
+    background-color: #f1f1f1;
+}
+
+.fixedSocial {
+    position: fixed;
+    right: 0;
+    z-index: 5;
+    top: 40%;
+    font-size: 32px;
+    height: 50px;
+    width: 50px;
+    background: #ff2121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff !important;
+    border-radius: 50%;
+    border: 2px solid #fda2a2;
+    margin: 0 10px 0 0;
+    box-shadow: 0 5px 5px rgb(45 45 45 / 40%);
+}
+.fixedSocial.fixedSocial-instagram {
+    top: 50%;
+    background: linear-gradient(30deg, #de1130, #8e4bc3);
+}
+.fixedSocial.fixedSocial-linkedin {
+top: 60%;
+background: #0077b5;
+}
+
+.rectangle{
+    box-sizing: border-box;
+    height: 100%;
+    background: #2E2F90;
+    border: 6px solid #2E2F90;
+    border-radius: 8%;
+    margin-top: 105px;
+    width: 410px;
+}
+
+.circle figure {
+    position: relative;
+    border: 6px solid #2e2f90;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.rectangle .circle {
+    color: inherit;
+    position: relative;
+    display: block;
+    z-index: 1;
+    margin-top: -105px;
+}
+
+.rectangle:hover> .circle > figure{
+    animation: colorChange 2s 1;
+    background: #eabd57;
+    border: 6px solid #eabd57;
+}
+.rectangle:hover{
+    animation: colorChange 2s 1 ;
+    background: #eabd57;
+    border: 6px solid #eabd57;
+}
+.rectangle:hover >.item-part-detail> h3 {
+    color: #2e2f90;
+}
+.rectangle:hover> .item-part-detail >hr::after{
+    animation: backgroundImageColor 2s 1 ;
+    background:#eabd57 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+}
+
+.rectangle:hover>.circle > figure> img {
+	animation: zoominoutsinglefeatured 7s 1 ;
+}
+
+.rectangle>.circle > figure> img {
+	animation: zoomoutsinglefeatured 7s 1 ;
+}
+
+.rectangle .item-part-detail {
+    padding-top: 30px;
+}
+.rectangle .item-part-detail h3 {
+    font-size: 24px;
+    color: #eabd57;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.rectangle .item-part-detail hr {
+    display: block;
+    margin: 30px auto;
+    height: 0;
+    background: #757575;
+    width: 60%;
+    position: relative;
+}
+
+.rectangle-inverted{
+    box-sizing: border-box;
+    height: 100%;
+    background: #eabd57;
+    border: 6px solid #eabd57;
+    margin-top: 105px;
+    border-radius: 8%;
+    width: 410px;
+}
+
+.rectangle-inverted .circle-inverted {
+    color: inherit;
+    position: relative;
+    display: block;
+    z-index: 1;
+    margin-top: -105px;
+}
+
+.circle-inverted figure {
+    position: relative;
+    border: 6px solid #eabd57;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.rectangle-inverted:hover >.circle-inverted> figure{
+    animation: colorChangeInverted 2s 1;
+    background: #2E2F90;
+    border: 6px solid #2E2F90;
+}
+.rectangle-inverted:hover >.item-part-detail> h3 {
+    color: #eabd57;
+}
+
+.rectangle-inverted:hover> .item-part-detail >hr::after{
+    animation: backgroundImageColorInverted 2s 1;
+    background:#2E2F90 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+}
+
+.rectangle-inverted:hover{
+    animation: colorChangeInverted 2s 1;
+    background: #2E2F90;
+    border: 6px solid #2E2F90; 
+}
+
+.rectangle-inverted:hover>.circle-inverted > figure> img {
+	animation: zoominoutsinglefeatured 7s 1 ;
+}
+
+.rectangle-inverted>.circle-inverted > figure> img {
+	animation: zoomoutsinglefeatured 7s 1 ;
+}
+
+.home-gallery-items {
+    padding-bottom: 80px;
+}
+
+.rectangle-inverted .item-part-detail {
+    padding-top: 30px;
+}
+.rectangle-inverted .item-part-detail h3 {
+    font-size: 24px;
+    color: #352222;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.rectangle-inverted .item-part-detail hr {
+    display: block;
+    margin: 30px auto;
+    height: 0;
+    background: #757575;
+    width: 60%;
+    position: relative;
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+      border-top-color: currentcolor;
+      border-top-style: none;
+      border-top-width: 0px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    box-sizing: content-box;
+height: 0;
+overflow: visible;
+}
+
+.rectangle .item-part-detail hr::after {
+    content: "";
+    position: absolute;
+    height: 49px;
+    width: 49px;
+    background:#2e2f90 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -27px;
+}
+.rectangle-inverted .item-part-detail hr::after {
+    content: "";
+    position: absolute;
+    height: 49px;
+    width: 49px;
+    background: #eabd57 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -27px;
+}
+/* .readMore a {
+    font-size: 13px;
+    color: #980606;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    font-weight: 800;
+} */
+
+.service-single {
+    width: 100%;
+    margin: 20px 0;
+    height: auto;
+    text-align: center;
+    padding: 10% 0 0;
+    background: #f1f1f1;
+    height: 100%;
+}
+
+.service-single figure {
+    position: relative;
+    margin: 0 10%;
+}
+
+.w-100 {
+    width: 100% !important;
+  }
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.service-single figure::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, .4);
+z-index: 0;
+transition: all .3s ease-in-out;
+opacity: 0;
+}
+.service-single figcaption {
+padding: 40px 20px 0;
+display: block;
+}
+.service-single figcaption h3 {
+font-size: 24px;
+color: #421b1d;
+text-transform: uppercase;
+}
+.small, small {
+font-size: 80%;
+font-weight: 400;
+}
+
+.service-single .readMore {
+padding: 30px 0 0;
+}
+.service-single .readMore a {
+font-size: 13px;
+color: #980606;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+display: inline-block;
+font-weight: 800;
+}
+.readMore a {
+position: relative;
+text-decoration: none !important;
+}
+
+.readMore a span::before,.readMore a span::after{
+    content: "";
+width: 1px;
+height: 0;
+position: absolute;
+transition: all 0.2s linear;
+  transition-duration: 0.2s;
+  background: #980606;
+}
+
+.readMore a span::before {
+    left: 0;
+    top: 0;
+    transition-duration: 0.4s;
+}
+
+.readMore a span::after {
+    right: 0;
+    bottom: 0;
+    transition-duration: 0.2s;
+}
+
+.readMore a:hover span::before, .readMore a:hover span::after {
+    height: 100%;
+}
+.readMore a::before {
+    left: 0;
+    top: 0;
+    transition-duration: 0.4s;
+}
+  .readMore a::before, .readMore a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    position: absolute;
+    transition: all 0.2s linear;
+      transition-duration: 0.2s;
+    background: #980606;
+}
+.readMore a span {
+    display: block;
+    padding: 12px 20px;
+  }
+
+.readMore a::after {
+    right: 0;
+    bottom: 0;
+    transition-duration: 0.2s;
+  }
+.readMore a:hover::before, .readMore a:hover::after {
+    width: 100%;
+}
+
+.service-single:hover figure::after {
+    opacity: 1;
+}
+
+
+  .section-title {
+    position: relative;
+    margin: 0 0 30px 0;
+  }
+  .section-title {
+    text-align: center;
+  }
+  .title-branding::after {
+    left: 68%;
+  }
+  .title-branding::before, .title-branding::after {
+    content: "";
+    top: 32%;
+    width: 60px;
+    height: 1px;
+    background: #bba7a7;
+    position: absolute;
+  }
+  .title-branding::before {
+    right: 68%;
+  }
+  .title-branding img {
+    width: 78px;
+  }
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+.newsAndEvents .title-branding::before,.newsAndEvents .title-branding::after {
+    content: "";
+    top: 46%;
+    width: 300px;
+    height: 1px;
+    background: #bba7a7;
+    position: absolute;
+  }
+  .newsAndEvents  .title-branding::after {
+    left: 64%;
+  }
+  .newsAndEvents  .title-branding::after {
+    right: 61%;
+  }
+
+  /* News carousel */
+  .containernews {
+    position: relative;
+    width: 320px;
+    margin: 0px auto 350px auto;
+    perspective: 1000px;
+  }
+  
+  .carouselNews {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    animation: rotate360 60s infinite forwards linear;
+  }
+  .carousel__face { 
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+    display: flex;
+  }
+  
+  span {
+    margin: auto;
+    font-size: 2rem;
+  }
+  
+  
+  .carousel__face:nth-child(1) {
+    background-image: url("/assests/saveEarth.jpg");
+    transform: rotateY(  0deg) translateZ(430px); }
+  .carousel__face:nth-child(2) { 
+    background-image: url("/assests/343965602_2373893866134991_7230012269913236247_n.jpg");
+      transform: rotateY( 40deg) translateZ(430px); }
+  .carousel__face:nth-child(3) {
+    background-image: url("/assests/International Dance Day.jpg");
+    transform: rotateY( 80deg) translateZ(430px); }
+  .carousel__face:nth-child(4) {
+    background-image: url("/assests/paintingcompetition.jpg");
+    transform: rotateY(120deg) translateZ(430px); }
+  .carousel__face:nth-child(5) { 
+    background-image: url("/assests/internationalWorkersDay.jpg");
+   transform: rotateY(160deg) translateZ(430px); }
+  .carousel__face:nth-child(6) { 
+    background-image: url("/assests/Glimpse of Baisakhi Celebration.jpg");
+   transform: rotateY(200deg) translateZ(430px); }
+  .carousel__face:nth-child(7) { 
+    background-image: url("/assests/watermelon.jpg");
+   transform: rotateY(240deg) translateZ(430px); }
+  .carousel__face:nth-child(8) {
+    background-image: url("/assests/welcomeback.jpg");
+    transform: rotateY(280deg) translateZ(430px); }
+  .carousel__face:nth-child(9) {
+    background-image: url("/assests/gradualResult.jpg");
+    transform: rotateY(320deg) translateZ(430px); }
+  
+  @keyframes rotate360 {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+
+  .calendarSingle {
+    padding: 30px 30px;
+    background: rgb(60, 46, 46);
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+  .circleDate {
+    background-color: #948484;
+    color: #fff;
+    margin: 0 auto 20px;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    opacity: .8;
+  }
+.circleDate .date span {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    line-height: normal;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+  .circleDate .date span:nth-child(2) {
+    font-size: 36px;
+    line-height: 38px;
+    padding: 10px;
+    background: #3c2e2e;
+    margin: -10px 7px;
+    border-radius: 50px;
+    border: 3px solid #fff;
+  }
+  .calendarSingle .dateContent h3 {
+    font-size: 20px;
+    color: #fff;
+    margin: 0;
+    text-align: left;
+    margin-left: 20px;
+    border-left: 5px solid #c3c3c3;
+    padding: 20px 10px 0 10px;
+    height: 70px;
+    overflow: hidden;
+  }
+
+  .single-publication {
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  .single-publication figure {
+    margin: 0 0 20px 0;
+    position: relative;
+    border: 4px solid #fff;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .single-publication figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .single-publication figure figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.9);
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    opacity: 0;
+  }
+
+  single-publication figure figcaption img {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    min-height: auto;
+  }
+  a:hover {
+    color: #0056b3;
+  }
+  .single-publication figure:hover figcaption {
+    opacity: 1;
+  }
+  .last-publication .single-publication figure figcaption {
+    opacity: 1;
+    background: #eabd57;
+  }
+  .last-publication .single-publication figure figcaption span {
+    display: inline-block;
+    font-size: 20px;
+    color: #000;
+    line-height: normal;
+    background: #cea038;
+    padding: 18px;
+    opacity: .7;
+  }
+  .last-publication .single-publication figure figcaption:hover {
+    opacity: .7;
+  }
+
+  .facts-and-figure .title-branding::before,.facts-and-figure .title-branding::after {
+    content: "";
+    top: 46%;
+    width: 300px;
+    height: 1px;
+    background: #bba7a7;
+    position: absolute;
+  }
+  .facts-and-figure  .title-branding::after {
+    left: 64%;
+  }
+  .facts-and-figure  .title-branding::after {
+    right: 61%;
+  }
+
+  .facts-and-figure .container {
+    background: #e0e0df;
+    border-radius: 20px;
+    padding: 38px 8%;
+  }
+
+  ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  .facts-and-figure ul li {
+    display: inline-block;
+    vertical-align: top;
+    width: 24%;
+  }
+  .single_counter div {
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    background: rgb(60, 46, 46);
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .single_counter h4, .single_counter h5, .single_counter h6 {
+    margin: 0;
+  }
+  .single_counter h2 i {
+    display: block;
+    font-size: 26px;
+    margin: 0 0 5px 0;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .single_counter h2 i::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: #e0e0df;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 100%;
+    margin: 0 auto;
+  }
+  .single_counter h2 span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: normal;
+  }
+  .single_counter h5 {
+    position: relative;
+    padding: 0;
+    margin: 20px 0 2px 0;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+  }
+  .single_counter h2 span + span {
+    margin: 0 0 0 2px;
+    font-size: 20px;
+  }
+  .brand-footer::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: url('https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg')no-repeat fixed center center/cover;
+    content: "";
+    opacity: .1;
+    top: 0;
+    bottom: 0;
+    transition: .8s ease-in-out;
+  }
+  .facts-and-figure {
+    position: relative;
+    z-index: 1;
+    padding: 70px 0 0;
+    display: block;
+  }
+  .brand-footer {
+    display: block;
+    padding: 170px 0 10px 0;
+    background: #31251f;
+    margin: -100px 0 0;
+    z-index: 0;
+    position: relative;
+}
+.brand-footer .container {
+    z-index: 1;
+    position: relative;
+  }
+
+
+  .brand-footer a {
+    text-decoration: none;
+    color: #b3b3b3;
+  }
+
+  .brand-footer a:hover {
+    text-decoration: underline
+  }
+
+  
+.box20:hover::after {
+
+    bottom: -54%;
+
+}
+.box20::after {
+
+    width: 25%;
+    height: 175%;
+    background-color: rgba(112, 80, 80,.9);
+    bottom: -1000%;
+    left: 53%;
+    transform: rotate(-33deg);
+    transform-origin: center bottom 0;
+    transition: all .8s ease 0s;
+
+}
+.box20::after, .box20::before {
+
+    position: absolute;
+    content: "";
+
+}
+.box20:hover::before {
+
+    left: 0%;
+
+}
+.box20::before {
+
+    width: 75%;
+    height: 220%;
+    background: #352222;
+    top: -50%;
+    left: -100%;
+    z-index: 1;
+    transform: rotate(25deg);
+    transform-origin: center top 0;
+    transition: all .5s ease 0s;
+
+}
+.box20 {
+    position: relative;
+    overflow: hidden;
+  }
+  .content_visible::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: 0;
+    -webkit-clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
+  }
+  .content_visible div {
+    position: relative;
+    z-index: 1;
+    line-height: normal;
+  }
+  .box20 .title:hover {
+    opacity: .6;
+  }
+  .box20 .title {
+    font-size: 16px;
+    margin: 0;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: inherit;
+  }
+  .content_visible div h3 {
+    line-height: normal;
+  }
+  .box20 .title a {
+    color: #fff;
+  }
+  .content_visible::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: 0;
+    -webkit-clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 0% 80%, 900% 100%, 0% 100%);
+  }
+  .box20:hover .box-content {
+    top: 15px;
+  }
+  .content_visible div {
+    position: relative;
+    z-index: 1;
+    line-height: normal;
+  }
+  .box20 .title:hover {
+    opacity: .6;
+  }
+  a:focus, a:hover, button:focus, button:hover {
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+  }
+  .box20 .box-content {
+    top: -100%;
+    color: #fff;
+  }
+.box20:hover .content_visible .imgtext h3{
+    opacity: 0;
+}
+  .box20:hover .box-content {
+    top: 30px;
+  }
+  .box20 .title a {
+    color: #fff;
+  }
+  .box20 .icon li {
+    display: inline-block;
+  }
+  .box20:hover::after {
+    bottom: -54%;
+  }
+  .box20 .box-content, .box20 .icon {
+    width: 20%;
+    padding: 0 20px;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    transition: all 1.1s ease 0s;
+  }
+  .box20 .title {
+    font-size: 16px;
+    margin: 0;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: inherit;
+  }
+  .box20:hover .icon {
+    bottom: 25px;
+  }
+  .box20 .icon {
+    list-style: none;
+    margin: 0;
+    bottom: -100%;
+  }
+  .box20 .box-content, .box20 .icon {
+    width: 60%;
+    padding: 0 20px;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    transition: all 1.1s ease 0s;
+  }
+  .box20 .icon li {
+    display: inline-block;
+  }
+  .box20 .icon li a {
+    width: 35px;
+    height: 35px;
+    line-height: 32px;
+    background: #444;
+    border-radius: 50%;
+    margin: 0 3px;
+    color: #fff;
+    text-align: center;
+    transition: all .5s ease 0s;
+    font-size: 24px;
+    padding: 2px 0 0;
+    background: #fff;
+    color: #ff402a;
+  }
+  .box20 .icon li a, .box20 .post {
+    display: inline-block;
+    font-size: 14px;
+  }
+  .la-arrow-right::before {
+    content: "\f061";
+  }
