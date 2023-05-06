@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override')
 const mongoSantize=require('express-mongo-sanitize');
+// const flash = require('connect-flash');
 
 const ExpressError = require('./utils/ExpressError');
 
@@ -36,12 +37,46 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(methodOverride('_method'));
 app.use(mongoSantize({replaceWith:'_'}));
 
+//using session and flash
+// app.use(session(sessionConfig))
+// app.use(flash());
+
+// setting local variables
+app.use((req, res, next) => {
+    res.locals.errorMessage = '';
+    next();
+})
+
 app.get('/',(req,res)=>{
     res.render('home');
 })
 
 app.get('/gallery',(req,res)=>{
     res.render('gallery');
+})
+app.get('/contact-us',(req,res)=>{
+    const errorMessage='underConstruction'
+    res.render('home',{errorMessage});
+})
+app.get('/accomplishments',(req,res)=>{
+    const errorMessage='underConstruction'
+    res.render('home',{errorMessage});
+})
+app.get('/beyond-classroom',(req,res)=>{
+    const errorMessage='underConstruction'
+    res.render('home',{errorMessage});
+})
+app.get('/about-us',(req,res)=>{
+    const errorMessage='underConstruction'
+    res.render('home',{errorMessage});
+})
+app.get('/admission',(req,res)=>{
+    const errorMessage='underConstruction'
+    res.render('home',{errorMessage});
+})
+app.get('/academics',(req,res)=>{
+    const errorMessage='underConstruction'
+    res.render('home',{errorMessage});
 })
 
 app.post('/',(req,res)=>{

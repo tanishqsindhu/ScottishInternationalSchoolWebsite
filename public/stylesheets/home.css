@@ -456,9 +456,14 @@ transition: all 0.2s linear;
   .title-branding::after {
     left: 68%;
   }
-  @media screen and (max-width:770px) {
+  @media screen and (min-width:770px) {
     .title-branding::before, .title-branding::after {
-      width: 60px;
+      width: 25%;
+    }
+  }
+  @media screen and (min-width:770px) {
+    .facts-and-figure .title-branding::before, .facts-and-figure .title-branding::after {
+      width: 30%;
     }
   }
   @media screen and (max-width:770px) {
@@ -1130,6 +1135,9 @@ transition: all 0.2s linear;
     z-index: 0;
     -webkit-clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 18%, 100% 100%, 0% 100%);
+  }
+  .content_visible a{
+    text-decoration: none;
   }
   .content_visible div {
     position: relative;

@@ -35,6 +35,12 @@
             </div>
         </div>
     </section>
+    <% if(errorMessage=='underConstruction' ) {%>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error Page is not build Yet!</strong> It is Under Construction.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
     <section class="home-entry bg1">
         <div class=" container text-center">
             <div id="welcomeMessage">
@@ -55,12 +61,12 @@
                     <div class="rectangle">
                         <div class="circle">
                             <figure>
-                                <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                                <img src="/assests/auditorium.jpg"
                                     alt="ACADEMICS" width="300px" height='300px'>
                             </figure>
                         </div>
                         <div class="item-part-detail text-center"">
-                            <h3>Going Global</h3>
+                            <h3>Scottish My Home</h3>
                             <hr>
                             <a href="" class=" btn btn-outline-primary mt-2"
                             style="color: #980606; border-radius: 0; border-color: #980606;">Explore</a>
@@ -71,12 +77,12 @@
                     <div class="rectangle-inverted">
                         <div class="circle-inverted">
                             <figure>
-                                <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                                <img src="/assests/girlsrace.jpg"
                                     alt="ACADEMICS" width="300px" height='300px'>
                             </figure>
                         </div>
                         <div class="item-part-detail text-center">
-                            <h3>Going Global</h3>
+                            <h3>Sweating It Out</h3>
                             <hr>
                             <a href="" class="btn btn-outline-primary mt-2"
                                 style="color: white; border-radius: 0; border-color: white;">Explore</a>
@@ -87,12 +93,12 @@
                     <div class="rectangle">
                         <div class="circle">
                             <figure>
-                                <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                                <img src="/assests/scottishBuilding.jpg"
                                     alt="ACADEMICS" width="300px" height='300px'>
                             </figure>
                         </div>
                         <div class="item-part-detail text-center"">
-                            <h3>Going Global</h3>
+                            <h3>Branching Out</h3>
                             <hr>
                             <a href="" class=" btn btn-outline-primary mt-2"
                             style="color: #980606; border-radius: 0; border-color: #980606;">Explore</a>
@@ -328,7 +334,7 @@
                 class=" border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-4 p-lg-5">
                 <div class="text-center text-lg-start py-3 py-lg-1">
                     <h2 class="fw-bold mb-2"><strong>Subscribe to our newsletter</strong></h2>
-                    <p class="mb-0">Imperdiet consectetur dolor.</p>
+                    <p class="mb-0">For latest Information.</p>
                 </div>
                 <form class="d-flex justify-content-center flex-wrap my-2" method="post">
                     <div class="my-2"><input class="form-control" type="email" name="email" placeholder="Your Email">
