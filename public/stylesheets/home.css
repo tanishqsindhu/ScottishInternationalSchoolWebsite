@@ -456,10 +456,19 @@ transition: all 0.2s linear;
   .title-branding::after {
     left: 68%;
   }
+  @media screen and (max-width:770px) {
+    .title-branding::before, .title-branding::after {
+      width: 60px;
+    }
+  }
+  @media screen and (max-width:770px) {
+    .title-branding::before, .title-branding::after {
+      width: 25%;
+    }
+  }
   .title-branding::before, .title-branding::after {
     content: "";
     top: 32%;
-    width: 60px;
     height: 1px;
     background: #bba7a7;
     position: absolute;
@@ -478,13 +487,27 @@ transition: all 0.2s linear;
     vertical-align: middle;
     border-style: none;
   }
+  @media screen and (max-width:440px) {
+    .newsAndEvents .title-branding::before,.newsAndEvents .title-branding::after  {
+      width: 120px;
+    }
+  }
+  @media screen and (min-width:770px) {
+    .newsAndEvents .title-branding::before,.newsAndEvents .title-branding::after  {
+      width: 300px;
+    }
+  }
+
+  html {
+    overflow-x: hidden;
+}
 .newsAndEvents .title-branding::before,.newsAndEvents .title-branding::after {
     content: "";
     top: 46%;
-    width: 300px;
     height: 1px;
     background: #bba7a7;
     position: absolute;
+    max-width: calc(100% - 200px);
   }
   .newsAndEvents  .title-branding::after {
     left: 64%;
@@ -524,35 +547,255 @@ transition: all 0.2s linear;
     margin: auto;
     font-size: 2rem;
   }
-  
+  @media screen and (max-width:440px) {
+    .carousel__face:nth-child(1) p{
+      font-size: 7px;
+    }
+    .carousel__face:nth-child(2) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(3) a {
+      font-size: 18px;
+    }
+    .carousel__face:nth-child(3) p{
+      font-size: 7px;
+    }
+    .carousel__face:nth-child(4) a {
+      font-size: 18px;
+    }
+    .carousel__face:nth-child(4) p{
+      font-size: 8px;
+    }
+    .carousel__face:nth-child(5) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(5) a {
+      font-size: 12px;
+    }
+    .carousel__face:nth-child(6) a {
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(6) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(7) a {
+      font-size: 15px;
+    }
+    .carousel__face:nth-child(7) p{
+      font-size: 5px;
+    }
+    .carousel__face:nth-child(8) a {
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(8) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(9) a {
+      font-size: 12px;
+    }
+    .carousel__face:nth-child(9) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(1) {
+      width: 160px;
+      transform: rotateY(  0deg) translateZ(220px); }
+    .carousel__face:nth-child(2) { 
+      width: 160px;
+        transform: rotateY( 40deg) translateZ(220px); }
+    .carousel__face:nth-child(3) {
+      width: 160px;
+      transform: rotateY( 80deg) translateZ(220px); }
+    .carousel__face:nth-child(4) {
+      width: 160px;
+      transform: rotateY(120deg) translateZ(220px); }
+    .carousel__face:nth-child(5) { 
+      width: 160px;
+     transform: rotateY(160deg) translateZ(220px); }
+    .carousel__face:nth-child(6) { 
+      width: 160px;
+     transform: rotateY(200deg) translateZ(220px); }
+    .carousel__face:nth-child(7) {
+      width: 160px;
+     transform: rotateY(240deg) translateZ(220px); }
+    .carousel__face:nth-child(8) {
+      width: 160px;
+      transform: rotateY(280deg) translateZ(220px); }
+    .carousel__face:nth-child(9) {
+      width: 160px;
+      transform: rotateY(320deg) translateZ(220px); }
+  }
+  @media screen and (max-width:769px) {
+    .carousel__face:nth-child(1) p{
+      font-size: 7px;
+    }
+    .carousel__face:nth-child(2) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(3) a {
+      font-size: 18px;
+    }
+    .carousel__face:nth-child(3) p{
+      font-size: 7px;
+    }
+    .carousel__face:nth-child(4) a {
+      font-size: 18px;
+    }
+    .carousel__face:nth-child(4) p{
+      font-size: 8px;
+    }
+    .carousel__face:nth-child(5) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(5) a {
+      font-size: 12px;
+    }
+    .carousel__face:nth-child(6) a {
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(6) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(7) a {
+      font-size: 17px;
+    }
+    .carousel__face:nth-child(7) p{
+      font-size: 5px;
+    }
+    .carousel__face:nth-child(8) a {
+      font-size: 12px;
+    }
+    .carousel__face:nth-child(8) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(9) a {
+      font-size: 18px;
+    }
+    .carousel__face:nth-child(9) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(1) {
+      width: 190px;
+      transform: rotateY(  0deg) translateZ(280px); }
+    .carousel__face:nth-child(2) { 
+      width: 190px;
+        transform: rotateY( 40deg) translateZ(280px); }
+    .carousel__face:nth-child(3) {
+      width: 190px;
+      transform: rotateY( 80deg) translateZ(280px); }
+    .carousel__face:nth-child(4) {
+      width: 190px;
+      transform: rotateY(120deg) translateZ(280px); }
+    .carousel__face:nth-child(5) { 
+      width: 190px;
+     transform: rotateY(160deg) translateZ(280px); }
+    .carousel__face:nth-child(6) { 
+      width: 190px;
+     transform: rotateY(200deg) translateZ(280px); }
+    .carousel__face:nth-child(7) {
+      width: 190px;
+     transform: rotateY(240deg) translateZ(280px); }
+    .carousel__face:nth-child(8) {
+      width: 190px;
+      transform: rotateY(280deg) translateZ(280px); }
+    .carousel__face:nth-child(9) {
+      width: 190px;
+      transform: rotateY(320deg) translateZ(280px); }
+  }
+  @media screen and (min-width:770px) {
+    .carousel__face:nth-child(1) p{
+      font-size: 7px;
+    }
+    .carousel__face:nth-child(2) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(3) a {
+      font-size: 18px;
+    }
+    .carousel__face:nth-child(3) p{
+      font-size: 7px;
+    }
+    .carousel__face:nth-child(4) a {
+      font-size: 18px;
+    }
+    .carousel__face:nth-child(4) p{
+      font-size: 8px;
+    }
+    .carousel__face:nth-child(5) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(5) a {
+      font-size: 12px;
+    }
+    .carousel__face:nth-child(6) a {
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(6) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(7) a {
+      font-size: 15px;
+    }
+    .carousel__face:nth-child(7) p{
+      font-size: 5px;
+    }
+    .carousel__face:nth-child(8) a {
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(8) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(9) a {
+      font-size: 12px;
+    }
+    .carousel__face:nth-child(9) p{
+      font-size: 10px;
+    }
+    .carousel__face:nth-child(1) {
+      transform: rotateY(  0deg) translateZ(430px); }
+    .carousel__face:nth-child(2) { 
+        transform: rotateY( 40deg) translateZ(430px); }
+    .carousel__face:nth-child(3) {
+      transform: rotateY( 80deg) translateZ(430px); }
+    .carousel__face:nth-child(4) {
+      transform: rotateY(120deg) translateZ(430px); }
+    .carousel__face:nth-child(5) { 
+     transform: rotateY(160deg) translateZ(430px); }
+    .carousel__face:nth-child(6) { 
+     transform: rotateY(200deg) translateZ(430px); }
+    .carousel__face:nth-child(7) {
+     transform: rotateY(240deg) translateZ(430px); }
+    .carousel__face:nth-child(8) {
+      transform: rotateY(280deg) translateZ(430px); }
+    .carousel__face:nth-child(9) {
+      transform: rotateY(320deg) translateZ(430px); }
+  }
   
   .carousel__face:nth-child(1) {
-    background-image: url("/assests/saveEarth.jpg");
-    transform: rotateY(  0deg) translateZ(430px); }
+    background-image: url("/assests/saveEarth.jpg");}
   .carousel__face:nth-child(2) { 
     background-image: url("/assests/343965602_2373893866134991_7230012269913236247_n.jpg");
-      transform: rotateY( 40deg) translateZ(430px); }
+}
   .carousel__face:nth-child(3) {
     background-image: url("/assests/International Dance Day.jpg");
-    transform: rotateY( 80deg) translateZ(430px); }
+}
   .carousel__face:nth-child(4) {
     background-image: url("/assests/paintingcompetition.jpg");
-    transform: rotateY(120deg) translateZ(430px); }
+}
   .carousel__face:nth-child(5) { 
     background-image: url("/assests/internationalWorkersDay.jpg");
-   transform: rotateY(160deg) translateZ(430px); }
+}
   .carousel__face:nth-child(6) { 
     background-image: url("/assests/Glimpse of Baisakhi Celebration.jpg");
-   transform: rotateY(200deg) translateZ(430px); }
+}
   .carousel__face:nth-child(7) { 
     background-image: url("/assests/watermelon.jpg");
-   transform: rotateY(240deg) translateZ(430px); }
+}
   .carousel__face:nth-child(8) {
     background-image: url("/assests/welcomeback.jpg");
-    transform: rotateY(280deg) translateZ(430px); }
+}
   .carousel__face:nth-child(9) {
     background-image: url("/assests/gradualResult.jpg");
-    transform: rotateY(320deg) translateZ(430px); }
+}
   
   @keyframes rotate360 {
     from {
@@ -681,11 +924,24 @@ transition: all 0.2s linear;
   .last-publication .single-publication figure figcaption:hover {
     opacity: .7;
   }
-
+  @media screen and (max-width:440px) {
+    .facts-and-figure ul li {
+      width: 300px;
+    }
+  }
+  @media screen and (min-width:770px) {
+    .facts-and-figure ul li {
+      width: 189px;
+    }
+  }
+  @media screen and (min-width:1210px) {
+    .facts-and-figure ul li {
+      width: 250px;
+    }
+  }
   .facts-and-figure .title-branding::before,.facts-and-figure .title-branding::after {
     content: "";
     top: 46%;
-    width: 300px;
     height: 1px;
     background: #bba7a7;
     position: absolute;
@@ -701,6 +957,7 @@ transition: all 0.2s linear;
     background: #e0e0df;
     border-radius: 20px;
     padding: 38px 8%;
+    margin:auto
   }
 
   ul, ol {
@@ -708,10 +965,19 @@ transition: all 0.2s linear;
     margin: 0;
     list-style-type: none;
   }
+  @media screen and (max-width:770px) {
+    .facts-and-figure ul li {
+      width: 45%;
+    }
+  }
+  @media screen and (max-width:770px) {
+    .facts-and-figure ul li {
+      width: 45%;
+    }
+  }
   .facts-and-figure ul li {
     display: inline-block;
     vertical-align: top;
-    width: 24%;
   }
   .single_counter div {
     color: #fff;
