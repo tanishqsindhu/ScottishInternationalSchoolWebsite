@@ -55,8 +55,8 @@ app.get('/gallery',(req,res)=>{
     res.render('gallery');
 })
 app.get('/contact-us',(req,res)=>{
-    const errorMessage='underConstruction'
-    res.render('home',{errorMessage});
+    // const errorMessage='underConstruction'
+    res.render('contact-us');
 })
 app.get('/accomplishments',(req,res)=>{
     const errorMessage='underConstruction'
