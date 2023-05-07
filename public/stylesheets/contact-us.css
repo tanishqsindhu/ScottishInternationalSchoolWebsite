@@ -1,6 +1,6 @@
 @media (min-width: 768px){
     .inner-page .brand-hero {
-        height: 80vh;
+        height: 60vh;
     }
 }
 
@@ -8,7 +8,7 @@
   height: 350px;
 }
 .brand-hero {
-  height: 100vh;
+  height: 70vh;
   position: relative;
   z-index: 2;
 }
