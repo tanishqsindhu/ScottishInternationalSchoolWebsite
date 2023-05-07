@@ -1,0 +1,96 @@
+.nav-trigger.NavTriggerBottom {
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .nav-trigger.NavTriggerBottom a {
+    padding: 0;
+    background: #654e42;
+    width: 110px;
+    cursor: pointer;
+    text-decoration: none !important;
+    height: 144px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: ellipse(50% 38% at 50% 50%);
+    -webkit-clip-path: ellipse(50% 38% at 50% 50%);
+    margin: 0 auto -84px;
+    position: relative;
+    z-index: 0;
+  }
+    @media (max-width: 1440px){
+        .nav-trigger a {
+            padding-right: 58px;
+            margin-top: 16px;
+          }
+    }
+  .nav-trigger a {
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    position: relative;
+    padding-right: 68px;
+    margin-top: 24px;
+    z-index: 1;
+  }
+
+  .nav-trigger.NavTriggerBottom a b {
+    position: static;
+    margin-top: -68px;
+    display: block;
+    line-height: 15px;
+  }
+    @media (max-width: 1440px){
+        .nav-trigger a b, .nav-trigger-close a b {
+            font-size: 15px;
+            top: -3px;
+          }
+    }
+
+  .nav-trigger a b, .nav-trigger-close a b {
+    position: absolute;
+    font-size: 18px;
+    right: 0;
+    color: #fff;
+    top: -1px;
+    text-transform: uppercase;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  .fa-solid .fa-arrow-up::before {
+    content: "\f062";
+  }
+  .nav-trigger.NavTriggerBottom a span {
+    display: none;
+  }
+    @media (max-width: 1440px){
+        .nav-trigger a span, .nav-trigger-close a span {
+            margin: 5px 0;
+            width: 26px;
+            height: 3px;
+          }
+    }
+
+  .nav-trigger a span, .nav-trigger-close a span {
+    display: block;
+    height: 4px;
+    background: #ffffff;
+    width: 36px;
+    margin: 7px 0;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    box-shadow: 0 0 5px #444;
+    transition: .3s ease-in-out;
+  }
+  .nav-trigger.NavTriggerBottom a b i {
+    line-height: normal;
+    display: block;
+    font-size: 80%;
+  }

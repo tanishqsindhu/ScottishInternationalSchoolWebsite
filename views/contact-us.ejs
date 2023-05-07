@@ -1,60 +1,161 @@
 <% layout('layouts/boilerplate')%>
-    <section class="brand-hero">
+    <section class="brand-hero row">
         <!--<iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.1434557992666!2d78.05572211552051!3d30.3184371125311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929b7249d5e1f%3A0x6a0dbc429180e02b!2sWelham%20Boys&#39;%20School!5e0!3m2!1sen!2sin!4v1594274963609!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
-        <div class="animate-banner" style="">
+        <div class="animate-banner">
             <picture class="zoom">
-                <source media="(min-width: 1281px)" srcset="images/contact-banner.jpg"> <!--1600*704-->
-                <source media="(min-width: 768px)" srcset="images/contact-banner.jpg"> <!--1000*500-->
-                <source media="(min-width: 320px)" srcset="images/contact-banner.jpg"> <!--540*350-->
-                <img src="images/contact-banner.jpg" alt="">
+                <source media="(min-width: 1281px)" srcset="/assests/scottishBuilding.jpg" width="1500" height="804"><!--1600*704 -->
+                <source media="(min-width: 768px)" srcset="/assests/scottishBuilding.jpg" width="900" height="700"> <!--1000*500-->
+                <source media="(min-width: 320px)" srcset="/assests/scottishBuilding.jpg" width="440" height="550"> <!--540*350 -->
+                <img src="/assests/scottishBuilding.jpg" alt="">
             </picture>
         </div>
-        <div class="page-title">
+        <div class="page-title align-items-start">
             <div class="container">
                 <div class="banner-content-inner">
-                    <h1>Contact us <a href="/"><i class="las la-long-arrow-alt-left"></i> Home</a></h1>
+                    <h1>Contact us <a href="/"><i class="fa-solid fa-arrow-left"></i> Home</a></h1>
                 </div>
             </div>
         </div>
     </section>
     <section class="map">
-        <iframe allowfullscreen="" frameborder="0" loading="lazy"
+        <!-- <iframe allowfullscreen="" frameborder="0" loading="lazy"
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAFq9_ErOMgRh-6_Z3-IVY2H00P6MWuA7Y&amp;q=scottish+international+school+hisar+haryana+india&amp;zoom=19"
-            width="100%" height="400"></iframe>
+            width="100%" height="400"></iframe> -->
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.6886838468514!2d75.72671616643342!3d29.127793875397877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39123345c6b63d4f%3A0x541ada9d1c5f86e3!2sScottish%20International%20School!5e1!3m2!1sen!2sin!4v1683410152676!5m2!1sen!2sin;zoom=0"
+            width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
-    <section class="position-relative py-5 bg1" style="margin-bottom: 160px;">
+    <section class="position-relative pt-5 bg1" style="padding-bottom: 5px;">
         <div class="d-md-none"><iframe allowfullscreen="" frameborder="0" loading="lazy"
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAFq9_ErOMgRh-6_Z3-IVY2H00P6MWuA7Y&amp;q=scottish+academy+of+execellence+hisar+india&amp;zoom=19"
                 width="100%" height="100%"></iframe></div>
-        <div class="d-none d-md-block position-absolute top-0 start-0 w-100 h-100"><iframe allowfullscreen=""
-                frameborder="0" loading="lazy"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAFq9_ErOMgRh-6_Z3-IVY2H00P6MWuA7Y&amp;q=Scottish+academy+of+excellence+hisar+india&amp;zoom=20"
-                width="100%" height="100%"></iframe></div>
+        <div class="d-none d-md-block position-absolute top-0 start-0 w-100 h-100"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d550.8261239380258!2d75.75971660380878!3d29.115309490210112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391233e1b6a18477%3A0x7e48b9b4e2c7fd30!2sScottish%20International%20School!5e1!3m2!1sen!2sin!4v1683410038417!5m2!1sen!2sin"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="position-relative mx-2 my-5 m-md-5">
-            <div class="container">
+            <div class="container" style="margin: 0;">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-md-6 col-xl-5 col-xxl-6">
-                        <div></div>
                         <div>
                             <div class="border rounded shadow p-3 p-md-4 p-lg-5" method="post"
                                 style="background: var(--bs-body-bg);">
                                 <div class="row">
-                                    <div class="col">
-                                        <h3 class="text-center mb-3">Branch #1</h3>
-                                        <div class="mb-3">Scottish International School
-                                            Civil Line Police Station Rd, Sector 17, Hisar, Haryana 125005, India</div>
-                                            <div class="mb-3">Lat: Log:</div>
-                                        <div class="mb-3"><a href="tel:+919315577788"style="text-decoration: none; color: black;"><i class="fa-solid fa-phone fa-shake"></i>+91 9315577788</a></div>
-                                        <div class="mb-3"><a href="mailto:scottishinternational@gmail.com" style="font-size: 15px; text-decoration: none; color: black;"><i class="fa-regular fa-envelope fa-flip"></i>scottishinternational@gmail.com</a></div>
+                                    <div class="col-lg-6">
+                                        <address class="address-wrap">
+                                            <h3 style="text-align: center; color: #654e42;">Branch #1</h3>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-map-pin"></i>
+                                                <p>
+                                                    <b>Location</b>
+                                                    Scottish International School <br>Civil Line Police Station Rd, Sector 17, Hisar, Haryana 125005, India
+                                                </p>
+                                            </div>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-phone fa-shake"></i>
+                                                <p>
+                                                    <b>Phone</b>
+                                                    <a href="tel:9315577788">+91-9315577788 </a>
+                                                    <!-- <a href="tel:+911352652935">2652935, </a><br> -->
+                                                </p>
+                                            </div>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-mobile-button fa-shake"></i>
+                                                <p class="mb-0">
+                                                    <b>Admission Office</b>
+                                                    <a href="tel:9315577788">+91-9315577788</a></p>
+                                                    <p>(09:30 AM to 06:00 PM)</p>
+                                                
+                                            </div>
+                                            <!--
+                                            <div class="form-group">
+                                                <i class="las la-print"></i>
+                                                <p>
+                                                    <b>Fax</b>
+                                                    <a href="tel:+911352658605">+91-135-2658605 </a>
+                                                </p>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-at fa-beat"></i>
+                                                <p>
+                                                    
+                                                    <b>Email</b>
+                                                    <a href="mailto:scottishinternational@gmail.com" style="font-size: 12px;">scottishinternational@gmail.com</a>
+                                                </p>
+                                            </div>
+                                        </address>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-lg-6">
+                                        <address class="address-wrap">
+                                            <h3 style="text-align: center; color: #654e42;">Branch #2</h3>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-map-pin"></i>
+                                                <p>
+                                                    <b>Location</b>
+                                                    Scottish International School <br>Near Aadhar hospital towards Delhi - South bye pass - Sector 16 & 17, Haryana 125001, India
+                                                </p>
+                                            </div>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-phone fa-shake"></i>
+                                                <p>
+                                                    <b>Phone</b>
+                                                    <a href="tel:9315577788">+91-9315577788 </a>
+                                                    <!-- <a href="tel:+911352652935">2652935, </a><br> -->
+                                                </p>
+                                            </div>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-mobile-button fa-shake"></i>
+                                                <p class="mb-0">
+                                                    <b>Admission Office</b>
+                                                    <a href="tel:9315577788">+91-9315577788</a></p>
+                                                    <p>(09:30 AM to 06:00 PM)</p>
+                                                
+                                            </div>
+                                            <!--
+                                            <div class="form-group">
+                                                <i class="las la-print"></i>
+                                                <p>
+                                                    <b>Fax</b>
+                                                    <a href="tel:+911352658605">+91-135-2658605 </a>
+                                                </p>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-at fa-beat"></i>
+                                                <p>
+                                                    <b>Email</b>
+                                                    <a href="mailto:scottishinternational@gmail.com" style="font-size: 12px;">scottishinternational@gmail.com</a>
+                                                </p>
+                                            </div>
+                                        </address>
+                                    </div>
+                                    <!-- <div class="col address-wrap">
+                                        <h3 class="text-center mb-3">Branch #1</h3>
+                                        <b>Loction</b><div class="mb-3"><i class="fa-regular fa-compass fa-fade" style="color: #eabe5b; font-size: 25px;" ></i><span style="padding-left: 10px;">Scottish International School
+                                            Civil Line Police Station Rd, Sector 17, Hisar, Haryana 125005, India</span></div>
+                                        <div class="mb-3">Latitude: 29.127819648467568 Longitude: 75.72737598984914</div>
+                                        <div class="mb-3"><a href="tel:+919315577788"
+                                                style="text-decoration: none; color: black;"><i
+                                                    class="fa-solid fa-phone fa-shake"></i>+91 9315577788</a></div>
+                                        <div class="mb-3"><a href="mailto:scottishinternational@gmail.com"
+                                                style="font-size: 15px; text-decoration: none; color: black;"><i
+                                                    class="fa-regular fa-envelope fa-flip"></i>scottishinternational@gmail.com</a>
+                                        </div>
+                                    </div> -->
+                                    <!-- <div class="col">
                                         <h3 class="text-center mb-3">Branch #2</h3>
                                         <div class="mb-3">Scottish International School
-                                            Near Aadhar hospital towards Delhi - South bye pass - Sector 16 & 17, Haryana 125001, India</div>
-                                        <div class="mb-3">Lat: Log:</div>
-                                        <div class="mb-3"><a href="tel:+919350808762" style="text-decoration: none; color: black;"><i class="fa-solid fa-phone fa-shake"></i>+91 93508 08762</a></div>
-                                        <div class="mb-3"><a href="mailto:scottishinternational@gmail.com" style="font-size: 15px; text-decoration: none; color: black;"><i class="fa-regular fa-envelope fa-flip"></i>scottishinternational@gmail.com</a></div>
-                                    </div>
+                                            Near Aadhar hospital towards Delhi - South bye pass - Sector 16 & 17,
+                                            Haryana 125001, India</div>
+                                        <div class="mb-3">Latitude: 29.115133758651055 Longitude: 75.75948832418624</div>
+                                        <div class="mb-3"><a href="tel:+919350808762"
+                                                style="text-decoration: none; color: black;"><i
+                                                    class="fa-solid fa-phone fa-shake"></i>+91 93508 08762</a></div>
+                                        <div class="mb-3"><a href="mailto:scottishinternational@gmail.com"
+                                                style="font-size: 15px; text-decoration: none; color: black;"><i
+                                                    class="fa-regular fa-envelope fa-flip"></i>scottishinternational@gmail.com</a>
+                                        </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -81,3 +182,8 @@
             </div>
         </div>
     </section>
+    <section class="row" style= 'margin-bottom: 160px;'>
+        <%- include('./partials/navBottom')%>
+    </section>
+    
+    <link rel="stylesheet" href="/stylesheets/contact-us.css">
