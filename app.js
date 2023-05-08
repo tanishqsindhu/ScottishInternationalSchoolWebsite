@@ -67,8 +67,7 @@ app.get('/beyond-classroom',(req,res)=>{
     res.render('home',{errorMessage});
 })
 app.get('/about-us',(req,res)=>{
-    const errorMessage='underConstruction'
-    res.render('home',{errorMessage});
+    res.render('about-us');
 })
 app.get('/admission',(req,res)=>{
     const errorMessage='underConstruction'
