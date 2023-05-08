@@ -2,3 +2,6 @@ body{
     min-height: 200vh;
     font-family: 'Noto Sans', sans-serif;
 }
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
