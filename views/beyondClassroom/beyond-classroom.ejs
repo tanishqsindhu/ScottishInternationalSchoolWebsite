@@ -35,7 +35,6 @@
                 </div>
             </div>
         </section>
-
         <div class="container-fuild">
             <div class="row">
                 <section class="inner-entry ">
@@ -44,56 +43,64 @@
                         <div class="mainTitle">
                             <p class="title-branding mb-2"><img class="img-fluid"
                                     src="/assests/SISTransparentLogoWhite.png"></p>
-                            <h2>Sports</h2>
+                            <h2></h2>
                         </div>
                     </div>
                 </section>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col py-5">
-                        <p class="text">
-
-                            Sports are an integral part of life at school. We pride in inculcating the finest values of
-                            dedication, integrity, and team spirit in our student body. </p>
-
-                        <p class="text"> Students are encouraged to compete with each other by way of inter house
-                            competitions. An academic year is typically infused with several sporting championships.
-                            Besides permanent physical education staff, specialist coaches are available year round for
-                            students to focus on a single sport, such as squash or badminton.</p>
-
-                        <p class="text">Our school has done exceedingly well in several sports in the past half-decade,
-                            including winning under-17 IPSC (Indian Public Schools Conference) football championship,
-                            winning gold at several major basketball tournaments and competing in the prestigious
-                            Subroto International Football Tournament.</p>
-
-                        <p class="text"> Our sports infrastructure is among the best in the country with modern
-                            basketball courts, synthetic tennis courts, a twenty five meter swimming pool, three cricket
-                            pitches, three glass squash courts, two indoor and as many outdoor badminton courts.</p>
-
-                        <p class="text"> Hockey, football, basketball, volleyball, squash, tennis, badminton, table
-                            tennis, skating and rifle shooting are on offer, alongside athletics, yoga and gymnastics.
-                        </p>
-
-                    </div>
+        </div>
+        <section class="container pt-3 bg-1">
+            <div class="row justify-content-center">
+                <h2 class="text-center display-1 py-5" style="color: #654f4f;">WHERE YOU WANT TO VISIT FIRST?</h2>
+                <div class="col-md-6 mb-2">
+                    <a href="/beyond-classroom-sports">
+                        <div class="card text-bg-dark">
+                            <img src="/assests/basketball.jpg" class="card-img" height="750px">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title text-center display-3" style="padding: 50% 0; color: #eabd57;">
+                                    Sports</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small>Last updated 3 mins ago</small></p> -->
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="row mb-3 justify-content-evenly">
-                    <div class="col-md-4 mb-2 pr-2" style="height: 450px;"><img src="/assests/basketball.jpg" alt="" style="width: 100%;height: 100%; border-radius: 5%;"></div>
-                    <div class="col-md-4 mb-2 pr-2"style="height: 450px;"><img src="/assests/girlsrace.jpg" alt="" style="width: 100%;height: 100%; border-radius: 5%;"></div>
-                    <div class="col-md-4 mb-2 pr-2"style="height: 450px;"><img src="/assests/auditorium.jpg" alt="" style="width: 100%;height: 100%; border-radius: 5%;"></div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm-6 mb-2"height="450px"><img src="/assests/343965602_2373893866134991_7230012269913236247_n.jpg" alt="" style="width: 100%;height: 100%; border-radius: 5%;"></div>
-                    <div class="col-sm-6 mb-2"height="450px"><img src="/assests/girlsrace.jpg" alt=""style="width: 100%;height: 100%; border-radius: 5%;"></div>
+                <div class="col-md-6">
+                    <a href="/beyond-classroom-co-curricular">
+                        <div class="card text-bg-dark">
+                            <img src="/assests/Glimpse of Baisakhi Celebration.jpg" class="card-img" height="750px">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title text-center display-3" style="padding: 50% 0; color: #eabd57;">
+                                    Co-Currucular</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small>Last updated 3 mins ago</small></p> -->
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-
-        </div>
-
+        </section>
         <section class="row" style='margin-bottom: 160px;'>
             <%- include('../partials/footerBottom')%>
         </section>
+        <style>
+            @keyframes zoominoutsinglefeatured {
+                0% {
+                    transform: scale(1, 1);
+                }
 
+                100% {
+                    transform: scale(1.25, 1.25);
+                }
+            }
+
+            .card:hover>img {
+                animation: zoominoutsinglefeatured 9s infinite;
+                
+            }
+        </style>
         <link rel="stylesheet" href="/stylesheets/contact-us.css">
         <link rel="stylesheet" href="/stylesheets/page-title.css">
         <link rel="stylesheet" href="/stylesheets/navbottom.css">

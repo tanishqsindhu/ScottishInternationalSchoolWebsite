@@ -62,6 +62,10 @@ app.get('/accomplishments',(req,res)=>{
     const errorMessage='underConstruction'
     res.render('home',{errorMessage});
 })
+app.get('/beyond-classroom',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('beyondClassroom/beyond-classroom');
+})
 app.get('/beyond-classroom-sports',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('beyondClassroom/sports');
@@ -78,8 +82,8 @@ app.get('/admission',(req,res)=>{
     res.render('admissions');
 })
 app.get('/academics',(req,res)=>{
-    const errorMessage='underConstruction'
-    res.render('home',{errorMessage});
+    // const errorMessage='underConstruction'
+    res.render('academics');
 })
 
 app.post('/',(req,res)=>{
