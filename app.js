@@ -62,16 +62,20 @@ app.get('/accomplishments',(req,res)=>{
     const errorMessage='underConstruction'
     res.render('home',{errorMessage});
 })
-app.get('/beyond-classroom',(req,res)=>{
-    const errorMessage='underConstruction'
-    res.render('home',{errorMessage});
+app.get('/beyond-classroom-sports',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('beyondClassroom/sports');
+})
+app.get('/beyond-classroom-co-curricular',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('beyondClassroom/coCurricular');
 })
 app.get('/about-us',(req,res)=>{
     res.render('about-us');
 })
 app.get('/admission',(req,res)=>{
-    const errorMessage='underConstruction'
-    res.render('home',{errorMessage});
+    // const errorMessage='underConstruction'
+    res.render('admissions');
 })
 app.get('/academics',(req,res)=>{
     const errorMessage='underConstruction'
