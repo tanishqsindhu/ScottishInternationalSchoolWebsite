@@ -58,7 +58,15 @@ app.get('/contact-us',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('contact-us');
 })
-app.get('/accomplishments',(req,res)=>{
+app.get('/accomplishments-academics',(req,res)=>{
+    const errorMessage='underConstruction'
+    res.render('home',{errorMessage});
+})
+app.get('/accomplishments-sports',(req,res)=>{
+    const errorMessage='underConstruction'
+    res.render('home',{errorMessage});
+})
+app.get('/accomplishments-co-curricular',(req,res)=>{
     const errorMessage='underConstruction'
     res.render('home',{errorMessage});
 })
