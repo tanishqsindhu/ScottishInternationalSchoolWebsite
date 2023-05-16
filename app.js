@@ -114,7 +114,7 @@ app.post('/news-events/add',(req,res)=>{
 })
 app.get('/news-events/:id',(req,res)=>{
     // const errorMessage='underConstruction'
-    res.render('newsAndEvents/eventpage');
+    res.render('newsAndEvents/EventPage');
 })
 app.get('/news-events/:id/edit',(req,res)=>{
     res.render('newsAndEvents/editNewsAndEvents');
