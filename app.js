@@ -93,6 +93,14 @@ app.get('/academics',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('academics');
 })
+app.get('/principal-message',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('principalsMessage');
+})
+app.get('/director-message',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('directorsMessage');
+})
 
 app.post('/',(req,res)=>{
     const {email} =req.body;
