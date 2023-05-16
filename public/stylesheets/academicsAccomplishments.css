@@ -1,0 +1,108 @@
+.academics-table .table-custom {
+padding-top: 0;
+}
+.table-custom {
+padding: 30px;
+    padding-top: 30px;
+background: #fff;
+}
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+}
+.section-title {
+position: relative;
+margin: 0 0 30px 0;
+}
+.section-title {
+text-align: center;
+}
+
+.section-title h2, .section-title h5 {
+text-transform: uppercase;
+color: #654f4f;
+}
+@media (max-width: 1199px){
+.section-title h2 {
+    font-size: 28px;
+    }
+}
+
+.table-responsive > .table-bordered {
+    border: 0;
+  }
+
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  .table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(0,0,0,.05);
+  }
+  .table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+  }
+  .table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  .bg-white {
+    background-color: #fff !important;
+  }
+  .academics-table table tr td p:first-child {
+    padding-top: 10px;
+  }
+  .academics-table table tr td p {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    padding: 0 20px;
+      padding-top: 0px;
+  }
+  .academics-table table tr td p b {
+    width: 200px;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  .academics-table table tr td p span {
+    font-size: 1rem;
+    width: calc(100% - 200px);
+  }
+  .table-custom .table tr th, .table-custom .table tr td {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .w-100 {
+    width: 100% !important;
+  }
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+  .title-branding::after {
+    left: 100%;
+  }
+  .title-branding::before, .title-branding::after {
+    content: "";
+    top: 66% !important;
+    width: 60px;
+    height: 1px;
+    background: #bba7a7;
+    position: absolute;
+  }
+  .title-branding::before {
+    right: 100%;
+  }
