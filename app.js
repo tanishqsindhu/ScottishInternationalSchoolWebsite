@@ -43,6 +43,7 @@ app.use(mongoSantize({replaceWith:'_'}));
 
 // setting local variables
 app.use((req, res, next) => {
+    res.locals.currentUser='';
     res.locals.errorMessage = '';
     next();
 })
@@ -100,6 +101,10 @@ app.get('/principal-message',(req,res)=>{
 app.get('/director-message',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('directorsMessage');
+})
+app.get('/login',(req,res)=>{
+    const errorMessage='underConstruction';
+    res.render('home',{errorMessage});
 })
 app.get('/news-events',(req,res)=>{
     // const errorMessage='underConstruction'

@@ -74,6 +74,9 @@
                                     <p class="test">Welham Boys’ School hosted the 34th All India Golden J</p>
                                     <p class="text-link"><a href="/news-events/:id">Full Story
                                         <i class="fa-solid fa-arrow-right fa-flip"></i></a></p>
+                                        <% if(currentUser!='') {%>
+                                        <p class="text-link"><a href="/news-events/:id/edit">Edit</a></p>
+                                        <% } %>
                                 </span>
                             </div>
                         </div>
