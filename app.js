@@ -101,6 +101,23 @@ app.get('/director-message',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('directorsMessage');
 })
+app.get('/news-events',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('newsAndEvents/homepage');
+})
+app.get('/news-events/:id',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('newsAndEvents/EventPage');
+})
+app.post('/news-events/:id',(req,res)=>{
+    res.render('newsAndEvents/EventPage');
+})
+app.get('/news-events/:id/edit',(req,res)=>{
+    res.render('newsAndEvents/editNewsAndEvents');
+})
+app.put('/news-events/:id',(req,res)=>{
+    res.render('newsAndEvents/editNewsAndEvents');
+})
 
 app.post('/',(req,res)=>{
     const {email} =req.body;
