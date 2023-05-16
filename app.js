@@ -105,12 +105,16 @@ app.get('/news-events',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('newsAndEvents/homepage');
 })
+app.get('/news-events/add',(req,res)=>{
+    res.render('newsAndEvents/addNewsAndEvents');
+})
+app.post('/news-events/add',(req,res)=>{
+    console.log(req.body)
+    res.render('newsAndEvents/addNewsAndEvents');
+})
 app.get('/news-events/:id',(req,res)=>{
     // const errorMessage='underConstruction'
-    res.render('newsAndEvents/EventPage');
-})
-app.post('/news-events/:id',(req,res)=>{
-    res.render('newsAndEvents/EventPage');
+    res.render('newsAndEvents/eventPage');
 })
 app.get('/news-events/:id/edit',(req,res)=>{
     res.render('newsAndEvents/editNewsAndEvents');

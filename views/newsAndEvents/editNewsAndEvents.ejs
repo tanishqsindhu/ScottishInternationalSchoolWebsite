@@ -1,9 +1,159 @@
 <% layout('layouts/boilerplate')%>
-    <%- include('./partials/fixedSocials')%>
-    <div class="container-fuild">
-        <section class="row" style='margin-bottom: 160px;'>
-            <%- include('./partials/footerBottom')%>
+    <%- include('../partials/fixedSocials')%>
+        <section class="brand-hero row">
+            <!--<iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.1434557992666!2d78.05572211552051!3d30.3184371125311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929b7249d5e1f%3A0x6a0dbc429180e02b!2sWelham%20Boys&#39;%20School!5e0!3m2!1sen!2sin!4v1594274963609!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+            <div class="animate-banner">
+                <picture class="zoom">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="3000">
+                                <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+                                    class="d-block w-100" alt="..." style="height: 70vh;">
+                                <!-- <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div> -->
+                            </div>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                                    class="d-block w-100" alt="..." style="height: 70vh;">
+                                <!-- <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </picture>
+            </div>
+            <div class="page-title align-items-start">
+                <div class="container">
+                    <div class="banner-content-inner">
+                        <h1 style="font-size: 3em;">News And Events<a href="/"><i class="fa-solid fa-arrow-left"
+                                    style="color: #eabd57;"></i>
+                                Home</a></h1>
+                    </div>
+                </div>
+            </div>
         </section>
-    </div>
-    <link rel="stylesheet" href="/stylesheets/navbottom.css">
-<link rel="stylesheet" href="/stylesheets/about-us.css">
+        <div class="container-fuild">
+            <div class="row">
+                <section class="inner-entry ">
+                    <div class="container wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="mainTitle">
+                            <p class="title-branding mb-2"><img class="img-fluid"
+                                    src="/assests/SISTransparentLogoWhite.png"></p>
+                            <h2>Add New Article</h2>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row card shadow mb-5">
+                <div>
+                    <div class="card-body">
+                        <div class="col-md-6 offset-md-3">
+                            <form action="/news-events/add" method="POST" novalidate class="validated-form"
+                                enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label class="form-label" for="title">Title: </label>
+                                    <input class="form-control" type="text" id="title" name="article[title]" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="secondaryTitle">Secondary Title:</label>
+                                    <input class="form-control" type="text" id="secondaryTitle"
+                                        name="article[secondaryTitle]" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Multiple files input example</label>
+                                    <input class="form-control" type="file" id="image" multiple required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="day">Day:</label>
+                                    <input class="form-control" type="number" id="day" name="article[day]" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="month">Month:</label>
+                                    <input class="form-control" type="text" id="month" name="article[month]" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="paragraph1">Paragraph 1: </label>
+                                    <input class="form-control" type="text" id="paragraph1" name="article[paragraph1]"
+                                        required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="paragraph2">Paragraph 2 (optional): </label>
+                                    <input class="form-control" type="text" id="paragraph2" name="article[paragraph2]">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="paragraph3">Paragraph 3 (optional): </label>
+                                    <input class="form-control" type="text" id="paragraph3" name="article[paragraph3]">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="paragraph4">Paragraph 4 (optional): </label>
+                                    <input class="form-control" type="text" id="paragraph4" name="article[paragraph4]">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="paragraph5">Paragraph 5 (optional): </label>
+                                    <input class="form-control" type="text" id="paragraph5" name="article[paragraph5]">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <div class="form-file custom-file">
+                                        <input type="file" class="form-file-input" id="image" name="image">
+                                        <label class="form-file-label" for="image">
+                                            <span class="form-file-text custom-file-label">Add more image(s)...</span>
+                                            <span class="form-file-button">Browse</span>
+                                        </label>
+                                    </div>
+                                </div> -->
+                                <div class="mb-3">
+                                    <button class="btn btn-success">Update Article</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="/news-events" class="btn btn-outline-info col-12">View All News And Events</a>
+        </div>
+        <div class="container-fuild">
+            <section class="row" style='margin-bottom: 160px;'>
+                <%- include('../partials/footerBottom')%>
+            </section>
+        </div>
+
+        <link rel="stylesheet" href="/stylesheets/contact-us.css">
+        <link rel="stylesheet" href="/stylesheets/page-title.css">
+        <link rel="stylesheet" href="/stylesheets/navbottom.css">

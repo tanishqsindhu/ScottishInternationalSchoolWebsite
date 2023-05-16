@@ -1,10 +1,95 @@
 <% layout('layouts/boilerplate')%>
-    <%- include('./partials/fixedSocials')%>
-    
-    <div class="container-fuild">
-        <section class="row" style='margin-bottom: 160px;'>
-            <%- include('./partials/footerBottom')%>
+    <%- include('../partials/fixedSocials')%>
+        <section class="brand-hero row">
+            <!--<iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.1434557992666!2d78.05572211552051!3d30.3184371125311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929b7249d5e1f%3A0x6a0dbc429180e02b!2sWelham%20Boys&#39;%20School!5e0!3m2!1sen!2sin!4v1594274963609!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+            <div class="animate-banner">
+                <picture class="zoom">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="3000">
+                                <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+                                    class="d-block w-100" alt="..." style="height: 70vh;">
+                                <!-- <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div> -->
+                            </div>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                                    class="d-block w-100" alt="..." style="height: 70vh;">
+                                <!-- <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </picture>
+            </div>
+            <div class="page-title align-items-start">
+                <div class="container">
+                    <div class="banner-content-inner">
+                        <h1 style="font-size: 3em;">News And Events<a href="/"><i class="fa-solid fa-arrow-left"
+                                    style="color: #eabd57;"></i>
+                                Home</a></h1>
+                    </div>
+                </div>
+            </div>
         </section>
-    </div>
-    <link rel="stylesheet" href="/stylesheets/navbottom.css">
-<link rel="stylesheet" href="/stylesheets/about-us.css">
+        <div class="container-fuild">
+            <div class="row">
+                <section class="inner-entry ">
+                    <div class="container wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="mainTitle">
+                            <p class="title-branding mb-2"><img class="img-fluid"
+                                    src="/assests/SISTransparentLogoWhite.png"></p>
+                            <h2></h2>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <section class="photo-gallery bg-white news-page">
+            <div class="container-fluid">
+                <ul class="photoGallery row">
+                    <% for(let i =0;i<10;i++){ %>
+                    <li class="col-xs-12 col-md-6 col-lg-4">
+                        <div class="gallery-single">
+                            <div>
+                                <span>
+                                    <p>
+                                        <b>27</b>
+                                        <b>Apr</b>
+                                        <!--<i class="las la-photo-video"></i>-->
+                                    </p>
+                                </span>
+                                <span>
+                                    <figure>
+                                        <img src="assests/basketball.jpg" alt="event photo" style="width: 100%;height: 100%;">
+                                    </figure>
+                                </span>
+                                <span>
+                                    <h3>34th All India Golden Jubilee Basketball Tournament </h3>
+                                    <p class="test">Welham Boys’ School hosted the 34th All India Golden J</p>
+                                    <p class="text-link"><a href="/news-events/:id">Full Story
+                                        <i class="fa-solid fa-arrow-right fa-flip"></i></a></p>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container-fuild">
+            <section class="row" style='margin-bottom: 160px;'>
+                <%- include('../partials/footerBottom')%>
+            </section>
+        </div>
+
+        <link rel="stylesheet" href="/stylesheets/news-events-homepage.css">
+        <link rel="stylesheet" href="/stylesheets/contact-us.css">
+        <link rel="stylesheet" href="/stylesheets/page-title.css">
+        <link rel="stylesheet" href="/stylesheets/navbottom.css">
