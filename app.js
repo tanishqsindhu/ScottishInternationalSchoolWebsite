@@ -103,7 +103,7 @@ app.get('/director-message',(req,res)=>{
 })
 app.get('/news-events',(req,res)=>{
     // const errorMessage='underConstruction'
-    res.render('newsAndEvents/homepage');
+    res.render('newsAndEvents/homePage');
 })
 app.get('/news-events/add',(req,res)=>{
     res.render('newsAndEvents/addNewsAndEvents');
