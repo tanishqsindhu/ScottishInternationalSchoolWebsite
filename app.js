@@ -119,6 +119,18 @@ app.post('/publications',(req,res)=>{
     res.render('publications/HomePage');
 })
 
+app.get('/calenders',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('calenders/homePage');
+})
+app.get('/calenders/add',(req,res)=>{
+    res.render('calenders/addForm');
+})
+app.post('/calenders',(req,res)=>{
+    console.log(req)
+    res.render('calenders/HomePage');
+})
+
 app.post('/newsLetterEmail',(req,res)=>{
     const{email}=req.body;
     res.redirect('/');
