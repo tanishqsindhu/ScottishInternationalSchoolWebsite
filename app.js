@@ -43,7 +43,7 @@ app.use(mongoSantize({replaceWith:'_'}));
 
 // setting local variables
 app.use((req, res, next) => {
-    res.locals.currentUser='';
+    res.locals.currentUser='awd';
     res.locals.errorMessage = '';
     next();
 })
@@ -106,6 +106,24 @@ app.get('/login',(req,res)=>{
     const errorMessage='underConstruction';
     res.render('home',{errorMessage});
 })
+
+app.get('/publications',(req,res)=>{
+    // const errorMessage='underConstruction'
+    res.render('publications/HomePage');
+})
+app.get('/publications/add',(req,res)=>{
+    res.render('publications/addForm');
+})
+app.post('/publications',(req,res)=>{
+    console.log(req)
+    res.render('publications/HomePage');
+})
+
+app.post('/newsLetterEmail',(req,res)=>{
+    const{email}=req.body;
+    res.redirect('/');
+})
+
 app.get('/news-events',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('newsAndEvents/homePage');
