@@ -1,15 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const app = express();
+const newsLetters = require('../controllers/newsLetter');
 const catchAsync = require('../utils/catchAsync');
-const NewsLetter = require('../models/newsLetter');
 
-app.post('/newsLetterEmail',catchAsync(async(req,res)=>{
-    const{email}=req.body;
-    const newEmail = await NewsLetter.findOne({});
-    newEmail.email.push(email);
-    await newEmail.save();
-    res.redirect('/');
-}))
+router.route('/')
+.get(newsLetters.renderUnsubscribeForm)
+.post(catchAsync(newsLetters.addEmail));
+
+router.route('/unsubscribe')
+.post(catchAsync(newsLetters.unsubscribed));
 
 module.exports = router;
