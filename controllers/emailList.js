@@ -1,4 +1,4 @@
-const NewsLetter = require('../models/newsLetter');
+const NewsLetter = require('../models/emailList');
 const{cloudinary} = require('../cloudinary');
 
 module.exports.addEmail=async(req,res)=>{

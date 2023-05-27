@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const newsLetters = require('../controllers/newsLetter');
+const newsLetters = require('../controllers/emailList');
 const catchAsync = require('../utils/catchAsync');
 
 router.route('/')

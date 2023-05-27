@@ -26,6 +26,7 @@ const accomplishmentsRoute=require('./routes/accomplishments')
 const newsAndEventsRoute=require('./routes/newsAndEvents')
 const newsLetterRoute=require('./routes/newsLetter')
 const userRoute=require('./routes/user')
+const publicationsRoute =require('./routes/publications');
 
 // Models
 const User = require('./models/user')
@@ -116,10 +117,11 @@ app.get('/contact-us',(req,res)=>{
     res.render('contact-us');
 })
 
-app.use('/beyondClassroom',beyondClassroomRoute)
+app.use('/beyond-classroom',beyondClassroomRoute)
 app.use('/newsLetter',newsLetterRoute)
 app.use('/news-events',newsAndEventsRoute)
 app.use('/accomplishments',accomplishmentsRoute)
+app.use('/publications',publicationsRoute)
 app.use('/',userRoute)
 
 app.get('/about-us',(req,res)=>{

@@ -59,22 +59,30 @@
                                 enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label class="form-label" for="title">Title: </label>
-                                    <input class="form-control" type="text" id="title" name="article[title]"
+                                    <input class="form-control" type="text" id="title" name="newsLetter[title]"
                                         required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
+                                    <label class="form-label" for="title">PDF/Document URL: </label>
+                                    <input class="form-control" type="text" id="title" name="newsLetter[documentUrl]"
+                                        required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <!-- <div class="mb-3">
                                     <label for="pdf" class="form-label">Add File/PDF</label>
                                     <input class="form-control" type="file" id="pdf" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="mb-3">
                                     <label for="image" class="form-label">Add Thumbnail</label>
-                                    <input class="form-control" type="file" id="image" required>
+                                    <input class="form-control" type="file" id="image" name="image" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
