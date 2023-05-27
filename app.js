@@ -13,8 +13,9 @@ const mongoSantize=require('express-mongo-sanitize');
 const multer=require('multer');
 const {storage} = require('./cloudinary')
 const upload=multer({storage});
-const{cloudinary} = require('./cloudinary');
 
+const{cloudinary} = require('./cloudinary');
+const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 
 const NewsLetter = require('./models/newsLetter');
@@ -138,38 +139,38 @@ app.post('/calenders',(req,res)=>{
     res.render('calenders/HomePage');
 })
 
-app.post('/newsLetterEmail',async(req,res)=>{
+app.post('/newsLetterEmail',catchAsync(async(req,res)=>{
     const{email}=req.body;
     const newEmail = await NewsLetter.findOne({});
     newEmail.email.push(email);
     await newEmail.save();
     res.redirect('/');
-})
+}))
 
-app.get('/news-events',async(req,res)=>{
+app.get('/news-events',catchAsync(async(req,res)=>{
     const news = await NewsArticles.find({});
     res.render('newsAndEvents/homePage',{news});
-})
+}))
 app.get('/news-events/add',(req,res)=>{
     res.render('newsAndEvents/addNewsAndEvents');
 })
-app.post('/news-events/add',upload.array('image'),async(req,res)=>{
+app.post('/news-events/add',upload.array('image'),catchAsync(async(req,res)=>{
     const imgs=req.files.map(f=>({url:f.path,filename:f.filename}));
     const newsArticle = new NewsArticles({...req.body.article})
     newsArticle.images.push(...imgs);
     await newsArticle.save();
     const news = await NewsArticles.find({});
     res.render('newsAndEvents/homePage',{news});
-})
-app.get('/news-events/:id',async(req,res)=>{
+}))
+app.get('/news-events/:id',catchAsync(async(req,res)=>{
     const news = await NewsArticles.findById(req.params.id)
     res.render('newsAndEvents/EventPage',{news});
-})
-app.get('/news-events/:id/edit',async(req,res)=>{
+}))
+app.get('/news-events/:id/edit',catchAsync(async(req,res)=>{
     const news = await NewsArticles.findById(req.params.id)
     res.render('newsAndEvents/editNewsAndEvents',{news});
-})
-app.put('/news-events/:id',upload.array('image'),async(req,res)=>{
+}))
+app.put('/news-events/:id',upload.array('image'),catchAsync(async(req,res)=>{
     const imgs=req.files.map(f=>({url:f.path,filename:f.filename}));
     const newsArticle = await NewsArticles.findByIdAndUpdate(req.params.id, { ...req.body.article });
     newsArticle.images.push(...imgs);
@@ -181,7 +182,7 @@ app.put('/news-events/:id',upload.array('image'),async(req,res)=>{
     }
     await newsArticle.save();
     res.redirect(`/news-events/${newsArticle._id}`);
-})
+}))
 
 app.post('/',(req,res)=>{
     const {email} =req.body;
