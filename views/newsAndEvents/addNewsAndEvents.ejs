@@ -55,6 +55,10 @@
                 <div>
                     <div class="card-body">
                         <div class="col-md-6 offset-md-3">
+                            <div class="alert alert-warning" role="alert">
+                                First image selected in time of uploading will act as a thumbnail for the article.
+                              </div>
+                              
                             <form action="/news-events/add" method="POST" novalidate class="validated-form"
                                 enctype="multipart/form-data">
                                 <div class="mb-3">
@@ -73,22 +77,44 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="image" class="form-label">Multiple files input example</label>
-                                    <input class="form-control" type="file" id="image" multiple required>
+                                    <label for="image" class="form-label">Images</label>
+                                    <input class="form-control" type="file" id="image" name="image" multiple required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="day">Day:</label>
-                                    <input class="form-control" type="number" id="day" name="article[day]" required>
+                                    <label class="form-label" for="date">Date:</label>
+                                    <input class="form-control" type="number" id="day" name="article[date]" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="month">Month:</label>
-                                    <input class="form-control" type="text" id="month" name="article[month]" required>
+                                    <select class="form-select" id="class" name="article[month]"
+                                                    required>
+                                                    <option selected>Choose...</option>
+                                                    <option value="Jan">January</option>
+                                                    <option value="Feb">February</option>
+                                                    <option value="Mar">March</option>
+                                                    <option value="Apr">April</option>
+                                                    <option value="May">May</option>
+                                                    <option value="Jun">June</option>
+                                                    <option value="Jul">July</option>
+                                                    <option value="Aug">August</option>
+                                                    <option value="Sept">September</option>
+                                                    <option value="Oct">October</option>
+                                                    <option value="Nov">November</option>
+                                                    <option value="Dec">December</option>
+                                                </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="year">Year:</label>
+                                    <input class="form-control" type="number" id="year" name="article[year]" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>

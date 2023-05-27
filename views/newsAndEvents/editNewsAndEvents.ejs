@@ -44,7 +44,7 @@
                         <div class="mainTitle">
                             <p class="title-branding mb-2"><img class="img-fluid"
                                     src="/assests/SISTransparentLogoWhite.png"></p>
-                            <h2>Add New Article</h2>
+                            <h2>Update The Article</h2>
                         </div>
                     </div>
                 </section>
@@ -55,11 +55,16 @@
                 <div>
                     <div class="card-body">
                         <div class="col-md-6 offset-md-3">
-                            <form action="/news-events/add" method="POST" novalidate class="validated-form"
-                                enctype="multipart/form-data">
+                            <div class="alert alert-warning" role="alert">
+                                First image selected in time of uploading will act as a thumbnail for the article.
+                            </div>
+
+                            <form action="/news-events/<%=news._id%>?_method=PUT" method="POST" novalidate
+                                class="validated-form" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label class="form-label" for="title">Title: </label>
-                                    <input class="form-control" type="text" id="title" name="article[title]" required>
+                                    <input class="form-control" type="text" id="title" name="article[title]" required
+                                        value="<%=news.title%>">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -67,67 +72,106 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="secondaryTitle">Secondary Title:</label>
                                     <input class="form-control" type="text" id="secondaryTitle"
-                                        name="article[secondaryTitle]" required>
+                                        name="article[secondaryTitle]" value="<%=news.secondaryTitle%>" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="image" class="form-label">Multiple files input example</label>
-                                    <input class="form-control" type="file" id="image" multiple required>
+                                    <label for="image" class="form-label">Images</label>
+                                    <input class="form-control" type="file" id="image" name="image" multiple required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="day">Day:</label>
-                                    <input class="form-control" type="number" id="day" name="article[day]" required>
+                                    <label class="form-label" for="date">Date:</label>
+                                    <input class="form-control" type="number" id="day" name="article[date]"
+                                        value="<%=news.date%>" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="month">Month:</label>
-                                    <input class="form-control" type="text" id="month" name="article[month]" required>
+                                    <select class="form-select" id="class" name="article[month]" required>
+                                        <option value="<%=news.month%>" selected>
+                                            <%=news.month%>
+                                        </option>
+                                        <option value="Jan">January</option>
+                                        <option value="Feb">February</option>
+                                        <option value="Mar">March</option>
+                                        <option value="Apr">April</option>
+                                        <option value="May">May</option>
+                                        <option value="Jun">June</option>
+                                        <option value="Jul">July</option>
+                                        <option value="Aug">August</option>
+                                        <option value="Sept">September</option>
+                                        <option value="Oct">October</option>
+                                        <option value="Nov">November</option>
+                                        <option value="Dec">December</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="year">Year:</label>
+                                    <input class="form-control" type="number" id="year" name="article[year]"
+                                        value="<%=news.year%>" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="paragraph1">Paragraph 1: </label>
-                                    <input class="form-control" type="text" id="paragraph1" name="article[paragraph1]"
-                                        required>
+                                    <input class="form-control" type="text" id="paragraph1"
+                                        value="<%=news.paragraph1%>" name="article[paragraph1]" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="paragraph2">Paragraph 2 (optional): </label>
-                                    <input class="form-control" type="text" id="paragraph2" name="article[paragraph2]">
+                                    <input class="form-control" type="text" id="paragraph2"
+                                        value="<%=news.paragraph2%>" name="article[paragraph2]">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="paragraph3">Paragraph 3 (optional): </label>
-                                    <input class="form-control" type="text" id="paragraph3" name="article[paragraph3]">
+                                    <input class="form-control" type="text" id="paragraph3"
+                                        value="<%=news.paragraph3%>" name="article[paragraph3]">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="paragraph4">Paragraph 4 (optional): </label>
-                                    <input class="form-control" type="text" id="paragraph4" name="article[paragraph4]">
+                                    <input class="form-control" type="text" id="paragraph4"
+                                        value="<%=news.paragraph4%>" name="article[paragraph4]">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="paragraph5">Paragraph 5 (optional): </label>
-                                    <input class="form-control" type="text" id="paragraph5" name="article[paragraph5]">
+                                    <input class="form-control" type="text" id="paragraph5"
+                                        value="<%=news.paragraph5%>" name="article[paragraph5]">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
+                                </div>
+                                <div class="mb-3">
+                                    <% news.images.forEach(function(img, i) { %>
+                                        <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
+                                        <div class="form-check-inline">
+                                            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]"
+                                                value="<%=img.filename%>">
+                                        </div>
+                                        <label for="image-<%=i%>">Delete?</label>
+                                        <% })%>
                                 </div>
                                 <!-- <div class="mb-3">
                                     <div class="form-file custom-file">

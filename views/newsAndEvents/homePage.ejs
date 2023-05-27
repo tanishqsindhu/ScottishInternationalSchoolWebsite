@@ -53,15 +53,16 @@
         <section class="photo-gallery bg-white news-page">
             <div class="container-fluid">
                 <ul class="photoGallery row">
-                    <% for(let i =0;i<10;i++){ %>
-                    <li class="col-xs-12 col-md-6 col-lg-4">
+                    <% for(let i=0;i<news.length;i++){ %>
+                        <!-- PlaceHolder
+                        <li class="col-xs-12 col-md-6 col-lg-4">
                         <div class="gallery-single">
                             <div>
                                 <span>
                                     <p>
                                         <b>27</b>
                                         <b>Apr</b>
-                                        <!--<i class="las la-photo-video"></i>-->
+                                        <i class="las la-photo-video"></i>
                                     </p>
                                 </span>
                                 <span>
@@ -80,9 +81,50 @@
                                 </span>
                             </div>
                         </div>
-                    </li>
-                    <% } %>
+                    </li> -->
+
+                        <li class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="gallery-single">
+                                <div>
+                                    <span>
+                                        <p>
+                                            <b>
+                                                <%= news[i].date %>
+                                            </b>
+                                            <b>
+                                                <%= news[i].month %>
+                                            </b>
+                                            <!--<i class="las la-photo-video"></i>-->
+                                        </p>
+                                    </span>
+                                    <span>
+                                        <figure>
+                                            <img src="<%= news[i].images[0].url %>" alt="event photo" style="width: 100%;height: 100%;">
+                                        </figure>
+                                    </span>
+                                    <span>
+                                        <h3>
+                                            <%= news[i].title %>
+                                        </h3>
+                                        <p class="test">
+                                            <%= news[i].secondaryTitle %>
+                                        </p>
+                                        <p class="text-link"><a href="/news-events/<%=news[i]._id%>">Full Story
+                                                <i class="fa-solid fa-arrow-right fa-flip"></i></a></p>
+                                        <% if(currentUser!='' ) {%>
+                                            <p class="text-link"><a href="/news-events/<%=news[i]._id%>/edit">Edit</a></p>
+                                            <% } %>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <% } %>
                 </ul>
+                <% if(currentUser!='' ) {%>
+                <div class="row justify-content-center">
+                    <a href="/news-events/add" class="btn btn-outline-primary col-5">Add a News Article</a>
+                </div>
+                <% } %>
             </div>
         </section>
 
