@@ -51,7 +51,7 @@ app.use(mongoSantize({replaceWith:'_'}));
 
 // setting local variables
 app.use((req, res, next) => {
-    res.locals.currentUser='';
+    res.locals.currentUser='aw';
     res.locals.errorMessage = '';
     next();
 })
