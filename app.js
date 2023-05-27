@@ -18,8 +18,6 @@ const multer=require('multer');
 const {storage} = require('./cloudinary')
 const upload=multer({storage});
 
-const{cloudinary} = require('./cloudinary');
-const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 
 // Route Imports
@@ -30,8 +28,6 @@ const newsLetterRoute=require('./routes/newsLetter')
 const userRoute=require('./routes/user')
 
 // Models
-const NewsLetter = require('./models/newsLetter');
-const NewsArticles = require('./models/newsAndEvents');
 const User = require('./models/user')
 
 // environment variables
@@ -146,17 +142,6 @@ app.get('/director-message',(req,res)=>{
     res.render('directorsMessage');
 })
 
-app.get('/publications',(req,res)=>{
-    // const errorMessage='underConstruction'
-    res.render('publications/HomePage');
-})
-app.get('/publications/add',(req,res)=>{
-    res.render('publications/addForm');
-})
-app.post('/publications',upload.single('image'),(req,res)=>{
-    console.log(req)
-    res.render('publications/HomePage');
-})
 
 app.get('/calenders',(req,res)=>{
     // const errorMessage='underConstruction'
