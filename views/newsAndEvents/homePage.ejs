@@ -111,7 +111,7 @@
                                         </p>
                                         <p class="text-link"><a href="/news-events/<%=news[i]._id%>">Full Story
                                                 <i class="fa-solid fa-arrow-right fa-flip"></i></a></p>
-                                        <% if(currentUser!='' ) {%>
+                                        <% if(currentUser) {%>
                                             <p class="text-link"><a href="/news-events/<%=news[i]._id%>/edit">Edit</a></p>
                                             <% } %>
                                     </span>
@@ -120,7 +120,7 @@
                         </li>
                         <% } %>
                 </ul>
-                <% if(currentUser!='' ) {%>
+                <% if(currentUser) {%>
                 <div class="row justify-content-center">
                     <a href="/news-events/add" class="btn btn-outline-primary col-5">Add a News Article</a>
                 </div>
