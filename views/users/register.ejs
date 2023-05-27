@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate')%>
+<div class="container d-flex justify-content-center align-items-center"style="margin-bottom: 200px;margin-top: 150px;">
+    <div class="row mb-xl-4">
+        <div>
+            <div class="card shadow">
+                <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_300/v1678905543/Scottish/IMG_6289_ingaog.jpg"
+                alt="" class="card-img-top" />
+                <div class="card-body">
+                    <h4 class="card-title">Register</h4>
+                    <form action="/register" method="POST" class="validated-form" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Username:</label>
+                            <input class="form-control" type="text" id="username" name="username" autofocus required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password:</label>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <button class="btn btn-success">Sign Up!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

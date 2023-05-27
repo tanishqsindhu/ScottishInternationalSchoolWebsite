@@ -9,7 +9,11 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override')
 const mongoSantize=require('express-mongo-sanitize');
-// const flash = require('connect-flash');
+const flash = require('connect-flash');
+const MongoStore = require('connect-mongo');
+const session = require('express-session');
+const passport =require('passport');
+const LocalStrategy=require('passport-local')
 const multer=require('multer');
 const {storage} = require('./cloudinary')
 const upload=multer({storage});
@@ -18,9 +22,19 @@ const{cloudinary} = require('./cloudinary');
 const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 
+// Route Imports
+const beyondClassroomRoute=require('./routes/beyondClassroom')
+const accomplishmentsRoute=require('./routes/accomplishments')
+const newsAndEventsRoute=require('./routes/newsAndEvents')
+const newsLetterRoute=require('./routes/newsLetter')
+const userRoute=require('./routes/user')
+
+// Models
 const NewsLetter = require('./models/newsLetter');
 const NewsArticles = require('./models/newsAndEvents');
+const User = require('./models/user')
 
+// environment variables
 const secret=process.env.SECRET;
 const dbUrl = process.env.DB_URL;
 
@@ -45,14 +59,52 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(methodOverride('_method'));
 app.use(mongoSantize({replaceWith:'_'}));
 
+//Session Store on DataBase
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+        secret
+    }
+});
+
+store.on('error',function(e){
+    console.log("SESSION STORE ERROR",e)
+})
+
+//Session configure
+const sessionConfig = {
+    store,
+    name:'messScottish',
+    secret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        // secure:true,
+        SameSite:'strict',
+        expires: Date.now() + 1000 * 60 * 60 * 3,
+        maxAge: 1000 * 60 * 60 * 3
+    }
+}
 //using session and flash
-// app.use(session(sessionConfig))
-// app.use(flash());
+app.use(session(sessionConfig))
+app.use(flash());
+
+// User Login Passport
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // setting local variables
 app.use((req, res, next) => {
-    res.locals.currentUser='aw';
     res.locals.errorMessage = '';
+    res.locals.currentUser=req.user;
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
     next();
 })
 
@@ -67,30 +119,13 @@ app.get('/contact-us',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('contact-us');
 })
-app.get('/accomplishments-academics',(req,res)=>{
-    // const errorMessage='underConstruction'
-    res.render('accomplishments/academics');
-})
-// app.get('/accomplishments-sports',(req,res)=>{
-//     // const errorMessage='underConstruction'
-//     res.render('accomplishments/sports');
-// })
-// app.get('/accomplishments-co-curricular',(req,res)=>{
-//     // const errorMessage='underConstruction'
-//     res.render('accomplishments/coCurricular');
-// })
-app.get('/beyond-classroom',(req,res)=>{
-    // const errorMessage='underConstruction'
-    res.render('beyondClassroom/beyond-classroom');
-})
-app.get('/beyond-classroom-sports',(req,res)=>{
-    // const errorMessage='underConstruction'
-    res.render('beyondClassroom/sports');
-})
-app.get('/beyond-classroom-co-curricular',(req,res)=>{
-    // const errorMessage='underConstruction'
-    res.render('beyondClassroom/coCurricular');
-})
+
+app.use('/beyondClassroom',beyondClassroomRoute)
+app.use('/newsLetter',newsLetterRoute)
+app.use('/news-events',newsAndEventsRoute)
+app.use('/accomplishments',accomplishmentsRoute)
+app.use('/',userRoute)
+
 app.get('/about-us',(req,res)=>{
     res.render('about-us');
 })
@@ -109,10 +144,6 @@ app.get('/principal-message',(req,res)=>{
 app.get('/director-message',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('directorsMessage');
-})
-app.get('/login',(req,res)=>{
-    const errorMessage='underConstruction';
-    res.render('home',{errorMessage});
 })
 
 app.get('/publications',(req,res)=>{
@@ -137,56 +168,6 @@ app.get('/calenders/add',(req,res)=>{
 app.post('/calenders',(req,res)=>{
     console.log(req)
     res.render('calenders/HomePage');
-})
-
-app.post('/newsLetterEmail',catchAsync(async(req,res)=>{
-    const{email}=req.body;
-    const newEmail = await NewsLetter.findOne({});
-    newEmail.email.push(email);
-    await newEmail.save();
-    res.redirect('/');
-}))
-
-app.get('/news-events',catchAsync(async(req,res)=>{
-    const news = await NewsArticles.find({});
-    res.render('newsAndEvents/homePage',{news});
-}))
-app.get('/news-events/add',(req,res)=>{
-    res.render('newsAndEvents/addNewsAndEvents');
-})
-app.post('/news-events/add',upload.array('image'),catchAsync(async(req,res)=>{
-    const imgs=req.files.map(f=>({url:f.path,filename:f.filename}));
-    const newsArticle = new NewsArticles({...req.body.article})
-    newsArticle.images.push(...imgs);
-    await newsArticle.save();
-    const news = await NewsArticles.find({});
-    res.render('newsAndEvents/homePage',{news});
-}))
-app.get('/news-events/:id',catchAsync(async(req,res)=>{
-    const news = await NewsArticles.findById(req.params.id)
-    res.render('newsAndEvents/EventPage',{news});
-}))
-app.get('/news-events/:id/edit',catchAsync(async(req,res)=>{
-    const news = await NewsArticles.findById(req.params.id)
-    res.render('newsAndEvents/editNewsAndEvents',{news});
-}))
-app.put('/news-events/:id',upload.array('image'),catchAsync(async(req,res)=>{
-    const imgs=req.files.map(f=>({url:f.path,filename:f.filename}));
-    const newsArticle = await NewsArticles.findByIdAndUpdate(req.params.id, { ...req.body.article });
-    newsArticle.images.push(...imgs);
-    if(req.body.deleteImages){
-        for(let filename of req.body.deleteImages){
-            await cloudinary.uploader.destroy(filename);
-        }
-        await newsArticle.updateOne({$pull:{images:{filename:{$in:req.body.deleteImages}}}})
-    }
-    await newsArticle.save();
-    res.redirect(`/news-events/${newsArticle._id}`);
-}))
-
-app.post('/',(req,res)=>{
-    const {email} =req.body;
-    res.redirect('/');
 })
 
 app.all('*', (req, res, next) => {

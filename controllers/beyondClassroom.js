@@ -1,0 +1,9 @@
+module.exports.home=(req,res)=>{
+    res.render('beyondClassroom/beyond-classroom');
+}
+module.exports.sports=(req,res)=>{
+    res.render('beyondClassroom/sports');
+}
+module.exports.coCurricular=(req,res)=>{
+    res.render('beyondClassroom/coCurricular');
+}

@@ -53,9 +53,23 @@
           <li class="nav-item">
             <a class="nav-link" href="/contact-us">Contact us</a>
           </li>
+          <% if(currentUser) {%>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <% if(currentUser.role.includes('admin')) {%>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <% } %>
+            <% }else{ %>
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
           </li>
+          <% } %>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown link
