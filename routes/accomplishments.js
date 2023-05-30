@@ -6,7 +6,7 @@ router.route('/academics')
     .get(accomplishments.academics);
 router.route('/sports')
     .get(accomplishments.sports);
-router.route('/coCurricular')
+router.route('/co-curricular')
     .get(accomplishments.coCurricular);
 
 module.exports = router;
