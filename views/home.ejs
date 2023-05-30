@@ -1,268 +1,323 @@
 <% layout('layouts/boilerplate')%>
-<%- include('./partials/fixedSocials')%>
-    <section>
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="4000">
-                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
-                        class="d-block w-100" alt="..." style="height: 500px;">
-                    <div class="carousel-caption d-md-block" style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
-                        <h5 style="color: #f0bc1b;">Scottish Academy of Excellence</h5>
-                        <p style="color: #f0bc1b;">Welcome to our school building, a place where learning thrives and futures are shaped! Our school is designed to provide a safe, engaging, and inspiring environment for students to grow academically, socially, and personally.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg"
-                        class="d-block w-100" alt="..." style="height: 500px;">
-                    <div class="carousel-caption d-md-block" style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
-                        <h5 style="color: #f0bc1b;">School's Library</h5>
-                        <p style="color: #f0bc1b;">Welcome to our student-focused library, where knowledge meets opportunity!Our library boasts a vast collection of academic materials, carefully curated to align with the curriculum of local schools, colleges, and universities. From textbooks and reference books to scholarly journals and research papers, we have everything you need to enhance your learning experience.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
-                        class="d-block w-100" alt="..." style="height: 500px;">
-                    <div class="carousel-caption d-md-block" style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
-                        <h5 style="color: #f0bc1b;">Scottish International School</h5>
-                        <p style="color: #f0bc1b;;">Welcome to our school building, a place where learning thrives and futures are shaped! Our school is designed to provide a safe, engaging, and inspiring environment for students to grow academically, socially, and personally.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <% if(errorMessage=='underConstruction' ) {%>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error Page is not build Yet!</strong> It is Under Construction.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <% } %>
-    <section class="home-entry bg1">
-        <div class=" container text-center">
-            <div id="welcomeMessage">
-                <div class="main-title">
-                    <h2>Scottish International School</h2>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi ducimus sunt odit
-                    at facere dolorem
-                    voluptas, ullam voluptatum quasi ipsa delectus distinctio deleniti debitis, est laboriosam corporis
-                    neque accusamus vel.</p>
-            </div>
-        </div>
-    </section>
-    <div class="home-gallery-items bg1">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col mb-5">
-                    <div class="rectangle">
-                        <div class="circle">
-                            <figure>
-                                <img src="/assests/auditorium.jpg"
-                                    alt="ACADEMICS" width="300px" height='300px'>
-                            </figure>
+    <%- include('./partials/fixedSocials')%>
+        <section>
+            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-pause="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="4000">
+                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                            class="d-block w-100" alt="..." style="height: 500px;">
+                        <div class="carousel-caption d-md-block"
+                            style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
+                            <h5 style="color: #f0bc1b;">Scottish Academy of Excellence</h5>
+                            <p style="color: #f0bc1b;">Welcome to our school building, a place where learning thrives
+                                and futures are shaped! Our school is designed to provide a safe, engaging, and
+                                inspiring environment for students to grow academically, socially, and personally.</p>
                         </div>
-                        <div class="item-part-detail text-center"">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg"
+                            class="d-block w-100" alt="..." style="height: 500px;">
+                        <div class="carousel-caption d-md-block"
+                            style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
+                            <h5 style="color: #f0bc1b;">School's Library</h5>
+                            <p style="color: #f0bc1b;">Welcome to our student-focused library, where knowledge meets
+                                opportunity!Our library boasts a vast collection of academic materials, carefully
+                                curated to align with the curriculum of local schools, colleges, and universities. From
+                                textbooks and reference books to scholarly journals and research papers, we have
+                                everything you need to enhance your learning experience.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+                            class="d-block w-100" alt="..." style="height: 500px;">
+                        <div class="carousel-caption d-md-block"
+                            style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
+                            <h5 style="color: #f0bc1b;">Scottish International School</h5>
+                            <p style="color: #f0bc1b;;">Welcome to our school building, a place where learning thrives
+                                and futures are shaped! Our school is designed to provide a safe, engaging, and
+                                inspiring environment for students to grow academically, socially, and personally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <% if(errorMessage=='underConstruction' ) {%>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error Page is not build Yet!</strong> It is Under Construction.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+                <section class="home-entry bg1">
+                    <div class=" container text-center">
+                        <div id="welcomeMessage">
+                            <div class="main-title">
+                                <h2>Scottish International School</h2>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi ducimus sunt odit
+                                at facere dolorem
+                                voluptas, ullam voluptatum quasi ipsa delectus distinctio deleniti debitis, est
+                                laboriosam corporis
+                                neque accusamus vel.</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="home-gallery-items bg1">
+                    <div class="container">
+                        <div class="row mb-5">
+                            <div class="col mb-5">
+                                <div class="rectangle">
+                                    <div class="circle">
+                                        <figure>
+                                            <img src="/assests/auditorium.jpg" alt="ACADEMICS" width="300px"
+                                                height='300px'>
+                                        </figure>
+                                    </div>
+                                    <div class="item-part-detail text-center"">
                             <h3>Scottish My Home</h3>
                             <hr>
-                            <a href="/about-us" class=" btn btn-outline-primary mt-2"
-                            style="color: #980606; border-radius: 0; border-color: #980606;">Explore</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="rectangle-inverted">
-                        <div class="circle-inverted">
-                            <figure>
-                                <img src="/assests/girlsrace.jpg"
-                                    alt="ACADEMICS" width="300px" height='300px'>
-                            </figure>
-                        </div>
-                        <div class="item-part-detail text-center">
-                            <h3>Sweating It Out</h3>
-                            <hr>
-                            <a href="/beyond-classroom/sports" class="btn btn-outline-primary mt-2"
-                                style="color: white; border-radius: 0; border-color: white;">Explore</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="rectangle">
-                        <div class="circle">
-                            <figure>
-                                <img src="/assests/scottishBuilding.jpg"
-                                    alt="ACADEMICS" width="300px" height='300px'>
-                            </figure>
-                        </div>
-                        <div class="item-part-detail text-center"">
+                            <a href=" /about-us" class=" btn btn-outline-primary mt-2"
+                                        style="color: #980606; border-radius: 0; border-color: #980606;">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="rectangle-inverted">
+                                    <div class="circle-inverted">
+                                        <figure>
+                                            <img src="/assests/girlsrace.jpg" alt="ACADEMICS" width="300px"
+                                                height='300px'>
+                                        </figure>
+                                    </div>
+                                    <div class="item-part-detail text-center">
+                                        <h3>Sweating It Out</h3>
+                                        <hr>
+                                        <a href="/beyond-classroom/sports" class="btn btn-outline-primary mt-2"
+                                            style="color: white; border-radius: 0; border-color: white;">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="rectangle">
+                                    <div class="circle">
+                                        <figure>
+                                            <img src="/assests/scottishBuilding.jpg" alt="ACADEMICS" width="300px"
+                                                height='300px'>
+                                        </figure>
+                                    </div>
+                                    <div class="item-part-detail text-center"">
                             <h3>Branching Out</h3>
                             <hr>
                             <a href="" class=" btn btn-outline-primary mt-2"
-                            style="color: #980606; border-radius: 0; border-color: #980606;">Explore</a>
+                                        style="color: #980606; border-radius: 0; border-color: #980606;">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <section class="messages">
-        <div class="container">
-            <div class="row mt-5 mb-5">
+                <section class="messages">
+                    <div class="container">
+                        <div class="row mt-5 mb-5">
 
-                <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3">
-                    <div class="service-single">
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3">
+                                <div class="service-single">
 
-                        <figure><img class="img-fluid w-100" src="/assests/IMG_1919.jpeg" alt=""></figure>
-                        <figcaption class="">
-                            <h3><small>OUR DIRECTOR</small> <br>MR. NARENDER SINGH SINDHU</h3>
-                            <div class="readMore"><a href="/director-message" title="Read More"><span>Read More</span></a></div>
-                        </figcaption>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3">
-                    <div class="service-single pt-3 pt-md-4 text-left">
-                        <div>
+                                    <figure><img class="img-fluid w-100" src="/assests/IMG_1919.jpeg" alt=""></figure>
+                                    <figcaption class="">
+                                        <h3><small>OUR DIRECTOR</small> <br>MR. NARENDER SINGH SINDHU</h3>
+                                        <div class="readMore"><a href="/director-message" title="Read More"><span>Read
+                                                    More</span></a></div>
+                                    </figcaption>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3">
+                                <div class="service-single pt-3 pt-md-4 text-left">
+                                    <div>
+                                        <div class="section-title wow fadeInUp"
+                                            style="visibility: visible; animation-name: fadeInUp;">
+                                            <p class="title-branding mb-2"><img class="img-fluid"
+                                                    src="/assests/SISTransparentLogo.png" width="49px" height="49px">
+                                            </p>
+                                            <h2 class="p-color"><small>Gallery</small></h2>
+                                        </div>
+                                        <figcaption class="Gallery" style="padding-top: 0px;">
+                                            <div class="box20">
+                                                <img class="img-fluid w-100" src="assests/saveEarth.jpg" alt="">
+
+                                                <div class="content_visible">
+                                                    <div class="imgtext">
+                                                        <h3 class="title"><a href="/gallery"><i
+                                                                    class="fa-solid fa-earth-asia fa-spin"></i> Our
+                                                                Priority to
+                                                                Save</a></h3>
+                                                        <!--<span class="post"><i class="las la-photo-video"></i>34</span>-->
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <h3 class="title"><a href="/gallery"> <i
+                                                                    class="fa-solid fa-earth-asia fa-spin"></i> Our
+                                                                Priority to
+                                                                Save</a></h3>
+                                                        <!--<span class="post"><i class="las la-photo-video"></i> 34</span>-->
+                                                    </div>
+                                                    <ul class="icon">
+                                                        <li><a href="/gallery" title="View all Images"><i
+                                                                    class="fa-solid fa-arrow-right"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="readMore"><a href="/gallery" title="Read More"><span>All
+                                                        Galleries</span></a></div>
+                                        </figcaption>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3">
+                                <div class="service-single">
+
+                                    <figure><img class="img-fluid w-100" src="assests/IMG_0933.jpeg" alt=""></figure>
+                                    <figcaption class="">
+                                        <h3><small>OUR PRINCIPAL</small> <br>MRS. MAMTA SINGH SINDHU</h3>
+                                        <div class="readMore"><a href="/principal-message" title="Read More"><span>Read
+                                                    More</span></a></div>
+                                    </figcaption>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section class="newsAndEvents container">
+                    <div class="row">
+                        <div class="row">
+                            <h2 class="text-center text-uppercase" style="color: #2f3091;"> news & events</h2>
                             <div class="section-title wow fadeInUp"
                                 style="visibility: visible; animation-name: fadeInUp;">
                                 <p class="title-branding mb-2"><img class="img-fluid"
                                         src="/assests/SISTransparentLogo.png" width="49px" height="49px"></p>
-                                <h2 class="p-color"><small>Gallery</small></h2>
                             </div>
-                            <figcaption class="Gallery" style="padding-top: 0px;">
-                                <div class="box20">
-                                    <img class="img-fluid w-100" src="assests/saveEarth.jpg" alt="">
-
-                                    <div class="content_visible">
-                                        <div class="imgtext">
-                                            <h3 class="title"><a href="/gallery"><i
-                                                        class="fa-solid fa-earth-asia fa-spin"></i> Our Priority to
-                                                    Save</a></h3>
-                                            <!--<span class="post"><i class="las la-photo-video"></i>34</span>-->
-                                        </div>
-                                        <div class="box-content">
-                                            <h3 class="title"><a href="/gallery"> <i
-                                                        class="fa-solid fa-earth-asia fa-spin"></i> Our Priority to
-                                                    Save</a></h3>
-                                            <!--<span class="post"><i class="las la-photo-video"></i> 34</span>-->
-                                        </div>
-                                        <ul class="icon">
-                                            <li><a href="/gallery" title="View all Images"><i
-                                                        class="fa-solid fa-arrow-right"></i></a>
-                                            </li>
-                                        </ul>
+                        </div>
+                        <div class="row">
+                            <div class="containernews">
+                                <div class="carouselNews">
+                                    <!-- <% for(let i=(news.length-1);i>=(news.length-9);i--){ %>
+                                        <% if(i>=0){ %>
+                                            <div class="carousel__face text-center" style="background-image: url(<%=news[i].images[0].url%>);"><span><a href="/news-events/<%= news[i]._id %>"
+                                                        style="text-decoration:none; color:#eabd57;">
+                                                        <%= news[i].title %><br>
+                                                            <p style=" color:#eabd57;">
+                                                                <%= news[i].paragraph1 %>
+                                                            </p>
+                                                </span></a></div>
+                                            <% } %>
+                                                <% } %> -->
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;"><i
+                                                    class="fa-solid fa-earth-asia fa-spin"></i> Save Earth<br>
+                                                <p style=" color:#eabd57;">Our students learned the importance of taking
+                                                    care of our planet through fun and engaging activities.🔍 We
+                                                    organized a
+                                                    scavenger/sound hunt in the park area. It was a great way for them
+                                                    to explore nature
+                                                    while learning about the importance of preserving it.</p>
+                                        </span></a></div>
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;"><i
+                                                    class="fa-solid fa-microphone"></i>Session<p
+                                                    style=" color:#eabd57;">We had the honor of hosting Mr. Prabhu
+                                                    M, an accomplished business leader and successful entrepreneur, at
+                                                    Scottish
+                                                    International School, Hisar. His session was nothing short of
+                                                    inspiring and
+                                                    enlightening.</p></a></span></div>
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;">🕺International Dance Day💃
+                                                <p style=" color:#eabd57;">Scottish International School celebrated
+                                                    International Dance Day with great enthusiasm and zeal on 29th April
+                                                    2023! This
+                                                    global celebration of dance brought together students from Class 3
+                                                    to 10, who
+                                                    showcased their rhythmic talents and mesmerized everyone with their
+                                                    graceful
+                                                    performances.</p>
+                                            </a></span></div>
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;"><i
+                                                    class="fa-solid fa-medal fa-beat"></i>Proud Moment<p
+                                                    style=" color:#eabd57;">✨Once again our Scottishian has come off
+                                                    with flying colours.Many Congratulations to Yogita of class X, who
+                                                    secured 1st
+                                                    position and cash prize for best painting in National Art Workshop
+                                                    held at
+                                                    Narnaul.</p></a></span></div>
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;"><i
+                                                    class="fa-solid fa-user-nurse"></i>International Worker's Day<p
+                                                    style=" color:#eabd57;">This day is dedicated to the workers and
+                                                    laborers of the world. In a Scottish school, International Workers'
+                                                    Day was also
+                                                    celebrated and the importance of workers in the country was
+                                                    explained to the
+                                                    children.</p></a></span></div>
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;">🕺Glimpse of Baisakhi
+                                                Celebration💃<p style=" color:#eabd57;">The Scottish International
+                                                    School kicked
+                                                    off the new season in style with a vibrant Baisakhi celebration! Our
+                                                    students
+                                                    were dressed in traditional ethnic wear, and the beats of the dhol
+                                                    kept everyone
+                                                    dancing and having a blast.</p></a></span></div>
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;">Learning at Scottish<p
+                                                    style=" color:#eabd57;">On Saturday, our little ones had a
+                                                    fun-filled day playing and participating in a refreshing
+                                                    #WATERMELON🍉🍉
+                                                    Activity. Our students received fruit boxes from their parents,
+                                                    filled with
+                                                    juicy watermelons to keep them feeling refreshed and energized in
+                                                    the scorching
+                                                    heat.
+                                                    At Scottish International School, we prioritize not only the
+                                                    academic success of
+                                                    our students, but also their holistic growth and development. Our
+                                                    events and
+                                                    activities are designed to provide our students with a well-rounded
+                                                    educational
+                                                    experience, complete with cultural celebrations, physical
+                                                    activities, and
+                                                    opportunities for fun and excitement.
+                                                    Join us at Scottish International School, where we believe that
+                                                    learning should
+                                                    be enjoyable and memorable!</p></a></span></div>
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;">A New Start: Orientation
+                                                Day<p style=" color:#eabd57;">Scottish International School's
+                                                    Orientation Day was a roaring success! 🎉
+                                                    👋 Teachers welcomed their students with open arms and engaging
+                                                    icebreakers.
+                                                    📸 Back-to-school photobooths captured picture-perfect memories.</p>
+                                            </a></span>
+                                    </div>
+                                    <div class="carousel__face text-center"><span><a href=""
+                                                style="text-decoration:none; color:#eabd57;"><i
+                                                    class="fa-solid fa-medal fa-flip"></i>Gradual Results<p
+                                                    style=" color:#eabd57;">Excellence is the gradual result of
+                                                    always striving to do Better 👏👏👏✌️Congratulations!</p></a></span>
                                     </div>
                                 </div>
-
-                                <div class="readMore"><a href="/gallery" title="Read More"><span>All
-                                            Galleries</span></a></div>
-                            </figcaption>
+                            </div>
+                        </div>
+                        <div class="service-single pt-3 pt-md-4 text-left" style="background-color: transparent;">
+                            <div>
+                                <figcaption class="Gallery" style="padding-top: 0px;">
+                                    <div class="readMore"><a href="/news-events" title="Read More"><span>Load
+                                                More</span></a></div>
+                                </figcaption>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-3">
-                    <div class="service-single">
-
-                        <figure><img class="img-fluid w-100" src="assests/IMG_0933.jpeg" alt=""></figure>
-                        <figcaption class="">
-                            <h3><small>OUR PRINCIPAL</small> <br>MRS. MAMTA SINGH SINDHU</h3>
-                            <div class="readMore"><a href="/principal-message" title="Read More"><span>Read
-                                        More</span></a></div>
-                        </figcaption>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section class="newsAndEvents container">
-        <div class="row">
-            <div class="row">
-                <h2 class="text-center text-uppercase" style="color: #2f3091;"> news & events</h2>
-                <div class="section-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <p class="title-branding mb-2"><img class="img-fluid" src="/assests/SISTransparentLogo.png"
-                            width="49px" height="49px"></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="containernews">
-                    <div class="carouselNews">
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;"><i
-                                        class="fa-solid fa-earth-asia fa-spin"></i> Save Earth<br>
-                                <p style=" color:#eabd57;">Our students learned the importance of taking
-                                    care of our planet through fun and engaging activities.🔍 We organized a
-                                    scavenger/sound hunt in the park area. It was a great way for them to explore nature
-                                    while learning about the importance of preserving it.</p>
-                            </span></a></div>
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;"><i
-                                        class="fa-solid fa-microphone"></i>Session<p
-                                        style=" color:#eabd57;">We had the honor of hosting Mr. Prabhu
-                                        M, an accomplished business leader and successful entrepreneur, at Scottish
-                                        International School, Hisar. His session was nothing short of inspiring and
-                                        enlightening.</p></a></span></div>
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;">🕺International Dance Day💃<p
-                                        style=" color:#eabd57;">Scottish International School celebrated
-                                        International Dance Day with great enthusiasm and zeal on 29th April 2023! This
-                                        global celebration of dance brought together students from Class 3 to 10, who
-                                        showcased their rhythmic talents and mesmerized everyone with their graceful
-                                        performances.</p></a></span></div>
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;"><i
-                                        class="fa-solid fa-medal fa-beat"></i>Proud Moment<p
-                                        style=" color:#eabd57;">✨Once again our Scottishian has come off
-                                        with flying colours.Many Congratulations to Yogita of class X, who secured 1st
-                                        position and cash prize for best painting in National Art Workshop held at
-                                        Narnaul.</p></a></span></div>
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;"><i
-                                        class="fa-solid fa-user-nurse"></i>International Worker's Day<p
-                                        style=" color:#eabd57;">This day is dedicated to the workers and
-                                        laborers of the world. In a Scottish school, International Workers' Day was also
-                                        celebrated and the importance of workers in the country was explained to the
-                                        children.</p></a></span></div>
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;">🕺Glimpse of Baisakhi Celebration💃<p
-                                        style=" color:#eabd57;">The Scottish International School kicked
-                                        off the new season in style with a vibrant Baisakhi celebration! Our students
-                                        were dressed in traditional ethnic wear, and the beats of the dhol kept everyone
-                                        dancing and having a blast.</p></a></span></div>
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;">Learning at Scottish<p
-                                        style=" color:#eabd57;">On Saturday, our little ones had a
-                                        fun-filled day playing and participating in a refreshing #WATERMELON🍉🍉
-                                        Activity. Our students received fruit boxes from their parents, filled with
-                                        juicy watermelons to keep them feeling refreshed and energized in the scorching
-                                        heat.
-                                        At Scottish International School, we prioritize not only the academic success of
-                                        our students, but also their holistic growth and development. Our events and
-                                        activities are designed to provide our students with a well-rounded educational
-                                        experience, complete with cultural celebrations, physical activities, and
-                                        opportunities for fun and excitement.
-                                        Join us at Scottish International School, where we believe that learning should
-                                        be enjoyable and memorable!</p></a></span></div>
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;">A New Start: Orientation Day<p
-                                        style=" color:#eabd57;">Scottish International School's
-                                        Orientation Day was a roaring success! 🎉
-                                        👋 Teachers welcomed their students with open arms and engaging icebreakers.
-                                        📸 Back-to-school photobooths captured picture-perfect memories.</p></a></span>
-                        </div>
-                        <div class="carousel__face text-center"><span><a href=""
-                                    style="text-decoration:none; color:#eabd57;"><i
-                                        class="fa-solid fa-medal fa-flip"></i>Gradual Results<p
-                                        style=" color:#eabd57;">Excellence is the gradual result of
-                                        always striving to do Better 👏👏👏✌️Congratulations!</p></a></span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="service-single pt-3 pt-md-4 text-left" style="background-color: transparent;">
-                <div>
-                    <figcaption class="Gallery" style="padding-top: 0px;">
-                        <div class="readMore"><a href="/news-events" title="Read More"><span>Load More</span></a></div>
-                    </figcaption>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="bg1 pt-5 pb-5">
+                </section>
+                <!-- <section class="bg1 pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-12 col-md-12 col-12">
@@ -322,82 +377,162 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="py-4 py-xl-5">
-        <div class="container">
-            <div
-                class=" border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-2 p-lg-3">
-                <div class="text-center text-lg-start py-3 py-lg-1">
-                    <h2 class="fw-bold mb-2"><strong>Subscribe to our newsletter</strong></h2>
-                    <p class="mb-0">For latest Information.</p>
-                </div>
-                <form action="/newsLetter" class="d-flex justify-content-center flex-wrap my-2" method="post">
-                    <div class="my-2"><input class="form-control" type="email" name="email" placeholder="Your Email">
+    </section> -->
+    <section class="container-fuild" style="height: 700px;">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade row" data-bs-ride="carousel" data-pause="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                        class="d-block w-100" alt="..." style="height: 700px;">
+                        <div class=" d-block carousel-caption col- col-lg-5 justify-content-start">
+                            <form class="border rounded shadow px-4" action="/contact-us" method="post"
+                                style="background: var(--bs-body-bg);">
+                                <h3 class="text-uppercase mt-4" style="color: black;text-align: left;">Schedule a campus visit </h3>
+                                <div><i class="fa-solid fa-minus" style="color: #e3bf68; font-size: 50px;margin-left: -90%;"></i></div>
+                                <div><p style="color: black;text-align: left;">Seeing is believing. To experience the infrastructure and atmosphere of Scottish, do get in touch with us </p></div>
+                                <div class="mb-3"><input class="form-control" type="text" name="user[name]"
+                                        placeholder="Name"></div>
+                                <div class="mb-3"><input class="form-control" type="email" name="user[email]"
+                                        placeholder="Email"></div>
+                                <div class="mb-3"><input class="form-control" type="number" name="user[mobilenumber]"
+                                        placeholder="Phone Number"></div>
+                                <div class="mb-3"><textarea class="form-control" name="user[message]"
+                                        placeholder="Message" rows="6"></textarea></div>
+                                        <div class="mb-3"><button class="btn btn-outline-secondary btn-lg col" type="submit"><i class="fa-solid fa-envelope" style="color: #bbbbbb;"></i> Send Us A Message</button></div>
+                            </form>
                     </div>
-                    <div class="my-2"><button class="btn btn-primary ms-sm-2" type="submit">Subscribe </button></div>
-                </form>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+                        class="d-block w-100" alt="school building" style="height: 700px;">
+                        <div class="col-md-5 col-xl-5 col-xxl-5 d-block carousel-caption justify-content-start">
+                                <form class="border rounded shadow px-4" action="/contact-us" method="post"
+                                    style="background: var(--bs-body-bg);">
+                                    <h3 class="text-uppercase mt-4" style="color: black;text-align: left;">Schedule a campus visit </h3>
+                                    <div><i class="fa-solid fa-minus" style="color: #e3bf68; font-size: 50px;margin-left: -90%;"></i></div>
+                                    <div><p style="color: black;text-align: left;">Seeing is believing. To experience the infrastructure and atmosphere of Scottish, do get in touch with us </p></div>
+                                    <div class="mb-3"><input class="form-control" type="text" name="user[name]"
+                                            placeholder="Name"></div>
+                                    <div class="mb-3"><input class="form-control" type="email" name="user[email]"
+                                            placeholder="Email"></div>
+                                    <div class="mb-3"><input class="form-control" type="number" name="user[mobilenumber]"
+                                            placeholder="Phone Number"></div>
+                                    <div class="mb-3"><textarea class="form-control" name="user[message]"
+                                            placeholder="Message" rows="6"></textarea></div>
+                                    <div class="mb-3"><button class="btn btn-outline-secondary btn-lg col" type="submit"><i class="fa-solid fa-envelope" style="color: #bbbbbb;"></i> Send Us A Message</button></div>
+                                </form>
+                        </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="pt-5">
-        <div class="facts-and-figure container">
-            <div class="row">
-                <h2 class="text-center text-uppercase" style="color: #2f3091;"> FACTS & FIGURES</h2>
-                <div class="section-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <p class="title-branding mb-2"><img class="img-fluid" src="/assests/SISTransparentLogo.png"
-                            width="49px" height="49px"></p>
-                </div>
-            </div>
-            <div class="container row">
-                <ul class="">
-                    <li class="col">
-                        <div class="single_counter ">
-                            <div>
+                <!-- <section>
+                    <section class="position-relative pt-5 bg1" style="padding-bottom: 5px;background-image: url(https://res.cloudinary.com/djfy7fvq1/image/upload/v1685453879/Untitled_design_bqvldn.png);">
+                        <div class="position-relative mx-2 my-5 m-md-5">
+                            <div class="container" style="margin: 0;">
+                                <div class="row justify-content-between align-items-center">
+                                    <div class="col-md-6 col-xl-5 col-xxl-6">
+                                        <div>
+                                            <form class="border rounded shadow p-5 p-md-4 p-lg-5" method="post"
+                                                style="background: var(--bs-body-bg);">
+                                                <h3 class="mb-3 text-uppercase">Schedule a campus visit </h3>
+                                                <div class="mb-3"><input class="form-control" type="text" name="name"
+                                                        placeholder="Name"></div>
+                                                <div class="mb-3"><input class="form-control" type="email" name="email"
+                                                        placeholder="Email"></div>
+                                                <div class="mb-3"><input class="form-control" type="number" name="mobilenumber"
+                                                        placeholder="Phone Number"></div>
+                                                <div class="mb-3"><textarea class="form-control" name="message"
+                                                        placeholder="Message" rows="6"></textarea></div>
+                                                <div class="mb-3" style="justify-items: start;"><button class="btn btn-primary" type="submit">Send </button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+            
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section> -->
+                <section class="py-4 py-xl-5">
+                    <div class="container">
+                        <div
+                            class=" border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-2 p-lg-3">
+                            <div class="text-center text-lg-start py-3 py-lg-1">
+                                <h2 class="fw-bold mb-2"><strong>Subscribe to our newsletter</strong></h2>
+                                <p class="mb-0">For latest Information.</p>
+                            </div>
+                            <form action="/newsLetter" class="d-flex justify-content-center flex-wrap my-2"
+                                method="post">
+                                <div class="my-2"><input class="form-control" type="email" name="email"
+                                        placeholder="Your Email">
+                                </div>
+                                <div class="my-2"><button class="btn btn-primary ms-sm-2" type="submit">Subscribe
+                                    </button></div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <section class="pt-5">
+                    <div class="facts-and-figure container">
+                        <div class="row">
+                            <h2 class="text-center text-uppercase" style="color: #2f3091;"> FACTS & FIGURES</h2>
+                            <div class="section-title wow fadeInUp"
+                                style="visibility: visible; animation-name: fadeInUp;">
+                                <p class="title-branding mb-2"><img class="img-fluid"
+                                        src="/assests/SISTransparentLogo.png" width="49px" height="49px"></p>
+                            </div>
+                        </div>
+                        <div class="container row">
+                            <ul class="">
+                                <li class="col">
+                                    <div class="single_counter ">
+                                        <div>
 
-                                <h2>
-                                    <i class="fa-solid fa-school"></i>
-                                    <span class="counting" data-count="1937">2015</span><span></span>
-                                </h2>
-                            </div>
-                            <h5>School <br>Founded In</h5>
-                        </div>
-                    </li>
-                    <li class="col">
-                        <div class="single_counter ">
-                            <div>
-                                <h2>
-                                    <i class="fa-solid fa-futbol fa-bounce"></i>
-                                    <span class="counting" data-count="30"
-                                        style="font-size: 40px;">30</span><span>+</span>
-                                    <!-- <br><small style="font-size: 30px;">Sports</small> -->
-                                </h2>
-                            </div>
-                            <h5 style="font-size: 30px;">Sports</h5>
-                        </div>
-                    </li>
-                    <li class="col">
-                        <div class="single_counter ">
-                            <div>
-                                <h2>
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                    <span class="counting">1:9</span>
-                                </h2>
-                            </div>
-                            <h5>Pupil Teacher<br> Ratio</h5>
-                        </div>
-                    </li>
-                    <li class="col">
-                        <div class="single_counter ">
-                            <div>
-                                <h2>
-                                    <i class="fa-solid fa-medal fa-beat"></i>
-                                    <span class="counting" data-count="25000">2000</span><span>+</span>
-                                </h2>
-                            </div>
-                            <h5>Achievements</h5>
-                        </div>
-                    </li>
-                    <!-- <li class="col">
+                                            <h2>
+                                                <i class="fa-solid fa-school"></i>
+                                                <span class="counting" data-count="1937">2015</span><span></span>
+                                            </h2>
+                                        </div>
+                                        <h5>School <br>Founded In</h5>
+                                    </div>
+                                </li>
+                                <li class="col">
+                                    <div class="single_counter ">
+                                        <div>
+                                            <h2>
+                                                <i class="fa-solid fa-futbol fa-bounce"></i>
+                                                <span class="counting" data-count="30"
+                                                    style="font-size: 40px;">30</span><span>+</span>
+                                                <!-- <br><small style="font-size: 30px;">Sports</small> -->
+                                            </h2>
+                                        </div>
+                                        <h5 style="font-size: 30px;">Sports</h5>
+                                    </div>
+                                </li>
+                                <li class="col">
+                                    <div class="single_counter ">
+                                        <div>
+                                            <h2>
+                                                <i class="fa-solid fa-chalkboard-user"></i>
+                                                <span class="counting">1:9</span>
+                                            </h2>
+                                        </div>
+                                        <h5>Pupil Teacher<br> Ratio</h5>
+                                    </div>
+                                </li>
+                                <li class="col">
+                                    <div class="single_counter ">
+                                        <div>
+                                            <h2>
+                                                <i class="fa-solid fa-medal fa-beat"></i>
+                                                <span class="counting" data-count="25000">2000</span><span>+</span>
+                                            </h2>
+                                        </div>
+                                        <h5>Achievements</h5>
+                                    </div>
+                                </li>
+                                <!-- <li class="col">
                         <div class="single_counter ">
                             <div>
                                 <h2>
@@ -408,16 +543,18 @@
                             <h5>Board <br>Accreditation </h5>
                         </div>
                     </li> -->
-                </ul>
-            </div>
-        </div>
-    </section>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-    <link rel="stylesheet" href="/stylesheets/fixedSocial.css">
-    <style>
-        @media (max-width:770px) {
-            .carousel-item h3,.carousel-item p{
-                font-size: 10px;
-            }
-        }
-    </style>
+                <link rel="stylesheet" href="/stylesheets/fixedSocial.css">
+                <style>
+                    @media (max-width:770px) {
+
+                        .carousel-item h3,
+                        .carousel-item p {
+                            font-size: 10px;
+                        }
+                    }
+                </style>

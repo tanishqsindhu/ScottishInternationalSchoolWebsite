@@ -29,7 +29,8 @@ const userRoute=require('./routes/user')
 const publicationsRoute =require('./routes/publications');
 
 // Models
-const User = require('./models/user')
+const User = require('./models/user');
+const newsAndEvents = require('./models/newsAndEvents');
 
 // environment variables
 const secret=process.env.SECRET;
@@ -105,8 +106,9 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/',(req,res)=>{
-    res.render('home');
+app.get('/',async(req,res)=>{
+    const news = await newsAndEvents.find({});
+    res.render('home',{news});
 })
 
 app.get('/gallery',(req,res)=>{
@@ -116,12 +118,16 @@ app.get('/contact-us',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('contact-us');
 })
-
+app.post('/contact-us',(req,res)=>{
+    const {user}=req.body;
+    console.log(user)
+    res.redirect('/')
+})
 app.use('/beyond-classroom',beyondClassroomRoute)
 app.use('/newsLetter',newsLetterRoute)
 app.use('/news-events',newsAndEventsRoute)
 app.use('/accomplishments',accomplishmentsRoute)
-app.use('/publications',publicationsRoute)
+// app.use('/publications',publicationsRoute)
 app.use('/',userRoute)
 
 app.get('/about-us',(req,res)=>{
@@ -143,19 +149,21 @@ app.get('/director-message',(req,res)=>{
     // const errorMessage='underConstruction'
     res.render('directorsMessage');
 })
+app.get('/jobs',(req,res)=>{
+    res.render('jobOpening')
+})
 
-
-app.get('/calenders',(req,res)=>{
-    // const errorMessage='underConstruction'
-    res.render('calenders/homePage');
-})
-app.get('/calenders/add',(req,res)=>{
-    res.render('calenders/addForm');
-})
-app.post('/calenders',(req,res)=>{
-    console.log(req)
-    res.render('calenders/HomePage');
-})
+// app.get('/calenders',(req,res)=>{
+//     // const errorMessage='underConstruction'
+//     res.render('calenders/homePage');
+// })
+// app.get('/calenders/add',(req,res)=>{
+//     res.render('calenders/addForm');
+// })
+// app.post('/calenders',(req,res)=>{
+//     console.log(req)
+//     res.render('calenders/HomePage');
+// })
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
