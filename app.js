@@ -31,6 +31,7 @@ const publicationsRoute =require('./routes/publications');
 // Models
 const User = require('./models/user');
 const newsAndEvents = require('./models/newsAndEvents');
+const ContactUs = require('./models/contactUs');
 
 // environment variables
 const secret=process.env.SECRET;
@@ -120,7 +121,9 @@ app.get('/contact-us',(req,res)=>{
 })
 app.post('/contact-us',(req,res)=>{
     const {user}=req.body;
-    console.log(user)
+    const date = Date.now();
+    const newContact = new ContactUs({...user,date})
+    newContact.save();
     res.redirect('/')
 })
 app.use('/beyond-classroom',beyondClassroomRoute)
