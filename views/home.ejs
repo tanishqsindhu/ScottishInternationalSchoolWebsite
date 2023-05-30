@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate')%>
     <%- include('./partials/fixedSocials')%>
         <section>
-            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-pause="false">
+            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="4000">
                         <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
@@ -378,54 +378,76 @@
             </div>
         </div>
     </section> -->
-    <section class="container-fuild" style="height: 700px;">
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade row" data-bs-ride="carousel" data-pause="false">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="4000">
-                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
-                        class="d-block w-100" alt="..." style="height: 700px;">
-                        <div class=" d-block carousel-caption col- col-lg-5 justify-content-start">
-                            <form class="border rounded shadow px-4" action="/contact-us" method="post"
-                                style="background: var(--bs-body-bg);">
-                                <h3 class="text-uppercase mt-4" style="color: black;text-align: left;">Schedule a campus visit </h3>
-                                <div><i class="fa-solid fa-minus" style="color: #e3bf68; font-size: 50px;margin-left: -90%;"></i></div>
-                                <div><p style="color: black;text-align: left;">Seeing is believing. To experience the infrastructure and atmosphere of Scottish, do get in touch with us </p></div>
-                                <div class="mb-3"><input class="form-control" type="text" name="user[name]"
-                                        placeholder="Name"></div>
-                                <div class="mb-3"><input class="form-control" type="email" name="user[email]"
-                                        placeholder="Email"></div>
-                                <div class="mb-3"><input class="form-control" type="number" name="user[mobilenumber]"
-                                        placeholder="Phone Number"></div>
-                                <div class="mb-3"><textarea class="form-control" name="user[message]"
-                                        placeholder="Message" rows="6"></textarea></div>
-                                        <div class="mb-3"><button class="btn btn-outline-secondary btn-lg col" type="submit"><i class="fa-solid fa-envelope" style="color: #bbbbbb;"></i> Send Us A Message</button></div>
-                            </form>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
-                        class="d-block w-100" alt="school building" style="height: 700px;">
-                        <div class="col-md-5 col-xl-5 col-xxl-5 d-block carousel-caption justify-content-start">
-                                <form class="border rounded shadow px-4" action="/contact-us" method="post"
-                                    style="background: var(--bs-body-bg);">
-                                    <h3 class="text-uppercase mt-4" style="color: black;text-align: left;">Schedule a campus visit </h3>
-                                    <div><i class="fa-solid fa-minus" style="color: #e3bf68; font-size: 50px;margin-left: -90%;"></i></div>
-                                    <div><p style="color: black;text-align: left;">Seeing is believing. To experience the infrastructure and atmosphere of Scottish, do get in touch with us </p></div>
-                                    <div class="mb-3"><input class="form-control" type="text" name="user[name]"
-                                            placeholder="Name"></div>
-                                    <div class="mb-3"><input class="form-control" type="email" name="user[email]"
-                                            placeholder="Email"></div>
-                                    <div class="mb-3"><input class="form-control" type="number" name="user[mobilenumber]"
-                                            placeholder="Phone Number"></div>
-                                    <div class="mb-3"><textarea class="form-control" name="user[message]"
-                                            placeholder="Message" rows="6"></textarea></div>
-                                    <div class="mb-3"><button class="btn btn-outline-secondary btn-lg col" type="submit"><i class="fa-solid fa-envelope" style="color: #bbbbbb;"></i> Send Us A Message</button></div>
-                                </form>
+                <section class="container-fuild" style="height: 700px;">
+                    <div class="row">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade row"
+                            data-bs-ride="carousel" data-bs-pause="false" >
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="4000">
+                                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                                        class="d-block w-100" alt="..." style="height: 700px;">
+                                    <div class=" d-block carousel-caption col- col-lg-5 justify-content-start">
+                                        <form class="border rounded shadow px-4" action="/contact-us" method="post"
+                                            style="background: var(--bs-body-bg);">
+                                            <h3 class="text-uppercase mt-4" style="color: black;text-align: left;">
+                                                Schedule a campus visit </h3>
+                                            <div><i class="fa-solid fa-minus"
+                                                    style="color: #e3bf68; font-size: 50px;margin-left: -90%;"></i>
+                                            </div>
+                                            <div>
+                                                <p style="color: black;text-align: left;">Seeing is believing. To
+                                                    experience the infrastructure and atmosphere of Scottish, do get in
+                                                    touch with us </p>
+                                            </div>
+                                            <div class="mb-3"><input class="form-control" type="text" name="user[name]"
+                                                    placeholder="Name"></div>
+                                            <div class="mb-3"><input class="form-control" type="email"
+                                                    name="user[email]" placeholder="Email"></div>
+                                            <div class="mb-3"><input class="form-control" type="number"
+                                                    name="user[mobilenumber]" placeholder="Phone Number"></div>
+                                            <div class="mb-3"><textarea class="form-control" name="user[message]"
+                                                    placeholder="Message" rows="6"></textarea></div>
+                                            <div class="mb-3 row mx-1"><button class="btn btn-outline-secondary btn-lg col"
+                                                    type="submit"><i class="fa-solid fa-envelope"
+                                                        style="color: #bbbbbb;"></i> Send Us A Message</button></div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000">
+                                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+                                        class="d-block w-100" alt="school building" style="height: 700px;">
+                                    <div
+                                        class="col-md-5 col-xl-5 col-xxl-5 d-block carousel-caption justify-content-start">
+                                        <form class="border rounded shadow px-4" action="/contact-us" method="post"
+                                            style="background: var(--bs-body-bg);">
+                                            <h3 class="text-uppercase mt-4" style="color: black;text-align: left;">
+                                                Schedule a campus visit </h3>
+                                            <div><i class="fa-solid fa-minus"
+                                                    style="color: #e3bf68; font-size: 50px;margin-left: -90%;"></i>
+                                            </div>
+                                            <div>
+                                                <p style="color: black;text-align: left;">Seeing is believing. To
+                                                    experience the infrastructure and atmosphere of Scottish, do get in
+                                                    touch with us </p>
+                                            </div>
+                                            <div class="mb-3"><input class="form-control" type="text" name="user[name]"
+                                                    placeholder="Name"></div>
+                                            <div class="mb-3"><input class="form-control" type="email"
+                                                    name="user[email]" placeholder="Email"></div>
+                                            <div class="mb-3"><input class="form-control" type="number"
+                                                    name="user[mobilenumber]" placeholder="Phone Number"></div>
+                                            <div class="mb-3"><textarea class="form-control" name="user[message]"
+                                                    placeholder="Message" rows="6"></textarea></div>
+                                            <div class="mb-3 row mx-1"><button class="btn btn-outline-secondary btn-lg col"
+                                                    type="submit"><i class="fa-solid fa-envelope"
+                                                        style="color: #bbbbbb;"></i> Send Us A Message</button></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </div>
+                </section>
                 <!-- <section>
                     <section class="position-relative pt-5 bg1" style="padding-bottom: 5px;background-image: url(https://res.cloudinary.com/djfy7fvq1/image/upload/v1685453879/Untitled_design_bqvldn.png);">
                         <div class="position-relative mx-2 my-5 m-md-5">
