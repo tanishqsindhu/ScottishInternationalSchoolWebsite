@@ -2,7 +2,8 @@
   <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgba(241,  241, 241, 0.8);">
     <div class="container-fluid">
       <div class="col justify-content-start">
-        <a class="navbar-brand" href="/"> <img src="/assests/SISTransparentLogo.png" alt="logo" width="30" height="24"> Scottish International School</a>
+        <a class="navbar-brand" href="/"> <img src="/assests/SISTransparentLogo.png" alt="logo" width="30" height="24">
+          Scottish International School</a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,12 +66,12 @@
                 <a class="nav-link" href="/register">Register</a>
               </li>
               <% } %>
-            <% }else{ %>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <% } %>
-          <!-- <li class="nav-item dropdown">
+                <% }else{ %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  <% } %>
+                    <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown link
             </a>
@@ -85,3 +86,12 @@
     </div>
   </nav>
 </div>
+
+<style>
+  @media only screen and (max-width: 433px) {
+    .navbar-toggler-icon {
+      width: 0.5em;
+      height: 0.5em;
+    }
+  }
+</style>
