@@ -6,7 +6,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="4000">
                         <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
-                            class="d-block w-100" alt="..." style="height: 500px;">
+                            class="d-block w-100" alt="school building" style="height: 500px;">
                         <div class="carousel-caption d-md-block"
                             style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
                             <h5 style="color: #f0bc1b;">Scottish Academy of Excellence</h5>
@@ -17,7 +17,7 @@
                     </div>
                     <div class="carousel-item" data-bs-interval="4000">
                         <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg"
-                            class="d-block w-100" alt="..." style="height: 500px;">
+                            class="d-block w-100" alt="school library" style="height: 500px;">
                         <div class="carousel-caption d-md-block"
                             style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
                             <h5 style="color: #f0bc1b;">School's Library</h5>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="carousel-item" data-bs-interval="4000">
                         <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
-                            class="d-block w-100" alt="..." style="height: 500px;">
+                            class="d-block w-100" alt="school building" style="height: 500px;">
                         <div class="carousel-caption d-md-block"
                             style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
                             <h5 style="color: #f0bc1b;">Scottish International School</h5>
@@ -211,9 +211,15 @@
                                             <div class="carousel__face text-center" style="background-image: url(<%=news[i].images[0].url%>);"><span><a href="/news-events/<%= news[i]._id %>"
                                                         style="text-decoration:none; color:#eabd57;">
                                                         <%= news[i].title %><br>
+                                                        <%if(news[i].shortDescription){%>
+                                                            <p style=" color:#eabd57;">
+                                                                <%= news[i].shortDescription %>
+                                                            </p>
+                                                            <% }else{ %>
                                                             <p style=" color:#eabd57;">
                                                                 <%= news[i].paragraph1 %>
                                                             </p>
+                                                            <% } %>
                                                 </span></a></div>
                                             <% } %>
                                                 <% } %> -->
