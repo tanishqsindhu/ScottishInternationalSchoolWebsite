@@ -22,8 +22,8 @@ module.exports.validateStudent = (req, res, next) => {
     }
 }
 
-module.exports.isOffice = async (req, res, next) => {
-    if (!(req.user.role=='admin'||req.user.role=='office'||req.user.role=='mess')) {
+module.exports.isArticleEditor = async (req, res, next) => {
+    if (!req.user.role.includes('articlesEditor')) {
         req.session.returnTo = req.originalUrl
         req.flash('error', 'You do not have permission to do that!');
         return res.redirect(`/`);

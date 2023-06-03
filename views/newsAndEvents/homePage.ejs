@@ -111,7 +111,7 @@
                                         </p>
                                         <p class="text-link"><a href="/news-events/<%=news[i]._id%>">Full Story
                                                 <i class="fa-solid fa-arrow-right fa-flip"></i></a></p>
-                                        <% if(currentUser) {%>
+                                        <% if(currentUser.role.includes('articlesEditor')) {%>
                                             <p class="text-link"><a href="/news-events/<%=news[i]._id%>/edit">Edit</a></p>
                                             <% } %>
                                     </span>
@@ -120,9 +120,9 @@
                         </li>
                         <% } %>
                 </ul>
-                <% if(currentUser) {%>
+                <% if(currentUser.role.includes('articlesEditor')) {%>
                 <div class="row justify-content-center">
-                    <a href="/news-events/add" class="btn btn-outline-primary col-5">Add a News Article</a>
+                    <a href="/news-events/add" class="btn btn-outline-primary col-5" style="color: #980505;border-color: #980505;">Add a News Article</a>
                 </div>
                 <% } %>
             </div>

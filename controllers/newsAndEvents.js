@@ -1,6 +1,7 @@
 const NewsArticles = require('../models/newsAndEvents');
 const{cloudinary} = require('../cloudinary');
 
+
 module.exports.home=async(req,res)=>{
     const news = await NewsArticles.find({});
     res.render('newsAndEvents/homePage',{news});
