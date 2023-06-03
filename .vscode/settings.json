@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/f29d8935-b34d-40dc-ae68-3fbff4dbda0d/resourceGroups/ScottishInternationalSchool_group/providers/Microsoft.Web/sites/ScottishInternationalSchool",
+    "appService.deploySubpath": "."
+}
