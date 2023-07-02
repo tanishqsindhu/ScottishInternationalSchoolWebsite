@@ -206,9 +206,9 @@
                         <div class="row">
                             <div class="containernews">
                                 <div class="carouselNews">
-                                    <!-- <% for(let i=(news.length-1);i>=(news.length-9);i--){ %>
+                                    <% for(let i=(news.length-1);i>=(news.length-9);i--){ %>
                                         <% if(i>=0){ %>
-                                            <div class="carousel__face text-center" style="background-image: url(<%=news[i].images[0].url%>);"><span><a href="/news-events/<%= news[i]._id %>"
+                                            <div class="carousel__face text-center" style="background-image: url(<%if(news[i].images.length){%><%=news[i].images[0].url%><%}else{%>https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688312952/No_image_Found_ioxitj.png<%}%>);"><span><a href="/news-events/<%= news[i]._id %>"
                                                         style="text-decoration:none; color:#eabd57;">
                                                         <%= news[i].title %><br>
                                                         <%if(news[i].shortDescription){%>
@@ -222,8 +222,8 @@
                                                             <% } %>
                                                 </span></a></div>
                                             <% } %>
-                                                <% } %> -->
-                                    <div class="carousel__face text-center"><span><a href=""
+                                                <% } %>
+                                    <!-- <div class="carousel__face text-center"><span><a href=""
                                                 style="text-decoration:none; color:#eabd57;"><i
                                                     class="fa-solid fa-earth-asia fa-spin"></i> Save Earth<br>
                                                 <p style=" color:#eabd57;">Our students learned the importance of taking
@@ -316,7 +316,7 @@
                                                     class="fa-solid fa-medal fa-flip"></i>Gradual Results<p
                                                     style=" color:#eabd57;">Excellence is the gradual result of
                                                     always striving to do Better 👏👏👏✌️Congratulations!</p></a></span>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
