@@ -132,8 +132,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <% if(currentUser) {%>
                             <% if(currentUser.role.includes('articlesEditor')) {%>
                                 <a class="btn btn-outline-info" href="/news-events/<%=news._id%>/edit">Edit</a>
+                                <% } %>
                                 <% } %>
                         </div>
                     </div>
