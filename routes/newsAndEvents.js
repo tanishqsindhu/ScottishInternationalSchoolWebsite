@@ -17,6 +17,7 @@ router.route('/add')
 
 router.route('/:id')
 .get(catchAsync(newsAndEvents.newsArticle))
+.delete(catchAsync(newsAndEvents.deleteArticle))
 .put(isLoggedIn,upload.array('image'),catchAsync(newsAndEvents.articleUpdate));
 
 router.route('/:id/edit')

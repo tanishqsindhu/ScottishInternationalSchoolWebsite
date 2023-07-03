@@ -27,6 +27,10 @@ module.exports.newsArticle = async(req,res)=>{
 
 module.exports.articleEdit=async(req,res)=>{
     const news = await NewsArticles.findById(req.params.id);
+    if(!news){
+        req.flash('error', 'Was not able to find that Menu');
+        return res.redirect('/news-events')
+    }
     res.render('newsAndEvents/editNewsAndEvents',{news});
 }
 
@@ -42,4 +46,19 @@ module.exports.articleUpdate=async(req,res)=>{
     }
     await newsArticle.save();
     res.redirect(`/news-events/${newsArticle._id}`);
+}
+
+module.exports.deleteArticle=async(req,res)=>{
+    const newsArticle = await NewsArticles.findById(req.params.id);
+    if(!newsArticle){
+        req.flash('error', 'Was not able to find that News Article');
+        return res.redirect('/news-events')
+    }
+    for(let filename of newsArticle.images){
+        await cloudinary.uploader.destroy(filename);
+    }
+    await NewsArticles.findByIdAndDelete(req.params.id);
+    const successMessage = 'successDelete';
+    const news = await NewsArticles.find({});
+    res.render('newsAndEvents/homePage',{successMessage,news});
 }

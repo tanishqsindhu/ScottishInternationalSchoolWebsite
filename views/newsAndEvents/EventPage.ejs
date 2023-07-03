@@ -4,7 +4,8 @@
             <!--<iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.1434557992666!2d78.05572211552051!3d30.3184371125311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929b7249d5e1f%3A0x6a0dbc429180e02b!2sWelham%20Boys&#39;%20School!5e0!3m2!1sen!2sin!4v1594274963609!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
             <div class="animate-banner">
                 <picture class="zoom">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                        data-bs-pause="false">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="3000">
                                 <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
@@ -29,8 +30,8 @@
             <div class="page-title align-items-start">
                 <div class="container">
                     <div class="banner-content-inner">
-                        <h1 style="font-size: 3em;">News And Events<a href="/news-events"><i class="fa-solid fa-arrow-left"
-                                    style="color: #eabd57;"></i>
+                        <h1 style="font-size: 3em;">News And Events<a href="/news-events"><i
+                                    class="fa-solid fa-arrow-left" style="color: #eabd57;"></i>
                                 Back</a></h1>
                     </div>
                 </div>
@@ -61,17 +62,18 @@
                                     <div class="carousel-inner">
                                         <div class="carousel-item active" data-bs-interval="4000">
                                             <% if(news.images.length){ %>
-                                            <img src="<%= news.images[0].url %>" class="d-block w-100" alt="event photo"
-                                                style="width: 100%;height: 100%;">
+                                                <img src="<%= news.images[0].url %>" class="d-block w-100"
+                                                    alt="event photo" style="width: 100%;height: 100%;">
                                                 <% }else{ %>
-                                                    <img src="https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688312952/No_image_Found_ioxitj.png" class="d-block w-100" alt="event photo"
-                                                    style="width: 100%;height: 100%;">
+                                                    <img src="https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688312952/No_image_Found_ioxitj.png"
+                                                        class="d-block w-100" alt="event photo"
+                                                        style="width: 100%;height: 100%;">
                                                     <% } %>
                                         </div>
                                         <% if(news.images.length>0) {%>
                                             <% for(let j=1;j<news.images.length;j++) {%>
                                                 <div class="carousel-item">
-                                                    
+
                                                     <img src="<%= news.images[j].url %>" class="d-block w-100"
                                                         alt="event photo" style="width: 100%;height: 100%;">
 
@@ -106,40 +108,59 @@
                             </div> -->
                                 <div class="text">
                                     <div class="content-text ImgNotFound">
-                                        <h3 class="title-medium"><small>News</small><%= news.title %> <b class="date"><i
-                                                    class="fa-regular fa-clock fa-fade"></i>
-                                                <%= news.date %> <%= news.month %> <%= news.year %></b></h3>
+                                        <h3 class="title-medium"><small>News</small>
+                                            <%= news.title %> <b class="date"><i
+                                                        class="fa-regular fa-clock fa-fade"></i>
+                                                    <%= news.date %>
+                                                        <%= news.month %>
+                                                            <%= news.year %>
+                                                </b>
+                                        </h3>
 
                                         <div class="text readMoreText">
                                             <p></p>
-                                            
-                                            <div><%=news.paragraph1  %>.</div>
+
+                                            <div>
+                                                <%=news.paragraph1 %>.
+                                            </div>
                                             <div>&nbsp;</div>
-                                            <% if(news.paragraph2!=''){ %>
-                                                <div><%=news.paragraph2  %>.</div>
+                                            <% if(news.paragraph2!='' ){ %>
+                                                <div>
+                                                    <%=news.paragraph2 %>.
+                                                </div>
                                                 <div>&nbsp;</div>
-                                            <% } %>
-                                            <% if(news.paragraph3!=''){ %>
-                                                <div><%=news.paragraph3  %>.</div>
-                                                <div>&nbsp;</div>
-                                            <% } %>
-                                            <% if(news.paragraph4!=''){ %>
-                                                <div><%=news.paragraph4  %>.&nbsp;</div>
-                                                <div>&nbsp;</div>
-                                            <% } %>
-                                            <% if(news.paragraph5!=''){ %>
-                                                <div><%=news.paragraph5  %>.</div>
-                                            <% } %>
-                                            <p></p>
+                                                <% } %>
+                                                    <% if(news.paragraph3!='' ){ %>
+                                                        <div>
+                                                            <%=news.paragraph3 %>.
+                                                        </div>
+                                                        <div>&nbsp;</div>
+                                                        <% } %>
+                                                            <% if(news.paragraph4!='' ){ %>
+                                                                <div>
+                                                                    <%=news.paragraph4 %>.&nbsp;
+                                                                </div>
+                                                                <div>&nbsp;</div>
+                                                                <% } %>
+                                                                    <% if(news.paragraph5!='' ){ %>
+                                                                        <div>
+                                                                            <%=news.paragraph5 %>.
+                                                                        </div>
+                                                                        <% } %>
+                                                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <% if(currentUser) {%>
-                            <% if(currentUser.role.includes('articlesEditor')) {%>
-                                <a class="btn btn-outline-info" href="/news-events/<%=news._id%>/edit">Edit</a>
-                                <% } %>
-                                <% } %>
+                                <% if(currentUser.role.includes('articlesEditor')) {%>
+                                    <span>
+                                    <a class="btn btn-outline-info " href="/news-events/<%=news._id%>/edit">Edit</a>
+                                    <form class="d-inline-block" action="/news-events/<%=news._id%>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-block btn-outline-danger col">Delete</button>
+                                    </form></span>
+                                    <% } %>
+                                        <% } %>
                         </div>
                     </div>
                 </div>

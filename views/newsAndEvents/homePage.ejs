@@ -50,6 +50,13 @@
                 </section>
             </div>
         </div>
+        <div class="row">
+            <% if(successMessage=='successDelete' ) {%>
+                <div class="alert alert-success text-center" role="alert">
+                    Sucesss!! Sucesssfully Deleted the News Article.
+                  </div>
+                <% } %>
+        </div>
         <section class="photo-gallery bg-white news-page">
             <div class="container-fluid">
                 <ul class="photoGallery row">
