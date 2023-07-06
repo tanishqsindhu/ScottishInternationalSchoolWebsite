@@ -579,232 +579,211 @@ transition: all 0.2s linear;
   
   span {
     margin: auto;
-    font-size: 2rem;
   }
   @media screen and (max-width:440px) {
     .carousel__face:nth-child(1) p{
-      font-size: 5px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(2) p{
-      font-size: 8px;
-    }
-    .carousel__face:nth-child(3) a {
-      font-size: 16px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(3) p{
-      font-size: 5px;
-    }
-    .carousel__face:nth-child(4) a {
-      font-size: 15px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(4) p{
-      font-size: 5px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(5) p{
-      font-size: 8px;
-    }
-    .carousel__face:nth-child(5) a {
-      font-size: 10px;
-    }
-    .carousel__face:nth-child(6) a {
-      font-size: 8px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(6) p{
-      font-size: 8px;
-    }
-    .carousel__face:nth-child(7) a {
-      font-size: 13px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(7) p{
-      font-size: 3px;
-    }
-    .carousel__face:nth-child(8) a {
-      font-size: 8px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(8) p{
-      font-size: 8px;
-    }
-    .carousel__face:nth-child(9) a {
-      font-size: 10px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(9) p{
-      font-size: 9px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(1) {
       width: 140px;
+      overflow-y: scroll;
       transform: rotateY(  0deg) translateZ(200px); }
     .carousel__face:nth-child(2) { 
       width: 140px;
+      overflow-y:scroll;
         transform: rotateY( 40deg) translateZ(200px); }
     .carousel__face:nth-child(3) {
       width: 140px;
+      overflow-y:scroll;
       transform: rotateY( 80deg) translateZ(200px); }
     .carousel__face:nth-child(4) {
       width: 140px;
+      overflow-y:scroll;
       transform: rotateY(120deg) translateZ(200px); }
     .carousel__face:nth-child(5) { 
       width: 140px;
+      overflow-y:scroll;
      transform: rotateY(160deg) translateZ(200px); }
     .carousel__face:nth-child(6) { 
       width: 140px;
+      overflow-y:scroll;
      transform: rotateY(200deg) translateZ(200px); }
     .carousel__face:nth-child(7) {
       width: 140px;
+      overflow-y:scroll;
      transform: rotateY(240deg) translateZ(200px); }
     .carousel__face:nth-child(8) {
       width: 140px;
+      overflow-y:scroll;
       transform: rotateY(280deg) translateZ(200px); }
     .carousel__face:nth-child(9) {
       width: 140px;
+      overflow-y:scroll;
       transform: rotateY(320deg) translateZ(200px); }
   }
   @media screen and (min-width:441px)and (max-width: 770px) {
     .carousel__face:nth-child(1) p{
-      font-size: 7px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(2) p{
-      font-size: 10px;
-    }
-    .carousel__face:nth-child(3) a {
-      font-size: 18px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(3) p{
-      font-size: 7px;
-    }
-    .carousel__face:nth-child(4) a {
-      font-size: 18px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(4) p{
-      font-size: 8px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(5) p{
-      font-size: 10px;
+      font-size: 50%;
     }
-    .carousel__face:nth-child(5) a {
-      font-size: 12px;
-    }
-    .carousel__face:nth-child(6) a {
-      font-size: 10px;
-    }
+
     .carousel__face:nth-child(6) p{
-      font-size: 10px;
-    }
-    .carousel__face:nth-child(7) a {
-      font-size: 17px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(7) p{
-      font-size: 5px;
-    }
-    .carousel__face:nth-child(8) a {
-      font-size: 12px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(8) p{
-      font-size: 10px;
+      font-size: 50%;
     }
-    .carousel__face:nth-child(9) a {
-      font-size: 18px;
-    }
+
     .carousel__face:nth-child(9) p{
-      font-size: 10px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(1) {
       width: 190px;
+      overflow-y:scroll;
       transform: rotateY(  0deg) translateZ(280px); }
     .carousel__face:nth-child(2) { 
       width: 190px;
+      overflow-y:scroll;
         transform: rotateY( 40deg) translateZ(280px); }
     .carousel__face:nth-child(3) {
       width: 190px;
+      overflow-y:scroll;
       transform: rotateY( 80deg) translateZ(280px); }
     .carousel__face:nth-child(4) {
       width: 190px;
+      overflow-y:scroll;
       transform: rotateY(120deg) translateZ(280px); }
     .carousel__face:nth-child(5) { 
       width: 190px;
+      overflow-y:scroll;
      transform: rotateY(160deg) translateZ(280px); }
     .carousel__face:nth-child(6) { 
       width: 190px;
+      overflow-y:scroll;
      transform: rotateY(200deg) translateZ(280px); }
     .carousel__face:nth-child(7) {
       width: 190px;
+      overflow-y:scroll;
      transform: rotateY(240deg) translateZ(280px); }
     .carousel__face:nth-child(8) {
       width: 190px;
+      overflow-y:scroll;
       transform: rotateY(280deg) translateZ(280px); }
     .carousel__face:nth-child(9) {
       width: 190px;
+      overflow-y:scroll;
       transform: rotateY(320deg) translateZ(280px); }
   }
   @media screen and (min-width:770px) {
     .carousel__face:nth-child(1) p{
-      font-size: 7px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(2) p{
-      font-size: 10px;
+      font-size: 50%;
     }
-    .carousel__face:nth-child(3) a {
-      font-size: 18px;
-    }
+
     .carousel__face:nth-child(3) p{
-      font-size: 7px;
-    }
-    .carousel__face:nth-child(4) a {
-      font-size: 18px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(4) p{
-      font-size: 8px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(5) p{
-      font-size: 10px;
-    }
-    .carousel__face:nth-child(5) a {
-      font-size: 12px;
-    }
-    .carousel__face:nth-child(6) a {
-      font-size: 10px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(6) p{
-      font-size: 10px;
+      font-size: 50%;
     }
-    .carousel__face:nth-child(7) a {
-      font-size: 15px;
-    }
+
     .carousel__face:nth-child(7) p{
-      font-size: 5px;
-    }
-    .carousel__face:nth-child(8) a {
-      font-size: 10px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(8) p{
-      font-size: 10px;
+      font-size: 50%;
     }
-    .carousel__face:nth-child(9) a {
-      font-size: 12px;
-    }
+    /* .carousel__face:nth-child(9) a {
+      font-size: 50%;
+    } */
     .carousel__face:nth-child(9) p{
-      font-size: 10px;
+      font-size: 50%;
     }
     .carousel__face:nth-child(1) {
-      transform: rotateY(  0deg) translateZ(430px); }
+      transform: rotateY(  0deg) translateZ(430px); 
+     overflow-y:scroll; 
+  }
     .carousel__face:nth-child(2) { 
-        transform: rotateY( 40deg) translateZ(430px); }
+        transform: rotateY( 40deg) translateZ(430px); 
+      overflow-y:scroll;  
+    }
     .carousel__face:nth-child(3) {
-      transform: rotateY( 80deg) translateZ(430px); }
+      transform: rotateY( 80deg) translateZ(430px); 
+     overflow-y:scroll; 
+  }
     .carousel__face:nth-child(4) {
-      transform: rotateY(120deg) translateZ(430px); }
+      transform: rotateY(120deg) translateZ(430px); 
+     overflow-y:scroll; 
+  }
     .carousel__face:nth-child(5) { 
-     transform: rotateY(160deg) translateZ(430px); }
+     transform: rotateY(160deg) translateZ(430px); 
+     overflow-y:scroll; 
+  }
     .carousel__face:nth-child(6) { 
-     transform: rotateY(200deg) translateZ(430px); }
+     transform: rotateY(200deg) translateZ(430px); 
+     overflow-y:scroll; 
+  }
     .carousel__face:nth-child(7) {
-     transform: rotateY(240deg) translateZ(430px); }
+     transform: rotateY(240deg) translateZ(430px); 
+     overflow-y:scroll; 
+  }
     .carousel__face:nth-child(8) {
-      transform: rotateY(280deg) translateZ(430px); }
+      transform: rotateY(280deg) translateZ(430px); 
+     overflow-y:scroll; 
+  }
     .carousel__face:nth-child(9) {
-      transform: rotateY(320deg) translateZ(430px); }
+      transform: rotateY(320deg) translateZ(430px); 
+     overflow-y:scroll; 
+  }
   }
   
-  .carousel__face:nth-child(1) {
+  /* .carousel__face:nth-child(1) {
     background-image: url("/assests/saveEarth.jpg");}
   .carousel__face:nth-child(2) { 
     background-image: url("/assests/343965602_2373893866134991_7230012269913236247_n.jpg");
@@ -829,7 +808,7 @@ transition: all 0.2s linear;
 }
   .carousel__face:nth-child(9) {
     background-image: url("/assests/gradualResult.jpg");
-}
+} */
   
   @keyframes rotate360 {
     from {
