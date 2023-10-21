@@ -14,9 +14,6 @@ const MongoStore = require('connect-mongo');
 const session = require('express-session');
 const passport =require('passport');
 const LocalStrategy=require('passport-local')
-const multer=require('multer');
-const {storage} = require('./cloudinary')
-const upload=multer({storage});
 
 const ExpressError = require('./utils/ExpressError');
 

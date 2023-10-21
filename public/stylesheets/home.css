@@ -43,19 +43,19 @@
 
 @keyframes backgroundImageColorInverted{
     0%{
-        background:#eabd57 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+        background:#eabd57 url(/assests/webp/SISTransparentLogoWhite.webp)no-repeat center center /49px;
     }
     100%{
-        background:#2E2F90 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+        background:#2E2F90 url(/assests/webp/SISTransparentLogoWhite.webp)no-repeat center center /49px;
     }
 }
 @keyframes backgroundImageColor{
     0%{
         
-        background:#2E2F90 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+        background:#2E2F90 url(/assests/webp/SISTransparentLogoWhite.webp)no-repeat center center /49px;
     }
     100%{
-        background:#eabd57 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+        background:#eabd57 url(/assests/webp/SISTransparentLogoWhite.webp)no-repeat center center /49px;
     }
 }
 
@@ -182,7 +182,7 @@ margin: 0;
 }
 .rectangle:hover> .item-part-detail >hr::after{
     animation: backgroundImageColor 2s 1 ;
-    background:#eabd57 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    background:#eabd57 url(/assests/webp/SISTransparentLogoWhite.webp)no-repeat center center /49px;
 }
 
 .rectangle:hover>.circle > figure> img {
@@ -265,7 +265,7 @@ margin: 0;
 
 .rectangle-inverted:hover> .item-part-detail >hr::after{
     animation: backgroundImageColorInverted 2s 1;
-    background:#2E2F90 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    background:#2E2F90 url(/assests/webp/SISTransparentLogoWhite.webp)no-repeat center center /49px;
 }
 
 .rectangle-inverted:hover{
@@ -322,7 +322,7 @@ overflow: visible;
     position: absolute;
     height: 49px;
     width: 49px;
-    background:#2e2f90 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    background:#2e2f90 url(/assests/webp/SISTransparentLogoWhite.webp)no-repeat center center /49px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -333,7 +333,7 @@ overflow: visible;
     position: absolute;
     height: 49px;
     width: 49px;
-    background: #eabd57 url(/assests/SISTransparentLogoWhite.png)no-repeat center center /49px;
+    background: #eabd57 url(/assests/webp/SISTransparentLogoWhite.webp)no-repeat center center /49px;
     left: 0;
     right: 0;
     margin: 0 auto;
