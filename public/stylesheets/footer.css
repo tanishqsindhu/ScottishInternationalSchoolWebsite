@@ -1,0 +1,36 @@
+.brand-footer::after {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background: url("https://res.cloudinary.com/djfy7fvq1/image/upload/w_500/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg")
+		no-repeat fixed;
+	background-size: cover;
+	background-position: center calc(100% + 150px);
+	content: "";
+	opacity: 0.1;
+	top: 0;
+	bottom: 0;
+	transition: 0.8s ease-in-out;
+}
+.brand-footer {
+	display: block;
+	padding: 170px 0 10px 0;
+	background: #31251f;
+	margin: -100px 0 0;
+	z-index: 0;
+	position: relative;
+}
+.brand-footer .container {
+	z-index: 1;
+	position: relative;
+}
+
+.brand-footer a {
+	text-decoration: none;
+	color: #b3b3b3;
+}
+
+.brand-footer a:hover {
+	text-decoration: underline;
+}

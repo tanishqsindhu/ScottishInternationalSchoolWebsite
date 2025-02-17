@@ -1,0 +1,12 @@
+a .btn {
+	animation: backgroundImageColor 2s 1;
+}
+
+#btn:hover {
+	background-color: #eabd57; /* Hover background */
+	color: #ffffff; /* Hover text color */
+}
+#inverted-btn:hover {
+	background-color: #2e2f90; /* Hover background */
+	color: #980606; /* Hover text color */
+}

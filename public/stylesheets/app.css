@@ -1,16 +1,25 @@
-  body {
-    margin: 0;
-    font-family: 'Lato','Nunito Sans','Open Sans',sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color: #fff;
-  }
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-    display: block;
+body {
+	margin: 0;
+	font-family: "Lato", "Nunito Sans", "Open Sans", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
+	background-color: #fff;
+}
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+	display: block;
 }
 .main {
-    overflow-x: hidden;
-  }
+	overflow-x: hidden;
+}
