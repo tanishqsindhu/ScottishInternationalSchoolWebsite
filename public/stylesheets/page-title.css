@@ -37,25 +37,25 @@
     top: 0;
   }
   .title-branding::after {
-    left: 100%;
+    left: 80%;
   }
   .title-branding::before, .title-branding::after {
     content: "";
     top: 50%;
-    width: 60px;
+    width: 7%;
     height: 1px;
     background: #bba7a7;
     position: absolute;
   }
   .title-branding::before {
-    right: 100%;
+    right: 80%;
   }
   .title-branding img {
     margin-top: -15px;
     width: 15%;
   }
   .img-fluid {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
   }
   img {

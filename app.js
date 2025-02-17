@@ -29,6 +29,7 @@ const publicationsRoute = require("./routes/publications");
 const User = require("./models/user");
 const newsAndEvents = require("./models/newsAndEvents");
 const ContactUs = require("./models/contactUs");
+const Post = require("./models/post");
 
 // environment variables
 const secret = process.env.SECRET;
@@ -111,8 +112,13 @@ app.get("/", async (req, res) => {
 	res.render("home", { news });
 });
 
-app.get("/gallery", (req, res) => {
-	res.render("gallery");
+app.get("/gallery", async (req, res) => {
+	try {
+		const posts = await Post.find(); // Fetch posts from MongoDB
+		res.render("gallery", { posts });
+	} catch (error) {
+		res.status(500).send("Error fetching posts");
+	}
 });
 app.get("/contact-us", (req, res) => {
 	// const errorMessage='underConstruction'

@@ -1,11 +1,19 @@
 <% layout('layouts/boilerplate')%>
     <%- include('./partials/fixedSocials')%>
-        <section>
+        <section id="top" class="row">
             <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel"
                 data-bs-pause="false">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="4000">
-                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                        srcset="
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_400/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg 400w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_600/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg 600w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg 1000w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg 1500w
+                      "    sizes="(max-width: 600px) 100vw, 
+                      (max-width: 1000px) 80vw, 
+                      50vw"
                             class="d-block w-100" alt="school building" style="height: 500px;">
                         <div class="carousel-caption d-md-block"
                             style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
@@ -16,8 +24,17 @@
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="4000">
-                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg"
-                            class="d-block w-100" alt="school library" style="height: 500px;">
+                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg"
+                        srcset="
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_400/q_auto/f_auto/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg 400w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_600/q_auto/f_auto/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg 600w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg 1000w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/q_auto/f_auto/v1680681286/Scottish/qmysveadjshrudb6flnu.jpg 1500w
+                        
+                      "    sizes="(max-width: 600px) 100vw, 
+                      (max-width: 1000px) 80vw, 
+                      50vw"
+                            class="d-block w-100" alt="school library" style="height: 500px;" loading="lazy">
                         <div class="carousel-caption d-md-block"
                             style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
                             <h5 style="color: #f0bc1b;">School's Library</h5>
@@ -29,8 +46,16 @@
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="4000">
-                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
-                            class="d-block w-100" alt="school building" style="height: 500px;">
+                        <img src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+                        srcset="
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png 500w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_600/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png 600w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png 1000w,
+                        https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png 1500w
+                      "    sizes="(max-width: 600px) 100vw, 
+                      (max-width: 1000px) 80vw, 
+                      50vw"
+                            class="d-block w-100" alt="school building" style="height: 500px;" loading="lazy">
                         <div class="carousel-caption d-md-block"
                             style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
                             <h5 style="color: #f0bc1b;">Scottish International School</h5>
@@ -143,13 +168,13 @@
                                         <div class="section-title wow fadeInUp"
                                             style="visibility: visible; animation-name: fadeInUp;">
                                             <p class="title-branding mb-2"><img class="img-fluid"
-                                                    src="/assets/webp/SISTransparentLogo.webp" width="49px" height="49px">
+                                                    src="/assets/webp/SISTransparentLogo.webp" width="49px" height="49px" alt="logo">
                                             </p>
                                             <h2 class="p-color"><small>Gallery</small></h2>
                                         </div>
                                         <figcaption class="Gallery" style="padding-top: 0px;">
                                             <div class="box20">
-                                                <img class="img-fluid w-100" src="assets/webp/saveEarth.webp" alt="">
+                                                <img class="img-fluid w-100" src="assets/webp/saveEarth.webp" alt="save earth image">
 
                                                 <div class="content_visible">
                                                     <div class="imgtext">
@@ -199,7 +224,7 @@
                             <h2 class="text-center text-uppercase" style="color: #2f3091;"> news & events</h2>
                             <div class="section-title wow fadeInUp"
                                 style="visibility: visible; animation-name: fadeInUp;">
-                                <p class="title-branding mb-2"><img class="img-fluid"
+                                <p class="title-branding mb-2"><img class="img-fluid" alt="logo"
                                         src="/assets/webp/SISTransparentLogo.webp" width="49px" height="49px"></p>
                             </div>
                         </div>
@@ -208,7 +233,7 @@
                                 <div class="carouselNews">
                                     <% for(let i=(news.length-1);i>=(news.length-9);i--){ %>
                                         <% if(i>=0){ %>
-                                            <div class="carousel__face text-center" style="background-image: url(<%if(news[i].images.length){%><%=news[i].images[0].url%><%}else{%>https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688312952/No_image_Found_ioxitj.png<%}%>);"><span><a href="/news-events/<%= news[i]._id %>"
+                                            <div class="carousel__face text-center" style="background-image: url(<%if(news[i].images.length){%><%=news[i].images[0].url%><%}else{%>https://res.cloudinary.com/dlpq5gl1a/image/upload/w_500/q_auto/f_auto/v1688312952/No_image_Found_ioxitj.png<%}%>);"><span><a href="/news-events/<%= news[i]._id %>"
                                                         style="text-decoration:none; color:#eabd57;">
                                                         <h3><%= news[i].title %></h3>
                                                         <%if(news[i].shortDescription){%>
@@ -303,8 +328,8 @@
                             data-bs-ride="carousel" data-bs-pause="false">
                             <div class="carousel-inner">
                                 <div class="carousel-item active" data-bs-interval="4000">
-                                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
-                                        class="d-block w-100" alt="..." style="height: 700px;">
+                                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                                        class="d-block w-100" alt="School Building" style="height: 700px;">
                                     <div class=" d-block carousel-caption col- col-lg-5 justify-content-start">
                                         <form class="border rounded shadow px-4" action="/contact-us" method="post"
                                             style="background: var(--bs-body-bg);">
@@ -334,7 +359,7 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item" data-bs-interval="4000">
-                                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+                                    <img src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
                                         class="d-block w-100" alt="school building" style="height: 700px;">
                                     <div
                                         class="col-md-5 col-xl-5 col-xxl-5 d-block carousel-caption justify-content-start">
@@ -377,11 +402,11 @@
                                     data-bs-pause="false">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+                                            <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
                                                 class="d-block w-100" alt="school building">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+                                            <img src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
                                                 class="d-block w-100" alt="school building">
                                         </div>
                                     </div>
@@ -467,7 +492,7 @@
                             <h2 class="text-center text-uppercase" style="color: #2f3091;"> FACTS & FIGURES</h2>
                             <div class="section-title wow fadeInUp"
                                 style="visibility: visible; animation-name: fadeInUp;">
-                                <p class="title-branding mb-2"><img class="img-fluid"
+                                <p class="title-branding mb-2"><img class="img-fluid" alt="logo"
                                         src="/assets/webp/SISTransparentLogo.webp" width="49px" height="49px"></p>
                             </div>
                         </div>

@@ -93,16 +93,16 @@ color: #654f4f;
     border-style: none;
   }
   .title-branding::after {
-    left: 100%;
+    left: 80%;
   }
   .title-branding::before, .title-branding::after {
     content: "";
-    top: 66% !important;
-    width: 60px;
+    top: 50% !important;
+    width: 7%;
     height: 1px;
     background: #bba7a7;
     position: absolute;
   }
   .title-branding::before {
-    right: 100%;
+    right: 80%;
   }

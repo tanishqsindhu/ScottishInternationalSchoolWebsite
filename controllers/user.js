@@ -29,7 +29,6 @@ module.exports.renderLogin=(req,res)=>{
 
 module.exports.login=(req,res)=>{
     const redirectUrl= req.session.returnTo || '/';
-    console.log(req.user)
     req.flash('success','Welcome Back!');
     res.redirect(redirectUrl);
 }

@@ -63,7 +63,7 @@
 }
 
 .carousel-item img {
-	animation: zoominoutsinglefeatured 7s infinite;
+	animation: zoominoutsinglefeatured 6s infinite;
 }
 .main-title h2::before {
 	position: absolute;

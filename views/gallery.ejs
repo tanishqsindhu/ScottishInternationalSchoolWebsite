@@ -12,9 +12,9 @@
 				<div class="carousel-inner">
 					<div class="carousel-item active" data-bs-interval="3000">
 						<img
-							src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+							src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
 							class="d-block w-100"
-							alt="..."
+							alt="School Building"
 							style="height: 70vh"
 						/>
 						<!-- <div class="carousel-caption d-none d-md-block">
@@ -24,9 +24,9 @@
 					</div>
 					<div class="carousel-item" data-bs-interval="3000">
 						<img
-							src="https://res.cloudinary.com/djfy7fvq1/image/upload/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+							src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
 							class="d-block w-100"
-							alt="..."
+							alt="School Building"
 							style="height: 70vh"
 						/>
 						<!-- <div class="carousel-caption d-none d-md-block">
@@ -48,8 +48,26 @@
 		</div>
 	</div>
 </section>
-<div class="container">
-	<div class="row mt-5 mb-5">
+<div class="container mt-4">
+	<div class="row">
+		<% posts.forEach(post => { %>
+		<div class="col p-2">
+			<iframe
+				src="https://www.facebook.com/plugins/post.php?href=<%=post.url %>&show_text=true&width=500"
+				width="500"
+				height="730"
+				style="border: none; overflow: hidden"
+				scrolling="no"
+				frameborder="0"
+				data-lazy="true"
+				loading="lazy"
+				allowfullscreen="true"
+				allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+			></iframe>
+		</div>
+		<% }); %>
+	</div>
+	<!-- <div class="row mt-5 mb-5">
 		<div class="col">
 			<iframe
 				frameborder="1"
@@ -119,6 +137,7 @@
 				allowfullscreen="true"
 				allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
 				loading="lazy"
+				data-lazy="true"
 			></iframe>
 		</div>
 		<div class="col">
@@ -132,6 +151,7 @@
 				allowfullscreen="true"
 				allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
 				loading="lazy"
+				data-lazy="true"
 			></iframe>
 		</div>
 	</div>
@@ -246,7 +266,7 @@
 				loading="lazy"
 			></iframe>
 		</div>
-	</div>
+	</div> -->
 </div>
 
 <style>
