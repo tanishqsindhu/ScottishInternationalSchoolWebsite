@@ -109,7 +109,18 @@ app.use((req, res, next) => {
 
 app.get("/", async (req, res) => {
 	const news = await newsAndEvents.find({});
-	res.render("home", { news });
+	const images = [
+		"https://res.cloudinary.com/djfy7fvq1/image/upload/f_auto,q_auto/v1/Scottish/principal",
+		"https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688487437/Scottish/nwwdzbutcsxl8263gbul.jpg",
+		"https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688485737/Scottish/nd4pkwmz4lji8akh696a.jpg",
+		"https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688485911/Scottish/sduujl3khhgvuy0kchbc.jpg",
+		"https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688486118/Scottish/lbydbokbc7qnpxkftua1.jpg",
+		"https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688486818/Scottish/vkbhyf8n18z73j6wbfml.jpg",
+		"https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688487882/Scottish/m875wsi1maelf0pnsc5j.jpg",
+		"https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688487054/Scottish/gtrxgyxjux4dfoioaeow.jpg",
+		"https://res.cloudinary.com/dlpq5gl1a/image/upload/v1688563913/Scottish/mmoz0fzr2wmt0yu8gdk8.jpg",
+	];
+	res.render("home", { news, images });
 });
 
 app.get("/gallery", async (req, res) => {
@@ -183,15 +194,16 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
 	const { statusCode = 500 } = err;
 	if (!err.message) err.message = "Oh No, Something Went Wrong!";
-	errorLog(statusCode, err.message);
-	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo });
-	if (process.env.NODE_ENV !== "production") {
+	if (process.env.NODE_ENV == "production") {
+		errorLog(statusCode, err.message);
+
 		async function errorLog(statusCode, message) {
 			const date = new Date();
 			const errorLog = new ErrorLogSchema({ statusCode, message, stack: err.stack, date });
 			await errorLog.save();
 		}
 	}
+	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo });
 });
 
 const port = process.env.PORT || 3000;

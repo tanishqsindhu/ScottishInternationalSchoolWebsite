@@ -1,0 +1,58 @@
+.carousel-container1 {
+	max-height: 35rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel1 {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.slide1 {
+	min-width: 25%;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.slide1 img {
+	max-height: 30rem;
+	width: 100%;
+	border-radius: 10px;
+}
+
+.nav-buttons {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	transform: translateY(-50%);
+	z-index: 3;
+}
+
+#prev,
+#next {
+	background: #f1f1f1;
+	color: #980606;
+	border-radius: 50%;
+	padding: 0.8rem;
+	cursor: pointer;
+	border: none;
+	font-size: 1rem;
+}
+
+#prev {
+	position: absolute;
+	left: 1rem;
+}
+
+#next {
+	position: absolute;
+	right: 2.7rem;
+}
+
+#prev:hover,
+#next:hover {
+	background: #0056b3;
+}

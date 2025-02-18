@@ -145,6 +145,53 @@
                     </div>
                 </div>
             </div>
+            <section data-aos="fade-up" class="newsAndEvents container mt-5">
+                <div class="row">
+                    <div class="row">
+                        <h2 class="text-center text-uppercase" style="color: #2f3091;"> news & events</h2>
+                        <div class="section-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <p class="title-branding mb-2"><img class="img-fluid" alt="logo"
+                                    src="/assets/webp/SISTransparentLogo.webp" width="49px" height="49px"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="containernews">
+                            <div class="carouselNews">
+                                <% for(let i=(news.length-1);i>=(news.length-9);i--){ %>
+                                    <% if(i>=0){ %>
+                                        <div class="carousel__face text-center"
+                                            style="background-image: url(<%if(news[i].images.length){%><%=news[i].images[0].url%><%}else{%>https://res.cloudinary.com/dlpq5gl1a/image/upload/w_500/q_auto/f_auto/v1688312952/No_image_Found_ioxitj.png<%}%>);">
+                                            <span><a href="/news-events/<%= news[i]._id %>"
+                                                    style="text-decoration:none; color:#eabd57;">
+                                                    <h3>
+                                                        <%= news[i].title %>
+                                                    </h3>
+                                                    <%if(news[i].shortDescription){%>
+                                                        <p style=" color:#eabd57; ">
+                                                            <%= news[i].shortDescription %>
+                                                        </p>
+                                                        <% }else{ %>
+                                                            <p style=" color:#eabd57;">
+                                                                <%= news[i].paragraph1 %>
+                                                            </p>
+                                                            <% } %>
+                                            </span></a>
+                                        </div>
+                                        <% } %>
+                                            <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-single pt-3 pt-md-4 text-left" style="background-color: transparent;">
+                        <div>
+                            <figcaption class="Gallery" style="padding-top: 0px;">
+                                <div class="readMore"><a href="/news-events" title="Read More"><span>Load
+                                            More</span></a></div>
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="messages">
                 <div class="container" data-aos="fade-up">
                     <div class="row mt-5 mb-5">
@@ -221,56 +268,44 @@
                         </div>
                     </div>
             </section>
-            <section data-aos="fade-up" class="newsAndEvents container">
-                <div class="row">
+            <section class="pt-5 mb-5" data-aos="fade-up" style="background-color: #f1f1f1;">
+                <div class="Parents-conner container">
                     <div class="row">
-                        <h2 class="text-center text-uppercase" style="color: #2f3091;"> news & events</h2>
+                        <h2 class="text-center text-uppercase" style="color: #2f3091;">Scottish Testimonial</h2>
                         <div class="section-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                             <p class="title-branding mb-2"><img class="img-fluid" alt="logo"
                                     src="/assets/webp/SISTransparentLogo.webp" width="49px" height="49px"></p>
+                            <p>Every member
+                                of our school community has a unique story to tell. From transformative learning
+                                experiences to moments of personal achievement, these stories showcase the spirit and
+                                values that define us. Hear directly from our alumni, students, parents, and well
+                                wishers. </p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="containernews">
-                            <div class="carouselNews">
-                                <% for(let i=(news.length-1);i>=(news.length-9);i--){ %>
-                                    <% if(i>=0){ %>
-                                        <div class="carousel__face text-center"
-                                            style="background-image: url(<%if(news[i].images.length){%><%=news[i].images[0].url%><%}else{%>https://res.cloudinary.com/dlpq5gl1a/image/upload/w_500/q_auto/f_auto/v1688312952/No_image_Found_ioxitj.png<%}%>);">
-                                            <span><a href="/news-events/<%= news[i]._id %>"
-                                                    style="text-decoration:none; color:#eabd57;">
-                                                    <h3>
-                                                        <%= news[i].title %>
-                                                    </h3>
-                                                    <%if(news[i].shortDescription){%>
-                                                        <p style=" color:#eabd57; ">
-                                                            <%= news[i].shortDescription %>
-                                                        </p>
-                                                        <% }else{ %>
-                                                            <p style=" color:#eabd57;">
-                                                                <%= news[i].paragraph1 %>
-                                                            </p>
-                                                            <% } %>
-                                            </span></a>
-                                        </div>
-                                        <% } %>
-                                            <% } %>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="carousel-container1">
+                        <div class="carousel1">
+                            <% images.forEach(img=> { %>
+                                <div class="slide1"><img src="<%= img %>" alt="Image 1" style="min-height: 100%;">
+                                </div>
+                                <% }) %>
                         </div>
-                    </div>
-                    <div class="service-single pt-3 pt-md-4 text-left" style="background-color: transparent;">
-                        <div>
-                            <figcaption class="Gallery" style="padding-top: 0px;">
-                                <div class="readMore"><a href="/news-events" title="Read More"><span>Load
-                                            More</span></a></div>
-                            </figcaption>
+                        <div class="nav-buttons">
+                            <button id="prev">&#10094;</button>
+                            <button id="next">&#10095;</button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="contact">
+            <section class="contact mt-5">
                 <div class="container" data-aos="fade-up">
                     <div class="row">
+                        <h2 class="text-center text-uppercase" style="color: #2f3091;"></h2>
+                        <div class="section-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <p class="title-branding mb-2"><img class="img-fluid" alt="logo"
+                                    src="/assets/webp/SISTransparentLogo.webp" width="49px" height="49px"></p>
+                        </div>
                         <div id="contactUsForm">
                             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"
                                 data-bs-pause="false">
@@ -407,6 +442,8 @@
 
             <link rel="stylesheet" href="/stylesheets/button.css">
             <link rel="stylesheet" href="/stylesheets/home.css">
+            <link rel="stylesheet" href="/stylesheets/infinty-carousel.css">
+            <script src="/javascripts/infinty-carousel.js"></script>
             <style>
                 @media (max-width:770px) {
 
