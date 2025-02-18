@@ -43,22 +43,18 @@
 
 @keyframes backgroundImageColorInverted {
 	0% {
-		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
-			49px;
+		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
 	}
 	100% {
-		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
-			49px;
+		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
 	}
 }
 @keyframes backgroundImageColor {
 	0% {
-		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
-			49px;
+		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
 	}
 	100% {
-		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
-			49px;
+		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
 	}
 }
 
@@ -107,25 +103,25 @@
 	border: 6px solid #2e2f90;
 	border-radius: 8%;
 	margin-top: 105px;
-	width: 410px;
+	width: 25rem;
 }
 
 .circle figure {
 	position: relative;
 	border: 6px solid #2e2f90;
-	width: 300px;
-	height: 300px;
+	width: 18rem;
+	height: 18rem;
 	border-radius: 50%;
 	overflow: hidden;
 	margin: 0 auto;
 }
 #contactUsForm img {
-	height: 700px;
+	height: 50rem;
 }
 #contactUsForm {
 	position: relative;
 	width: 100%;
-	height: 700px;
+	height: 50rem;
 }
 
 #contactUsForm .contactForm {
@@ -139,26 +135,54 @@
 	left: 3%;
 	width: 45%;
 }
-@media (max-width: 433px) {
+
+@media (max-width: 770px) {
 	.rectangle {
-		width: 350px;
+		width: 25rem;
 		height: 89%;
 		margin-left: 15px;
+		margin-bottom: 2rem;
 	}
 	.circle figure {
-		width: 250px;
-		height: 250px;
+		width: 18rem;
+		height: 18rem;
 		margin-top: 10px;
 	}
+
 	#contactUsForm .contactForm {
 		width: 75%;
 		margin: 9%;
 	}
 	#contactUsForm {
-		height: 880px;
+		height: 60rem;
 	}
 	#contactUsForm img {
-		height: 900px;
+		height: 65rem;
+	}
+}
+
+@media (max-width: 433px) {
+	.rectangle {
+		width: 22rem;
+		height: 89%;
+		margin-left: 15px;
+		margin-bottom: 2rem;
+	}
+	.circle figure {
+		width: 15rem;
+		height: 15rem;
+		margin-top: 10px;
+	}
+
+	#contactUsForm .contactForm {
+		width: 75%;
+		margin: 9%;
+	}
+	#contactUsForm {
+		height: 60rem;
+	}
+	#contactUsForm img {
+		height: 65rem;
 	}
 }
 
@@ -222,7 +246,7 @@
 	border: 6px solid #eabd57;
 	margin-top: 105px;
 	border-radius: 8%;
-	width: 410px;
+	width: 25rem;
 }
 
 .rectangle-inverted .circle-inverted {
@@ -236,22 +260,37 @@
 .circle-inverted figure {
 	position: relative;
 	border: 6px solid #eabd57;
-	width: 300px;
-	height: 300px;
+	width: 18rem;
+	height: 18rem;
 	border-radius: 50%;
 	overflow: hidden;
 	margin: 0 auto;
 }
 
-@media (max-width: 433px) {
+@media (max-width: 770px) {
 	.rectangle-inverted {
-		width: 350px;
+		width: 25rem;
 		height: 89%;
 		margin-left: 15px;
+		margin-bottom: 2rem;
 	}
 	.circle-inverted figure {
-		width: 250px;
-		height: 250px;
+		width: 18rem;
+		height: 18rem;
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 433px) {
+	.rectangle-inverted {
+		width: 22rem;
+		height: 89%;
+		margin-left: 15px;
+		margin-bottom: 2rem;
+	}
+	.circle-inverted figure {
+		width: 15rem;
+		height: 15rem;
 		margin-top: 10px;
 	}
 }

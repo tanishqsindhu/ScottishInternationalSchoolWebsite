@@ -20,6 +20,6 @@ nav,
 section {
 	display: block;
 }
-.main {
-	overflow-x: hidden;
+ul {
+	list-style: none;
 }

@@ -183,7 +183,15 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
 	const { statusCode = 500 } = err;
 	if (!err.message) err.message = "Oh No, Something Went Wrong!";
-	res.status(statusCode).render("error", { err });
+	errorLog(statusCode, err.message);
+	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo });
+	if (process.env.NODE_ENV !== "production") {
+		async function errorLog(statusCode, message) {
+			const date = new Date();
+			const errorLog = new ErrorLogSchema({ statusCode, message, stack: err.stack, date });
+			await errorLog.save();
+		}
+	}
 });
 
 const port = process.env.PORT || 3000;

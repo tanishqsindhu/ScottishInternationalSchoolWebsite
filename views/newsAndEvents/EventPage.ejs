@@ -120,30 +120,30 @@
                                         <div class="text readMoreText">
                                             <p></p>
 
-                                            <div>
+                                            <div data-aos="fade-up">
                                                 <%=news.paragraph1 %>.
                                             </div>
                                             <div>&nbsp;</div>
                                             <% if(news.paragraph2!='' ){ %>
-                                                <div>
+                                                <div data-aos="fade-up">
                                                     <%=news.paragraph2 %>.
                                                 </div>
                                                 <div>&nbsp;</div>
                                                 <% } %>
                                                     <% if(news.paragraph3!='' ){ %>
-                                                        <div>
+                                                        <div data-aos="fade-up">
                                                             <%=news.paragraph3 %>.
                                                         </div>
                                                         <div>&nbsp;</div>
                                                         <% } %>
                                                             <% if(news.paragraph4!='' ){ %>
-                                                                <div>
+                                                                <div data-aos="fade-up">
                                                                     <%=news.paragraph4 %>.&nbsp;
                                                                 </div>
-                                                                <div>&nbsp;</div>
+                                                                <div data-aos="fade-up">&nbsp;</div>
                                                                 <% } %>
                                                                     <% if(news.paragraph5!='' ){ %>
-                                                                        <div>
+                                                                        <div data-aos="fade-up">
                                                                             <%=news.paragraph5 %>.
                                                                         </div>
                                                                         <% } %>
@@ -155,10 +155,13 @@
                             <% if(currentUser) {%>
                                 <% if(currentUser.role.includes('articlesEditor')) {%>
                                     <span>
-                                    <a class="btn btn-outline-info " href="/news-events/<%=news._id%>/edit">Edit</a>
-                                    <form class="d-inline-block" action="/news-events/<%=news._id%>?_method=DELETE" method="POST">
-                                        <button type="submit" class="btn btn-block btn-outline-danger col">Delete</button>
-                                    </form></span>
+                                        <a class="btn btn-outline-info " href="/news-events/<%=news._id%>/edit">Edit</a>
+                                        <form class="d-inline-block" action="/news-events/<%=news._id%>?_method=DELETE"
+                                            method="POST">
+                                            <button type="submit"
+                                                class="btn btn-block btn-outline-danger col">Delete</button>
+                                        </form>
+                                    </span>
                                     <% } %>
                                         <% } %>
                         </div>
