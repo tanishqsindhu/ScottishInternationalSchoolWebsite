@@ -1029,8 +1029,8 @@ ol {
 	color: #fff;
 	text-align: center;
 	border-radius: 50%;
-	width: 130px;
-	height: 130px;
+	width: 10rem;
+	height: 10rem;
 	background: rgb(60, 46, 46);
 	margin: 0 auto;
 	display: -webkit-flex;
