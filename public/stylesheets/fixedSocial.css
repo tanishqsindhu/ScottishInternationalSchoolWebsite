@@ -1,27 +1,50 @@
-.fixedSocial {
+:root {
+	--social-icon-size: 3rem;
+	--social-border-color: #fda2a2;
+	--social-box-shadow: 0 5px 5px rgba(45, 45, 45, 0.4);
+}
+
+/* Container to manage social icons' layout */
+.fixed-social-container {
 	position: fixed;
-	right: 0;
-	z-index: 5;
+	right: 1rem;
 	top: 40%;
-	font-size: 25px;
-	height: 3rem;
-	width: 3rem;
-	background: #ff2121;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	z-index: 5;
+}
+
+/* Base styles for all social icons */
+.fixedSocial {
+	width: var(--social-icon-size);
+	height: var(--social-icon-size);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #ffffff !important;
 	border-radius: 50%;
-	border: 2px solid #fda2a2;
-	margin: 0 1rem 0 0;
-	box-shadow: 0 5px 5px rgb(45 45 45 / 40%);
-	overflow: hidden;
+	border: 2px solid var(--social-border-color);
+	color: #ffffff !important;
+	font-size: 25px;
+	box-shadow: var(--social-box-shadow);
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.fixedSocial.fixedSocial-instagram {
-	top: 50%;
+
+/* Hover effect */
+.fixedSocial:hover {
+	transform: scale(1.1);
+	box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Social Media Background Colors */
+.fixedSocial-youtube {
+	background: #ff2121;
+}
+
+.fixedSocial-instagram {
 	background: linear-gradient(30deg, #de1130, #8e4bc3);
 }
-.fixedSocial.fixedSocial-linkedin {
-	top: 60%;
-	background: #0077b5;
+
+.fixedSocial-facebook {
+	background: #1877f2;
 }

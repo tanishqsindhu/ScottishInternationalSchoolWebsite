@@ -33,7 +33,7 @@
 
 #prev,
 #next {
-	background: #f1f1f1;
+	background-color: rgba(241, 241, 241, 0.4);
 	color: #980606;
 	border-radius: 50%;
 	padding: 0.8rem;

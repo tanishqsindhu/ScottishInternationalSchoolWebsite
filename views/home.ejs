@@ -268,6 +268,7 @@
                         </div>
                     </div>
             </section>
+            <% if(parentTestimonial&&parentTestimonial.length>0){ %>
             <section class="pt-5 mb-5" data-aos="fade-up" style="background-color: #f1f1f1;">
                 <div class="Parents-conner container">
                     <div class="row">
@@ -286,7 +287,7 @@
                 <div class="row">
                     <div class="carousel-container1">
                         <div class="carousel1">
-                            <% images.forEach(img=> { %>
+                            <% parentTestimonial.forEach(img=> { %>
                                 <div class="slide1"><img src="<%= img %>" alt="Image 1" style="min-height: 100%;">
                                 </div>
                                 <% }) %>
@@ -298,6 +299,7 @@
                     </div>
                 </div>
             </section>
+            <% } %>
             <section class="contact mt-5">
                 <div class="container" data-aos="fade-up">
                     <div class="row">
@@ -393,7 +395,7 @@
                                 <div class="single_counter ">
                                     <div>
                                         <h2>
-                                            <i class="fa-solid fa-futbol fa-bounce"></i>
+                                            <i class="fa-solid fa-futbol fa-bounce"style="margin-bottom: -0.3rem;"></i>
                                             <span class="counting" data-count="30"
                                                 style="font-size: 40px;">30</span><span>+</span>
                                             <!-- <br><small style="font-size: 30px;">Sports</small> -->
@@ -406,7 +408,7 @@
                                 <div class="single_counter ">
                                     <div>
                                         <h2>
-                                            <i class="fa-solid fa-chalkboard-user"></i>
+                                            <i class="fa-solid fa-chalkboard-user"style="margin-bottom: -0.3rem;"></i>
                                             <span class="counting">1:9</span>
                                         </h2>
                                     </div>
@@ -417,7 +419,7 @@
                                 <div class="single_counter ">
                                     <div>
                                         <h2>
-                                            <i class="fa-solid fa-medal fa-beat"></i>
+                                            <i class="fa-solid fa-medal fa-beat" style="margin-bottom: -0.3rem;"></i>
                                             <span class="counting" data-count="25000">2000</span><span>+</span>
                                         </h2>
                                     </div>

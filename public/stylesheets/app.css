@@ -8,18 +8,16 @@ body {
 	text-align: left;
 	background-color: #fff;
 }
-article,
-aside,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section {
-	display: block;
-}
+
 ul {
 	list-style: none;
+}
+
+/* Fix Bootstrap row margin issue */
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+#carouselExampleSlidesOnly {
+	padding: 0;
 }
