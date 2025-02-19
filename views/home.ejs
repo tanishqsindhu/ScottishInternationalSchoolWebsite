@@ -13,8 +13,8 @@
                       " sizes="(max-width: 600px) 100vw, 
                       (max-width: 1000px) 80vw, 
                       50vw" class="d-block w-100" alt="school building" style="height: 500px;">
-                    <div class="carousel-caption d-md-block"
-                        style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
+                    <div class="carousel-caption d-md-block rounded"
+                        style="background-color:rgb(66, 39, 26,0.4);">
                         <h5 style="color: #f0bc1b;">Scottish Academy of Excellence</h5>
                         <p style="color: #f0bc1b;">Welcome to our school building, a place where learning thrives
                             and futures are shaped! Our school is designed to provide a safe, engaging, and
@@ -32,8 +32,8 @@
                       " sizes="(max-width: 600px) 100vw, 
                       (max-width: 1000px) 80vw, 
                       50vw" class="d-block w-100" alt="school library" style="height: 500px;" loading="lazy">
-                    <div class="carousel-caption d-md-block"
-                        style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
+                    <div class="carousel-caption d-md-block rounded"
+                        style="background-color:rgb(66, 39, 26,0.4);">
                         <h5 style="color: #f0bc1b;">School's Library</h5>
                         <p style="color: #f0bc1b;">Welcome to our student-focused library, where knowledge meets
                             opportunity!Our library boasts a vast collection of academic materials, carefully
@@ -52,8 +52,8 @@
                       " sizes="(max-width: 600px) 100vw, 
                       (max-width: 1000px) 80vw, 
                       50vw" class="d-block w-100" alt="school building" style="height: 500px;" loading="lazy">
-                    <div class="carousel-caption d-md-block"
-                        style="background-color:rgb(66, 39, 26,0.4); border-radius: 2%;">
+                    <div class="carousel-caption d-md-block rounded"
+                        style="background-color:rgb(66, 39, 26,0.4);">
                         <h5 style="color: #f0bc1b;">Scottish International School</h5>
                         <p style="color: #f0bc1b;;">Welcome to our school building, a place where learning thrives
                             and futures are shaped! Our school is designed to provide a safe, engaging, and
@@ -147,49 +147,38 @@
             </div>
             <section data-aos="fade-up" class="newsAndEvents container mt-5">
                 <div class="row">
-                    <div class="row">
-                        <h2 class="text-center text-uppercase" style="color: #2f3091;"> news & events</h2>
-                        <div class="section-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                            <p class="title-branding mb-2"><img class="img-fluid" alt="logo"
-                                    src="/assets/webp/SISTransparentLogo.webp" width="49px" height="49px"></p>
+                    <h2 class="text-center text-uppercase" style="color: #2f3091;">News & Events</h2>
+                    <div class="section-title wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <p class="title-branding mb-2">
+                            <img class="img-fluid" alt="logo" src="/assets/webp/SISTransparentLogo.webp" width="49" height="49">
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="containernews">
+                        <div class="carouselNews">
+                            <% for(let i = news.length - 1; i >= news.length - 9; i--) { %>
+                                <% if(i >= 0) { %>
+                                    <article class="carousel__face text-center"
+                                        style="background-image: url(<%= news[i].images.length ? news[i].images[0].url : 'https://res.cloudinary.com/dlpq5gl1a/image/upload/w_500/q_auto/f_auto/v1688312952/No_image_Found_ioxitj.png' %>);">
+                                        <a href="/news-events/<%= news[i]._id %>" style="text-decoration: none; color: #eabd57;">
+                                            <h3 class="fs-3"><%= news[i].title %></h3>
+                                            <p class="text-break" style="color: #eabd57;">
+                                                <%= news[i].shortDescription || news[i].paragraph1 %>
+                                            </p>
+                                        </a>
+                                    </article>
+                                <% } %>
+                            <% } %>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="containernews">
-                            <div class="carouselNews">
-                                <% for(let i=(news.length-1);i>=(news.length-9);i--){ %>
-                                    <% if(i>=0){ %>
-                                        <div class="carousel__face text-center"
-                                            style="background-image: url(<%if(news[i].images.length){%><%=news[i].images[0].url%><%}else{%>https://res.cloudinary.com/dlpq5gl1a/image/upload/w_500/q_auto/f_auto/v1688312952/No_image_Found_ioxitj.png<%}%>);">
-                                            <span><a href="/news-events/<%= news[i]._id %>"
-                                                    style="text-decoration:none; color:#eabd57;">
-                                                    <h3>
-                                                        <%= news[i].title %>
-                                                    </h3>
-                                                    <%if(news[i].shortDescription){%>
-                                                        <p style=" color:#eabd57; ">
-                                                            <%= news[i].shortDescription %>
-                                                        </p>
-                                                        <% }else{ %>
-                                                            <p style=" color:#eabd57;">
-                                                                <%= news[i].paragraph1 %>
-                                                            </p>
-                                                            <% } %>
-                                            </span></a>
-                                        </div>
-                                        <% } %>
-                                            <% } %>
-                            </div>
+                </div>
+                <div class="service-single pt-3 pt-md-4 text-left" style="background-color: transparent;">
+                    <figcaption class="Gallery" style="padding-top: 0;">
+                        <div class="readMore">
+                            <a href="/news-events" title="Read More"><span>Load More</span></a>
                         </div>
-                    </div>
-                    <div class="service-single pt-3 pt-md-4 text-left" style="background-color: transparent;">
-                        <div>
-                            <figcaption class="Gallery" style="padding-top: 0px;">
-                                <div class="readMore"><a href="/news-events" title="Read More"><span>Load
-                                            More</span></a></div>
-                            </figcaption>
-                        </div>
-                    </div>
+                    </figcaption>
                 </div>
             </section>
             <section class="messages">
