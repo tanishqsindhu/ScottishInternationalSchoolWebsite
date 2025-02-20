@@ -5,8 +5,8 @@ let visibleCount = getVisibleCount();
 const buffer = visibleCount; // Number of extra slides to clone for infinite looping
 
 function getVisibleCount() {
-	if (window.innerWidth < 600) return 2; // Mobile
-	if (window.innerWidth < 900) return 3; // Tablet
+	if (window.innerWidth < 600) return 1; // Mobile
+	if (window.innerWidth < 900) return 2; // Tablet
 	if (window.innerWidth > 1500) return 6; // Extra Wide Display
 	return 4; // Desktop default
 }

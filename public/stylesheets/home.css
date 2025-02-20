@@ -58,9 +58,6 @@
 	}
 }
 
-.carousel-item img {
-	animation: zoominoutsinglefeatured 6s infinite;
-}
 .main-title h2::before {
 	position: absolute;
 	right: 0;
@@ -136,7 +133,7 @@
 	width: 45%;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 990px) {
 	.rectangle {
 		width: 25rem;
 		height: 89%;
@@ -144,8 +141,8 @@
 		margin-bottom: 2rem;
 	}
 	.circle figure {
-		width: 18rem;
-		height: 18rem;
+		width: 16rem;
+		height: 16rem;
 		margin-top: 10px;
 	}
 
@@ -267,7 +264,7 @@
 	margin: 0 auto;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 990px) {
 	.rectangle-inverted {
 		width: 25rem;
 		height: 89%;
@@ -275,8 +272,8 @@
 		margin-bottom: 2rem;
 	}
 	.circle-inverted figure {
-		width: 18rem;
-		height: 18rem;
+		width: 16rem;
+		height: 16rem;
 		margin-top: 10px;
 	}
 }
@@ -530,6 +527,18 @@ small {
 .title-branding::after {
 	left: 68%;
 }
+
+@media screen and (max-width: 770px) {
+	.readMore a::before,
+	.readMore a::after {
+		width: 100%;
+	}
+	.readMore a span::before,
+	.readMore a span::after {
+		height: 100%;
+	}
+}
+
 @media screen and (min-width: 770px) {
 	.title-branding::before,
 	.title-branding::after {
