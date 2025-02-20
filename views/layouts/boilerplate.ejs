@@ -1,80 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Scottish International School</title>
 
-		<!-- SEO Meta Tags -->
-		<meta
-			name="description"
-			content="At Scottish International School, we nurture the inherent potential of every child, emphasizing their intellectual, creative, physical, mental, and social abilities. Our well-equipped studios for dance, music, and art & craft, along with our auditorium, library, eco-friendly campus, indoor-outdoor sports facilities, science labs, computer lab, and swimming pool, provide a conducive environment for holistic development."
-		/>
-		<meta
-			name="keywords"
-			content="Scottish International School, International School, Education, Holistic Learning,Hisar,Best School,Best,Top 10,Top,School"
-		/>
-		<meta name="author" content="Scottish International School" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Scottish International School</title>
 
-		<!-- Favicon -->
-		<link
-			rel="icon"
-			href="https://res.cloudinary.com/djfy7fvq1/image/upload/w_250/q_auto/f_auto/v1678905543/Scottish/IMG_6289_ingaog.jpg"
-			type="image/x-icon"
-		/>
+	<!-- SEO Meta Tags -->
+	<meta name="description"
+		content="At Scottish International School, we nurture the inherent potential of every child, emphasizing their intellectual, creative, physical, mental, and social abilities. Our well-equipped studios for dance, music, and art & craft, along with our auditorium, library, eco-friendly campus, indoor-outdoor sports facilities, science labs, computer lab, and swimming pool, provide a conducive environment for holistic development." />
+	<meta name="keywords"
+		content="Scottish International School, International School, Education, Holistic Learning,Hisar,Best School,Best,Top 10,Top,School" />
+	<meta name="author" content="Scottish International School" />
 
-		<!-- Preconnect for External Resources -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<!-- Favicon -->
+	<link rel="icon"
+		href="https://res.cloudinary.com/djfy7fvq1/image/upload/w_250/q_auto/f_auto/v1678905543/Scottish/IMG_6289_ingaog.jpg"
+		type="image/x-icon" />
 
-		<!-- Google Fonts (Single Request for Efficiency) -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&family=Open+Sans:wght@300&display=swap"
-			rel="stylesheet"
-		/>
+	<!-- Preconnect for External Resources -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-		<!-- Bootstrap CSS -->
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-		/>
+	<!-- Google Fonts (Single Request for Efficiency) -->
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&family=Open+Sans:wght@300&display=swap"
+		rel="stylesheet" />
 
-		<!-- AOS Animation CSS -->
-		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 
-		<!-- Custom Stylesheet -->
-		<link rel="stylesheet" href="/stylesheets/app.css" />
-	</head>
+	<!-- AOS Animation CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-	<body class="d-flex flex-column container-fluid p-0">
-		<main class="main vh-100 m-0 p-0">
-			<%- include('../partials/navbar') %> <%- include('../partials/fixedSocials') %><%- body %> <%-
-			include('../partials/footer') %>
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/app.css" />
+</head>
+
+<body class="d-flex flex-column vh-100">
+
+	<%- include('../partials/navbar')%>
+		<main class="flex-grow-1">
+			<%- include('../partials/fixedSocials')%>
+				<%- body %>
 		</main>
+		<%- include('../partials/footer')%>
 
-		<!-- FontAwesome Icons -->
-		<script src="https://kit.fontawesome.com/eb475ea0e9.js" crossorigin="anonymous" defer></script>
+			<!-- FontAwesome Icons -->
+			<script src="https://kit.fontawesome.com/eb475ea0e9.js" crossorigin="anonymous" defer></script>
 
-		<!-- Bootstrap Bundle (with Popper) -->
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-			defer
-		></script>
+			<!-- Bootstrap Bundle (with Popper) -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
-		<!-- AOS Animation Script -->
-		<script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-		<script defer>
-			document.addEventListener("DOMContentLoaded", function () {
-				AOS.init({
-					offset: 150,
-					duration: 800,
-					delay: 150,
-					mirror: true,
+			<!-- AOS Animation Script -->
+			<script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+			<script defer>
+				document.addEventListener("DOMContentLoaded", function () {
+					AOS.init({
+						offset: 150,
+						duration: 800,
+						delay: 150,
+						mirror: true,
+					});
 				});
-			});
-		</script>
+			</script>
+			<link rel="stylesheet" href="/stylesheets/image-banner.css" />
 
-		<!-- Custom JavaScript -->
-		<script src="/javascripts/validateForms.js" defer></script>
-	</body>
+			<!-- Custom JavaScript -->
+			<script src="/javascripts/validateForms.js" defer></script>
+</body>
+
 </html>

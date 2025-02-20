@@ -85,9 +85,9 @@ h3.title-medium {
 	width: 70px;
 	margin: 0 0 16px 0;
 }
-ul li {
+.readMoreText ul li {
 	margin-bottom: 10px;
-	font-size: 20px;
+	font-size: 1.2rem;
 }
 
 .admission-overview .style-section-2 .style-section-text {

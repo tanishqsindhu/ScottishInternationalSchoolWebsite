@@ -43,22 +43,18 @@
 
 @keyframes backgroundImageColorInverted {
 	0% {
-		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
-			49px;
+		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
 	}
 	100% {
-		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
-			49px;
+		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
 	}
 }
 @keyframes backgroundImageColor {
 	0% {
-		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
-			49px;
+		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
 	}
 	100% {
-		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
-			49px;
+		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
 	}
 }
 
@@ -635,7 +631,7 @@ img {
 	position: absolute;
 	width: 90%; /* Use relative width */
 	max-width: var(--carousel-width); /* Limit maximum width */
-	height: 150px; /* Adjust height for smaller screens */
+	height: 12rem; /* Adjust height for smaller screens */
 	top: 20px;
 	left: 5%; /* Center the element */
 	background-size: cover;
@@ -663,6 +659,34 @@ img {
 	font-size: 65%;
 }
 
+.carousel__face:nth-child(1) {
+	transform: rotateY(0deg) translateZ(25rem);
+}
+.carousel__face:nth-child(2) {
+	transform: rotateY(40deg) translateZ(25rem);
+}
+.carousel__face:nth-child(3) {
+	transform: rotateY(80deg) translateZ(25rem);
+}
+.carousel__face:nth-child(4) {
+	transform: rotateY(120deg) translateZ(25rem);
+}
+.carousel__face:nth-child(5) {
+	transform: rotateY(160deg) translateZ(25rem);
+}
+.carousel__face:nth-child(6) {
+	transform: rotateY(200deg) translateZ(25rem);
+}
+.carousel__face:nth-child(7) {
+	transform: rotateY(240deg) translateZ(25rem);
+}
+.carousel__face:nth-child(8) {
+	transform: rotateY(280deg) translateZ(25rem);
+}
+.carousel__face:nth-child(9) {
+	transform: rotateY(320deg) translateZ(25rem);
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 440px) {
 	.carousel__face p {
@@ -671,7 +695,7 @@ img {
 	}
 	.carousel__face {
 		width: 10rem; /* Smaller width for small screens */
-		height: 10rem; /* Smaller height for small screens */
+		height: 12rem; /* Smaller height for small screens */
 	}
 	.carousel__face:nth-child(1) {
 		transform: rotateY(0deg) translateZ(14rem);
@@ -709,8 +733,8 @@ img {
 		font-size: 45%;
 	}
 	.carousel__face {
-		width: 18rem; /* Medium width for tablets */
-		height: 13rem; /* Medium height for tablets */
+		width: 10.5rem; /* Medium width for tablets */
+		height: 12rem; /* Medium height for tablets */
 	}
 	.carousel__face:nth-child(1) {
 		transform: rotateY(0deg) translateZ(15rem);
