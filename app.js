@@ -3,12 +3,11 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
-const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const methodOverride = require("method-override");
-const mongoSantize = require("express-mongo-sanitize");
+const mongoSanitize = require("express-mongo-sanitize");
 const flash = require("connect-flash");
 const MongoStore = require("connect-mongo");
 const session = require("express-session");
@@ -16,6 +15,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
 const ExpressError = require("./utils/ExpressError");
+const User = require("./models/user");
 
 // Route Imports
 const beyondClassroomRoute = require("./routes/beyondClassroom");
@@ -23,153 +23,127 @@ const accomplishmentsRoute = require("./routes/accomplishments");
 const newsAndEventsRoute = require("./routes/newsAndEvents");
 const newsLetterRoute = require("./routes/newsLetter");
 const userRoute = require("./routes/user");
-const publicationsRoute = require("./routes/publications");
 
-// Models
-const User = require("./models/user");
-const newsAndEvents = require("./models/newsAndEvents");
-const ContactUs = require("./models/contactUs");
-const Post = require("./models/post");
-const Home = require("./models/home");
+// Environment Variables
+const SECRET = process.env.SECRET || "fallbackSecret";
+const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/mydb";
+const PORT = process.env.PORT || 3000;
 
-// environment variables
-const secret = process.env.SECRET;
-const dbUrl = process.env.DB_URL;
-
+// MongoDB Connection
 mongoose
-	.connect(dbUrl)
-	.then(() => {
-		console.log("MONGO CONNECTION OPEN!!!");
-	})
-	.catch((err) => {
-		console.log("OH NO MONGO CONNECTION ERROR!!!!");
-		console.log(err);
-	});
+	.connect(DB_URL)
+	.then(() => console.log("✅ Connected to MongoDB"))
+	.catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
-// configuring ejs
+// Express App Initialization
+const app = express();
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// config public dir and decoding form
+// Middleware Setup
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-// safety messures
 app.use(methodOverride("_method"));
-app.use(mongoSantize({ replaceWith: "_" }));
+app.use(mongoSanitize({ replaceWith: "_" }));
 
-//Session Store on DataBase
+// Session Store Configuration
 const store = MongoStore.create({
-	mongoUrl: dbUrl,
+	mongoUrl: DB_URL,
 	touchAfter: 24 * 60 * 60,
-	crypto: {
-		secret,
-	},
+	crypto: { secret: SECRET },
 });
 
-store.on("error", function (e) {
-	console.log("SESSION STORE ERROR", e);
-});
+store.on("error", (e) => console.error("SESSION STORE ERROR:", e));
 
-//Session configure
-const sessionConfig = {
-	store,
-	name: "messScottish",
-	secret,
-	resave: false,
-	saveUninitialized: true,
-	cookie: {
-		httpOnly: true,
-		secure: true,
-		SameSite: "secure",
-		expires: Date.now() + 1000 * 60 * 60 * 3,
-		maxAge: 1000 * 60 * 60 * 3,
-	},
-};
-//using session and flash
-app.use(session(sessionConfig));
+app.use(
+	session({
+		store,
+		name: "sessionId",
+		secret: SECRET,
+		resave: false,
+		saveUninitialized: false,
+		cookie: {
+			httpOnly: true,
+			secure: process.env.NODE_ENV === "production", // Secure in production
+			sameSite: "lax",
+			expires: Date.now() + 1000 * 60 * 60 * 3, // 3 hours
+			maxAge: 1000 * 60 * 60 * 3,
+		},
+	})
+);
+
 app.use(flash());
 
-// User Login Passport
+// Passport Authentication
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
-
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// setting local variables
+// Global Middleware for Flash Messages & User Data
 app.use((req, res, next) => {
-	res.locals.errorMessage = "";
-	res.locals.successMessage = "";
 	res.locals.currentUser = req.user;
 	res.locals.success = req.flash("success");
 	res.locals.error = req.flash("error");
+	res.locals.errorMessage = "";
 	next();
 });
 
-app.get("/", async (req, res) => {
-	const news = await newsAndEvents.find({});
-	news.sort(
-		(a, b) =>
-			new Date(b.date + "/" + b.month + "/" + b.year) -
-			new Date(a.date + "/" + a.month + "/" + a.year)
-	);
-	const { parentTestimonial } = await Home.findOne();
-	res.render("home", { news, parentTestimonial });
-});
-
-app.get("/gallery", async (req, res) => {
-	try {
-		const posts = await Post.find(); // Fetch posts from MongoDB
-		res.render("gallery", { posts });
-	} catch (error) {
-		res.status(500).send("Error fetching posts");
-	}
-});
-app.get("/contact-us", (req, res) => {
-	// const errorMessage='underConstruction'
-	res.render("contact-us");
-});
-app.post("/contact-us", (req, res) => {
-	const { user } = req.body;
-	const date = Date.now();
-	const newContact = new ContactUs({ ...user, date });
-	newContact.save();
-	res.redirect("/");
-});
+// Routes
 app.use("/beyond-classroom", beyondClassroomRoute);
 app.use("/newsLetter", newsLetterRoute);
 app.use("/news-events", newsAndEventsRoute);
 app.use("/accomplishments", accomplishmentsRoute);
-// app.use('/publications',publicationsRoute)
 app.use("/", userRoute);
 
-app.get("/about-us", (req, res) => {
-	res.render("about-us");
+// Home Route
+app.get("/", async (req, res, next) => {
+	try {
+		const news = await require("./models/newsAndEvents").find({});
+		news.sort(
+			(a, b) =>
+				new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`)
+		);
+		const { parentTestimonial } = await require("./models/home").findOne();
+		res.render("home", { news, parentTestimonial });
+	} catch (err) {
+		next(err);
+	}
 });
+
+// Contact Us Route
+app
+	.route("/contact-us")
+	.get((req, res) => res.render("contact-us"))
+	.post(async (req, res, next) => {
+		try {
+			const newContact = new (require("./models/contactUs"))({
+				...req.body.user,
+				date: Date.now(),
+			});
+			await newContact.save();
+			res.redirect("/");
+		} catch (err) {
+			next(err);
+		}
+	});
+
 app.get("/admission", (req, res) => {
-	// const errorMessage='underConstruction'
 	res.render("admissions");
 });
-app.get("/academics", (req, res) => {
-	// const errorMessage='underConstruction'
-	res.render("academics");
-});
-app.get("/principal-message", (req, res) => {
-	// const errorMessage='underConstruction'
-	res.render("principalsMessage");
-});
-app.get("/director-message", (req, res) => {
-	// const errorMessage='underConstruction'
-	res.render("directorsMessage");
-});
-app.get("/mandatory-disclosure", (req, res) => {
-	res.render("mandatory-disclosure");
-});
-app.get("/jobs", (req, res) => {
-	res.render("jobOpening");
-});
+
+// Static Page Routes
+const staticPages = [
+	"about-us",
+	"academics",
+	"principal-message",
+	"director-message",
+	"mandatory-disclosure",
+	"jobs",
+];
+staticPages.forEach((page) => app.get(`/${page}`, (req, res) => res.render(page)));
 
 // app.get('/calenders',(req,res)=>{
 //     // const errorMessage='underConstruction'
@@ -183,27 +157,24 @@ app.get("/jobs", (req, res) => {
 //     res.render('calenders/HomePage');
 // })
 
+// 404 Error Handler
 app.all("*", (req, res, next) => {
 	next(new ExpressError("Page Not Found", 404));
 });
 
+// General Error Handler
 app.use((err, req, res, next) => {
-	const { statusCode = 500 } = err;
-	if (!err.message) err.message = "Oh No, Something Went Wrong!";
-	if (process.env.NODE_ENV == "production") {
-		errorLog(statusCode, err.message);
-
-		async function errorLog(statusCode, message) {
-			const date = new Date();
-			const errorLog = new ErrorLogSchema({ statusCode, message, stack: err.stack, date });
-			await errorLog.save();
+	const { statusCode = 500, message = "Something Went Wrong!" } = err;
+	if (process.env.NODE_ENV === "production") {
+		try {
+			const ErrorLogSchema = require("./models/errorLog"); // Ensure errorLog schema exists
+			new ErrorLogSchema({ statusCode, message, stack: err.stack, date: new Date() }).save();
+		} catch (error) {
+			console.error("Error Logging Failed:", error);
 		}
 	}
-	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo });
+	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo || "/" });
 });
 
-const port = process.env.PORT || 3000;
-
-app.listen(port, () => {
-	console.log(`app is listed on port ${port}`);
-});
+// Start Server
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
