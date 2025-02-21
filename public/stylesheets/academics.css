@@ -22,15 +22,16 @@ small {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-  list-style: none;
+	list-style: none;
 }
 .subjects ul li {
-	width: 20%;
+	width: 33rem;
 	text-align: center;
 	padding: 15px;
 }
 
 .subjects ul li div {
+	max-width: 100%;
 	background: #f1f1f1;
 	padding: 20px;
 	border-radius: 10px;
@@ -49,6 +50,7 @@ small {
 	font-weight: 600;
 	color: #444;
 }
+
 @media (max-width: 1199px) {
 	.section-title h2 {
 		font-size: 28px;
@@ -96,10 +98,15 @@ small {
 	margin: -150px 0 0;
 	margin-top: -150px;
 	background: #fff;
-	padding: 40px;
+	padding: 2.5rem;
 	border-radius: 5px;
 }
 
+@media (max-width: 550px) {
+	.style-section-3 .content-text {
+		padding: 0px;
+	}
+}
 @media (max-width: 1199px) {
 	.style-section-3 .content-text {
 		margin-top: 0;
@@ -117,7 +124,7 @@ h3.title-medium::before {
 }
 
 h3.title-medium {
-	font-size: 30px;
+	font-size: 1.9rem;
 	color: #42271a;
 	margin: 0 0 15px 0;
 	position: relative;

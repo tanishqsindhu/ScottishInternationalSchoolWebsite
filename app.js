@@ -80,8 +80,8 @@ const sessionConfig = {
 	saveUninitialized: true,
 	cookie: {
 		httpOnly: true,
-		// secure:true,
-		SameSite: "strict",
+		secure: true,
+		SameSite: "secure",
 		expires: Date.now() + 1000 * 60 * 60 * 3,
 		maxAge: 1000 * 60 * 60 * 3,
 	},
@@ -110,6 +110,11 @@ app.use((req, res, next) => {
 
 app.get("/", async (req, res) => {
 	const news = await newsAndEvents.find({});
+	news.sort(
+		(a, b) =>
+			new Date(b.date + "/" + b.month + "/" + b.year) -
+			new Date(a.date + "/" + a.month + "/" + a.year)
+	);
 	const { parentTestimonial } = await Home.findOne();
 	res.render("home", { news, parentTestimonial });
 });

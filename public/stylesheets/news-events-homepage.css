@@ -68,7 +68,7 @@
 .gallery-single div span:nth-child(1) b {
 	display: block;
 	text-align: center;
-	font-size: 20px;
+	font-size: 0.9rem;
 	font-weight: 500;
 	line-height: 21px;
 }

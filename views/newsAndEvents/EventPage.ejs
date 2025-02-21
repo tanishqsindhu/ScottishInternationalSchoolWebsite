@@ -1,7 +1,5 @@
 <% layout('layouts/boilerplate')%>
-    <%- include('../partials/fixedSocials')%>
-        <section id="top" class="brand-hero row">
-            <!--<iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.1434557992666!2d78.05572211552051!3d30.3184371125311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929b7249d5e1f%3A0x6a0dbc429180e02b!2sWelham%20Boys&#39;%20School!5e0!3m2!1sen!2sin!4v1594274963609!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+        <section id="top" class="brand-hero row"style="overflow-x: hidden;">
             <div class="animate-banner">
                 <picture class="zoom">
                     <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel"
@@ -73,28 +71,11 @@
                                         <% if(news.images.length>0) {%>
                                             <% for(let j=1;j<news.images.length;j++) {%>
                                                 <div class="carousel-item">
-
                                                     <img src="<%= news.images[j].url %>" class="d-block w-100"
                                                         alt="event photo" style="width: 100%;height: 100%;">
-
-
-                                                    <!-- <div class=" carousel-caption d-none d-md-block">
-                                            <h5>First slide label</h5>
-                                            <p>Some representative placeholder content for the first slide.</p>
-                                        </div> -->
-                                                    <!-- <h3>Mr. Narender Sindhu <small>Founder & Director of Scottish International
-                                                    School</small></h3> -->
                                                 </div>
                                                 <% } %>
                                                     <% } %>
-                                                        <!-- <div class="carousel-item" data-bs-interval="3000">
-                                        <img src="/assets/IMG_1919.jpeg" class="d-block w-100" alt="School Building" ">
-                                         <div class=" carousel-caption d-none d-md-block">
-                                        <h5>First slide label</h5>
-                                        <p>Some representative placeholder content for the first slide.</p>
-                                    </div> 
-                                    <h3>Mr. Narender Sindhu <small>Founder of Scottish International School</small></h3>
-                                </div> -->
                                     </div>
                                 </div>
 
@@ -102,12 +83,8 @@
                         </div>
                         <div class="col-md-7 col-12 order-md-2">
                             <div class="profile-content newsDetails style-section-3 pt-0">
-                                <!-- <div class="inner-section-title">
-                                <h2>MS. OLIPHANT</h2>
-                                <p>Founder of Welham Boys' School</p>
-                            </div> -->
                                 <div class="text">
-                                    <div class="content-text ImgNotFound">
+                                    <div class="content-text ImgNotFound mt-3 mt-md-0 me-0">
                                         <h3 class="title-medium"><small>News</small>
                                             <%= news.title %> <b class="date"><i
                                                         class="fa-regular fa-clock fa-fade"></i>
@@ -117,7 +94,7 @@
                                                 </b>
                                         </h3>
 
-                                        <div class="text readMoreText">
+                                        <div class="text readMoreText ">
                                             <p></p>
 
                                             <div data-aos="fade-up">
@@ -171,4 +148,3 @@
         </div>
         <link rel="stylesheet" href="/stylesheets/eventPage.css">
         <link rel="stylesheet" href="/stylesheets/page-title.css">
-        <link rel="stylesheet" href="/stylesheets/navbottom.css">

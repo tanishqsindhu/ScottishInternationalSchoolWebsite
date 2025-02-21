@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate')%> <%- include('../partials/fixedSocials')%>
-<section id="top" class="brand-hero row">
+<section id="top" class="brand-hero row" style="overflow-x: hidden">
 	<div class="animate-banner">
 		<picture class="zoom">
 			<div
@@ -158,7 +158,7 @@
 			</div>
 		</div>
 
-		<div class="table-custom table-responsive pt-3 pt-md-4"data-aos="fade-up">
+		<div class="table-custom table-responsive pt-3 pt-md-4" data-aos="fade-up">
 			<div class="section-title">
 				<h2 class="p-color">SECONDARY EXAMINATION (X)</h2>
 				<p class="title-branding pt-2">
@@ -238,7 +238,8 @@
 </div>
 <section
 	class="section table-section academics-table wow fadeInUp pt-5"
-	style="visibility: visible; animation-name: fadeInUp" data-aos="fade-up"
+	style="visibility: visible; animation-name: fadeInUp"
+	data-aos="fade-up"
 >
 	<div class="container">
 		<div class="table-custom table-responsive">
@@ -384,6 +385,12 @@
 	</div>
 </section>
 
-<link rel="stylesheet" href="/stylesheets/contact-us.css" />
-<link rel="stylesheet" href="/stylesheets/page-title.css" />
 <link rel="stylesheet" href="/stylesheets/academicsAccomplishments.css" />
+<link rel="stylesheet" href="/stylesheets/page-title.css" />
+<style>
+	@media (max-width: 770px) {
+		.banner-content-inner h1 {
+			font-size: 2rem !important;
+		}
+	}
+</style>

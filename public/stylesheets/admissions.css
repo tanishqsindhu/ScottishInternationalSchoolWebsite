@@ -59,11 +59,13 @@ h3.title-medium {
 	color: #b57c69;
 }
 .list li.subjects ul {
+	width: 100%;
 	justify-content: flex-start;
 	margin: 0 -15px;
 }
 
 .subjects ul li div {
+	max-width: 100%;
 	background: #f1f1f1;
 	padding: 20px;
 	border-radius: 10px;
@@ -112,7 +114,7 @@ h3.title-medium {
 	}
 }
 .style-section-2 .style-section-text h3 {
-	font-size: 28px;
+	font-size: 2rem;
 	margin: 0 0 30px -90px;
 	padding: 20px 20px;
 	background: #eabd57;
@@ -126,6 +128,14 @@ h3.title-medium {
 	text-transform: uppercase;
 	position: relative;
 }
+
+@media (max-width: 767px) {
+	.style-section-2 .style-section-text h3 {
+		margin: 0 0 50px -50px;
+		max-width: 100%;
+	}
+}
+
 .style-section-2 .style-section-text h3::after {
 	position: absolute;
 	bottom: 0;
