@@ -1,9 +1,12 @@
-module.exports.home=(req,res)=>{
-    res.render('beyondClassroom/beyond-classroom');
-}
-module.exports.sports=(req,res)=>{
-    res.render('beyondClassroom/sports');
-}
-module.exports.coCurricular=(req,res)=>{
-    res.render('beyondClassroom/coCurricular');
-}
+module.exports.home = (req, res) => {
+	const currentPage = "beyondClassroom";
+	res.render("beyondClassroom/beyond-classroom", { currentPage });
+};
+module.exports.sports = (req, res) => {
+	const currentPage = "beyondClassroom";
+	res.render("beyondClassroom/sports", { currentPage });
+};
+module.exports.coCurricular = (req, res) => {
+	const currentPage = "beyondClassroom";
+	res.render("beyondClassroom/coCurricular", { currentPage });
+};

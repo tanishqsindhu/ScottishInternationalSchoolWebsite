@@ -2,43 +2,45 @@ const NewsArticles = require("../models/newsAndEvents");
 const { cloudinary } = require("../cloudinary");
 
 module.exports.home = async (req, res) => {
+	const currentPage = "news";
 	const news = await NewsArticles.find({});
-	news.sort(
-		(a, b) =>
-			new Date(b.date + "/" + b.month + "/" + b.year) -
-			new Date(a.date + "/" + a.month + "/" + a.year)
-	);
-	res.render("newsAndEvents/homePage", { news });
+	news.sort((a, b) => new Date(b.date + "/" + b.month + "/" + b.year) - new Date(a.date + "/" + a.month + "/" + a.year));
+	res.render("newsAndEvents/homePage", { news, currentPage });
 };
 
 module.exports.renderAddForm = (req, res) => {
-	res.render("newsAndEvents/addNewsAndEvents");
+	const currentPage = "news";
+	res.render("newsAndEvents/addNewsAndEvents", { currentPage });
 };
 
 module.exports.add = async (req, res) => {
+	const currentPage = "news";
 	const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
 	const newsArticle = new NewsArticles({ ...req.body.article });
 	newsArticle.images.push(...imgs);
 	await newsArticle.save();
 	const news = await NewsArticles.find({});
-	res.render("newsAndEvents/homePage", { news });
+	res.render("newsAndEvents/homePage", { news, currentPage });
 };
 
 module.exports.newsArticle = async (req, res) => {
+	const currentPage = "news";
 	const news = await NewsArticles.findById(req.params.id);
-	res.render("newsAndEvents/EventPage", { news });
+	res.render("newsAndEvents/EventPage", { news, currentPage });
 };
 
 module.exports.articleEdit = async (req, res) => {
+	const currentPage = "news";
 	const news = await NewsArticles.findById(req.params.id);
 	if (!news) {
 		req.flash("error", "Was not able to find that Menu");
 		return res.redirect("/news-events");
 	}
-	res.render("newsAndEvents/editNewsAndEvents", { news });
+	res.render("newsAndEvents/editNewsAndEvents", { news, currentPage });
 };
 
 module.exports.articleUpdate = async (req, res) => {
+	const currentPage = "news";
 	const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
 	const newsArticle = await NewsArticles.findByIdAndUpdate(req.params.id, { ...req.body.article });
 	newsArticle.images.push(...imgs);
@@ -51,10 +53,11 @@ module.exports.articleUpdate = async (req, res) => {
 		});
 	}
 	await newsArticle.save();
-	res.redirect(`/news-events/${newsArticle._id}`);
+	res.redirect(`/news-events/${newsArticle._id}`, { currentPage });
 };
 
 module.exports.deleteArticle = async (req, res) => {
+	const currentPage = "news";
 	const newsArticle = await NewsArticles.findById(req.params.id);
 	if (!newsArticle) {
 		req.flash("error", "Was not able to find that News Article");
@@ -66,5 +69,5 @@ module.exports.deleteArticle = async (req, res) => {
 	await NewsArticles.findByIdAndDelete(req.params.id);
 	const successMessage = "successDelete";
 	const news = await NewsArticles.find({});
-	res.render("newsAndEvents/homePage", { successMessage, news });
+	res.render("newsAndEvents/homePage", { successMessage, news, currentPage });
 };

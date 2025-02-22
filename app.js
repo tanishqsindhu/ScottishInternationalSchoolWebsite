@@ -101,13 +101,11 @@ app.use("/", userRoute);
 // Home Route
 app.get("/", async (req, res, next) => {
 	try {
+		const currentPage = "home";
 		const news = await require("./models/newsAndEvents").find({});
-		news.sort(
-			(a, b) =>
-				new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`)
-		);
+		news.sort((a, b) => new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`));
 		const { parentTestimonial } = await require("./models/home").findOne();
-		res.render("home", { news, parentTestimonial });
+		res.render("home", { news, parentTestimonial, currentPage });
 	} catch (err) {
 		next(err);
 	}
@@ -116,7 +114,10 @@ app.get("/", async (req, res, next) => {
 // Contact Us Route
 app
 	.route("/contact-us")
-	.get((req, res) => res.render("contact-us"))
+	.get((req, res) => {
+		const currentPage = "contactus";
+		res.render("contact-us", { currentPage });
+	})
 	.post(async (req, res, next) => {
 		try {
 			const newContact = new (require("./models/contactUs"))({
@@ -131,19 +132,25 @@ app
 	});
 
 app.get("/admission", (req, res) => {
-	res.render("admissions");
+	const currentPage = "admissions";
+	res.render("admissions", { currentPage });
+});
+
+app.get("/gallery", async (req, res) => {
+	const currentPage = "gallery";
+	const posts = await require("./models/post").find({});
+
+	res.render("gallery", { posts, currentPage });
 });
 
 // Static Page Routes
-const staticPages = [
-	"about-us",
-	"academics",
-	"principal-message",
-	"director-message",
-	"mandatory-disclosure",
-	"jobs",
-];
-staticPages.forEach((page) => app.get(`/${page}`, (req, res) => res.render(page)));
+const staticPages = ["about-us", "academics", "principal-message", "director-message", "mandatory-disclosure", "jobs"];
+staticPages.forEach((page) =>
+	app.get(`/${page}`, (req, res) => {
+		const currentPage = page;
+		res.render(page, { currentPage });
+	})
+);
 
 // app.get('/calenders',(req,res)=>{
 //     // const errorMessage='underConstruction'
@@ -173,7 +180,8 @@ app.use((err, req, res, next) => {
 			console.error("Error Logging Failed:", error);
 		}
 	}
-	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo || "/" });
+	const currentPage = "error";
+	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
 });
 
 // Start Server

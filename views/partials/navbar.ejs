@@ -2,63 +2,51 @@
 	<div class="container-fluid">
 		<!-- Logo & Brand -->
 		<a class="navbar-brand d-flex align-items-center" href="/">
-			<img
-				src="/assets/webp/SISTransparentLogo.webp"
-				alt="Scottish International School Logo"
-				width="30"
-				height="24"
-			/>
+			<img src="/assets/webp/SISTransparentLogo.webp" alt="Scottish International School Logo" width="30"
+				height="24" />
 			<span class="ms-2">Scottish International School</span>
 		</a>
 
 		<!-- Mobile Toggle Button -->
-		<button
-			class="navbar-toggler"
-			type="button"
-			data-bs-toggle="collapse"
-			data-bs-target="#navbarNavDropdown"
-			aria-controls="navbarNavDropdown"
-			aria-expanded="false"
-			aria-label="Toggle navigation"
-		>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+			aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<!-- Navbar Links -->
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="/academics">Academics</a></li>
-				<li class="nav-item"><a class="nav-link" href="/admission">Admissions</a></li>
-				<li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li>
+				<li class="nav-item"><a class="nav-link <%= currentPage === 'academics' ? 'active' : '' %>"
+						<%=currentPage==='academics' ? 'aria-current="page"' : '' %> href="/academics">Academics</a>
+				</li>
+				<li class="nav-item"><a class="nav-link <%= currentPage === 'admissions' ? 'active' : '' %>"
+						<%=currentPage==='admissions' ? 'aria-current="page"' : '' %> href="/admission">Admissions</a>
+				</li>
+				<li class="nav-item"><a class="nav-link <%= currentPage === 'about-us' ? 'active' : '' %>"
+						<%=currentPage==='aboutUs' ? 'aria-current="page"' : '' %> href="/about-us">About Us</a></li>
 
 				<!-- Beyond Classroom Dropdown -->
 				<li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						href="#"
-						role="button"
+					<a class="nav-link dropdown-toggle <%= currentPage === 'beyondClassroom' ? 'active' : '' %>"
+						<%=currentPage==='beyondClassroom' ? 'aria-current="page"' : '' %> href="#" role="button"
 						data-bs-toggle="dropdown"
-						aria-expanded="false"
-					>
+						aria-expanded="false">
 						Beyond Classroom
 					</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="/beyond-classroom/sports">Sports</a></li>
 						<li>
-							<a class="dropdown-item" href="/beyond-classroom/co-curricular">Co-Curricular</a>
+							<a class="dropdown-item " href="/beyond-classroom/co-curricular">Co-Curricular</a>
 						</li>
 					</ul>
 				</li>
 
 				<!-- Accomplishments Dropdown -->
 				<li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						href="#"
-						role="button"
+					<a class="nav-link dropdown-toggle <%= currentPage === 'accomplishments' ? 'active' : '' %>"
+						<%=currentPage==='accomplishments' ? 'aria-current="page"' : '' %> href="#" role="button"
 						data-bs-toggle="dropdown"
-						aria-expanded="false"
-					>
+						aria-expanded="false">
 						Accomplishments
 					</a>
 					<ul class="dropdown-menu">
@@ -70,21 +58,30 @@
 					</ul>
 				</li>
 
-				<li class="nav-item"><a class="nav-link" href="/news-events">News</a></li>
-				<li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
-				<li class="nav-item"><a class="nav-link" href="/contact-us">Contact Us</a></li>
+				<li class="nav-item"><a class="nav-link <%= currentPage === 'news' ? 'active' : '' %>"
+						<%=currentPage==='news' ? 'aria-current="page"' : '' %> href="/news-events">News</a></li>
+				<li class="nav-item"><a class="nav-link <%= currentPage === 'gallery' ? 'active' : '' %>"
+						<%=currentPage==='gallery' ? 'aria-current="page"' : '' %> href="/gallery">Gallery</a></li>
+				<li class="nav-item"><a class="nav-link <%= currentPage === 'contactus' ? 'active' : '' %>"
+						<%=currentPage==='contactus' ? 'aria-current="page"' : '' %> href="/contact-us">Contact Us</a>
+				</li>
 
 				<!-- Conditional Rendering for User Authentication -->
 				<% if(currentUser) { %>
-				<li class="nav-item">
-					<a class="nav-link" href="dashboard.scottishinternationalschool.com">Dashboard</a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-				<% if(currentUser.role.includes('admin')) { %>
-				<li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-				<% } %> <% } else { %>
-				<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-				<% } %>
+					<li class="nav-item">
+						<a class="nav-link" href="dashboard.scottishinternationalschool.com">Dashboard</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+					<% if(currentUser.role.includes('admin')) { %>
+						<li class="nav-item <%= currentPage === 'register' ? 'active' : '' %>"
+							<%=currentPage==='register' ? 'aria-current="page"' : '' %>><a class="nav-link"
+								href="/register">Register</a></li>
+						<% } %>
+							<% } else { %>
+								<li class="nav-item <%= currentPage === 'login' ? 'active' : '' %>"
+									<%=currentPage==='login' ? 'aria-current="page"' : '' %>><a class="nav-link"
+										href="/login">Login</a></li>
+								<% } %>
 			</ul>
 		</div>
 	</div>
@@ -95,6 +92,7 @@
 	.custom-navbar {
 		background-color: rgba(241, 241, 241, 0.8);
 	}
+
 	@media (max-width: 433px) {
 		.navbar-toggler-icon {
 			width: 0.8em;

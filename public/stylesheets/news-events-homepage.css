@@ -37,14 +37,16 @@
 	}
 }
 .news-page .gallery-single {
-	margin: 0 0 30px 0;
+	height: 100%;
 }
+
 .gallery-single div {
 	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	padding: 20px 0;
+	height: 100%;
 }
 .gallery-single div span:nth-child(1) {
 	width: 40px;
