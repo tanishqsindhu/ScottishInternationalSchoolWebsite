@@ -103,7 +103,10 @@ app.get("/", async (req, res, next) => {
 	try {
 		const currentPage = "home";
 		const news = await require("./models/newsAndEvents").find({});
-		news.sort((a, b) => new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`));
+		news.sort(
+			(a, b) =>
+				new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`)
+		);
 		const { parentTestimonial } = await require("./models/home").findOne();
 		res.render("home", { news, parentTestimonial, currentPage });
 	} catch (err) {
@@ -138,13 +141,20 @@ app.get("/admission", (req, res) => {
 
 app.get("/gallery", async (req, res) => {
 	const currentPage = "gallery";
-	const posts = await require("./models/post").find({});
+	const posts = await require("./models/post").find({}).sort({ _id: -1 });
 
 	res.render("gallery", { posts, currentPage });
 });
 
 // Static Page Routes
-const staticPages = ["about-us", "academics", "principal-message", "director-message", "mandatory-disclosure", "jobs"];
+const staticPages = [
+	"about-us",
+	"academics",
+	"principal-message",
+	"director-message",
+	"mandatory-disclosure",
+	"jobs",
+];
 staticPages.forEach((page) =>
 	app.get(`/${page}`, (req, res) => {
 		const currentPage = page;
@@ -181,7 +191,9 @@ app.use((err, req, res, next) => {
 		}
 	}
 	const currentPage = "error";
-	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
+	res
+		.status(statusCode)
+		.render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
 });
 
 // Start Server

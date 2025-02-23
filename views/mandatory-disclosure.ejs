@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate')%>
-<section id="top" class="brand-hero row">
+<section id="top" class="brand-hero row" style="overflow-x: hidden">
 	<div class="animate-banner">
 		<picture class="zoom">
 			<div
@@ -30,7 +30,7 @@
 		</picture>
 	</div>
 	<div class="page-title align-items-start" data-aos="fade-up">
-		<div class="container">
+		<div class="container" style="overflow-x: hidden">
 			<div class="banner-content-inner">
 				<h1>
 					<a href="/"><i class="fa-solid fa-arrow-left" style="color: #eabd57"></i> Home</a>
@@ -39,20 +39,10 @@
 		</div>
 	</div>
 </section>
-<div class="container-fuild"data-aos="fade-up">
+<div class="container-fuild" data-aos="fade-up">
 	<div class="row">
 		<section class="inner-entry">
-			<div
-				class="container wow fadeInUp"
-				data-wow-duration="1.5s"
-				data-wow-delay=".2s"
-				style="
-					visibility: visible;
-					animation-duration: 1.5s;
-					animation-delay: 0.2s;
-					animation-name: fadeInUp;
-				"
-			>
+			<div class="container">
 				<div class="mainTitle">
 					<p class="title-branding mb-2">
 						<img class="img-fluid" src="/assets/webp/SISTransparentLogoWhite.webp" alt="logo" />
@@ -63,13 +53,10 @@
 		</section>
 	</div>
 </div>
-<section
-	class="section table-section academics-table wow fadeInUp pt-5"
-	style="visibility: visible; animation-name: fadeInUp"
->
+<section class="section table-section academics-table pt-5">
 	<div class="container">
-		<div class="row"data-aos="fade-up">
-			<div class="table-custom table-responsive">
+		<div class="row" data-aos="fade-up">
+			<div class="table-custom table-responsive p-0" style="overflow-x: auto">
 				<div
 					class="section-title wow fadeInUp"
 					data-wow-duration="1.5s"
@@ -142,8 +129,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row"data-aos="fade-up">
-			<div class="table-custom table-responsive">
+		<div class="row" data-aos="fade-up">
+			<div class="table-custom table-responsive p-0" style="overflow-x: auto">
 				<div
 					class="section-title wow fadeInUp"
 					data-wow-duration="1.5s"
@@ -410,8 +397,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row"data-aos="fade-up">
-			<div class="table-custom table-responsive">
+		<div class="row" data-aos="fade-up">
+			<div class="table-custom table-responsive p-0" style="overflow-x: auto">
 				<div
 					class="section-title wow fadeInUp"
 					data-wow-duration="1.5s"
@@ -551,19 +538,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="row"data-aos="fade-up">
-			<div class="table-custom table-responsive">
-				<div
-					class="section-title wow fadeInUp"
-					data-wow-duration="1.5s"
-					data-wow-delay=".2s"
-					style="
-						visibility: visible;
-						animation-duration: 1.5s;
-						animation-delay: 0.2s;
-						animation-name: fadeInUp;
-					"
-				>
+		<div class="row" data-aos="fade-up">
+			<div class="table-custom table-responsive p-0" style="overflow-x: auto">
+				<div class="section-title">
 					<h2 class="p-color">STAFF (TEACHING)</h2>
 				</div>
 				<div class="row justify-content-center">
@@ -607,19 +584,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="row"data-aos="fade-up">
-			<div class="table-custom table-responsive">
-				<div
-					class="section-title wow fadeInUp"
-					data-wow-duration="1.5s"
-					data-wow-delay=".2s"
-					style="
-						visibility: visible;
-						animation-duration: 1.5s;
-						animation-delay: 0.2s;
-						animation-name: fadeInUp;
-					"
-				>
+		<div class="row" data-aos="fade-up">
+			<div class="table-custom table-responsive p-0" style="overflow-x: auto">
+				<div class="section-title">
 					<h2 class="p-color">SCHOOL INFRASTRUCTURE</h2>
 				</div>
 				<div class="row justify-content-center">
@@ -705,7 +672,12 @@
 		</div>
 	</div>
 </section>
-<link rel="stylesheet" href="/stylesheets/contact-us.css" />
+
 <link rel="stylesheet" href="/stylesheets/page-title.css" />
 <link rel="stylesheet" href="/stylesheets/academicsAccomplishments.css" />
 <link rel="stylesheet" href="/stylesheets/button.css" />
+<style>
+	.table-custom .table tr td {
+		font-size: 0.7rem;
+	}
+</style>

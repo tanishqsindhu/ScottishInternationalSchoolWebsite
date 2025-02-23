@@ -1,238 +1,303 @@
 <% layout('layouts/boilerplate')%> <%- include('./partials/photoSlide')%>
-<section class="position-relative pt-5 bg1" style="padding-bottom: 5px" data-aos="fade-up">
-	<div class="d-none d-md-block position-absolute top-0 start-0 w-100 h-100">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.6886838468514!2d75.72671616643342!3d29.127793875397877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f8.1!3m3!1m2!1s0x39123345c6b63d4f%3A0x541ada9d1c5f86e3!2sScottish%20International%20School!5e1!3m2!1sen!2sin!4v1683410152676!5m2!1sen!2sin;zoom=0"
-				width="100%"
-				height="100%"
-				style="border: 0"
-				allowfullscreen=""
-				referrerpolicy="no-referrer-when-downgrade"
-			></iframe>
-	</div>
-	<div class="position-relative mx-2 my-5 m-md-5">
-		<div class="container" style="margin: 0; max-width: 100%">
-			<div class="row justify-content-between align-items-center">
-				<div class="col-md-5 col-xl-4 ms-md-5">
-					<div>
-						<div
-							class="border rounded shadow p-3 p-md-4 p-lg-5"
-							method="post"
-							style="background: var(--bs-body-bg)"
-						>
-							<div class="row">
-								<div class="col">
-									<address class="address-wrap">
-										<h3 style="text-align: center; color: #654e42">Branch #1</h3>
-										<div class="form-group">
-											<i class="fa-solid fa-map-pin"></i>
-											<p>
-												<b>Location</b>
-                                                <a
-                                                href="https://maps.app.goo.gl/vJdQzYNjVQKK1eXSA"
-                                                target="_blank"
-                                                aria-label="maps link"
-                                                rel="noopener noreferrer"
-                                            >Scottish International School <br />Civil Line Police Station Rd, Sector 17,
-												Hisar, Haryana 125005, India		</a>
-											</p>
-										</div>
-										<div class="form-group">
-											<i class="fa-solid fa-phone fa-shake"></i>
-											<p>
-												<b>Phone</b>
-												<a href="tel:9315577788">+91-9315577788 </a>
-												<!-- <a href="tel:+911352652935">2652935, </a><br> -->
-											</p>
-										</div>
-										<div class="form-group">
-											<i class="fa-solid fa-mobile-button fa-shake"></i>
-											<p class="mb-0">
-												<b>Admission Office</b>
-												<a href="tel:9315577788">+91-9315577788</a>
-											</p>
-											<p>(09:30 AM to 06:00 PM)</p>
-										</div>
-										<div class="form-group">
-											<i class="fa-solid fa-at fa-beat"></i>
-											<p>
-												<b>Email</b>
-												<a href="mailto:scottishinternational@gmail.com" style="font-size: 12px"
-													>scottishinternational@gmail.com</a
-												>
-											</p>
-										</div>
-									</address>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-5 col-xl-3 mt-3 mt-md-0">
-					<div>
-						<form
-							class="border rounded shadow p-3 p-md-4 p-lg-5"
-							action="/contact-us"
-							method="post"
-							style="background: var(--bs-body-bg)"
-						>
-							<h3 class="text-center mb-3">Contact us</h3>
-							<div class="mb-3">
-								<input class="form-control" type="text" name="user[name]" placeholder="Name" />
-							</div>
-							<div class="mb-3">
-								<input class="form-control" type="email" name="user[email]" placeholder="Email" />
-							</div>
-							<div class="mb-3">
-								<input
-									class="form-control"
-									type="number"
-									name="user[mobilenumber]"
-									placeholder="Phone Number"
-								/>
-							</div>
-							<div class="mb-3">
-								<textarea
-									class="form-control"
-									name="user[message]"
-									placeholder="Message"
-									rows="6"
-								></textarea>
-							</div>
-							<div class="mb-3">
-								<button class="btn btn-primary w-100" type="submit">Send</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="position-relative pt-5 bg1" style="padding-bottom: 5px" data-aos="fade-up">
-	<div class="d-none d-md-block position-absolute top-0 start-30 w-100 h-100">
-
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d550.8261239380258!2d75.75971660380878!3d29.115309490210112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f12.1!3m3!1m2!1s0x391233e1b6a18477%3A0x7e48b9b4e2c7fd30!2sScottish%20International%20School!5e1!3m2!1sen!2sin!4v1683410038417!5m2!1sen!2sin"
-				width="100%"
-				height="100%"
-				style="border: 0"
-				allowfullscreen=""
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-			></iframe
+<div class="container-fluid mt-5 d-flex" style="min-height: 30vh">
+	<div class="row w-100 align-self-center">
+		<div
+			class="row border-top border-bottom border-2"
+			style="border-color: #421b1d; height: fit-content"
 		>
-	</div>
-	<div class="position-relative mx-2 my-5 m-md-5">
-		<div class="container" style="margin: 0; max-width: 100%">
-			<div class="row justify-content-between align-items-center">
-				<div class="col-md-5 col-xl-4 ms-md-5">
-					<div>
-						<div
-							class="border rounded shadow p-3 p-md-4 p-lg-5"
-							method="post"
-							style="background: var(--bs-body-bg)"
-						>
-							<div class="row">
-								<div class="col">
-									<address class="address-wrap">
-										<h3 style="text-align: center; color: #654e42">Branch #2</h3>
-										<div class="form-group">
-											<i class="fa-solid fa-map-pin"></i>
-											<p>
-                                                <b>Location</b>
-												<a
-                                                href="https://maps.app.goo.gl/K5DN5gm6HbvBFsSn6"
-                                                target="_blank"
-                                                aria-label="maps link"
-                                                rel="noopener noreferrer">
-                                            Scottish International School <br />Near Aadhar hospital towards Delhi -
-												South bye pass - Sector 16 & 17, Haryana 125001, India
-											</p></a>
-										</div>
-										<div class="form-group">
-											<i class="fa-solid fa-phone fa-shake"></i>
-											<p>
-												<b>Phone</b>
-												<a href="tel:9350808762">+91-9350808762 </a>
-												<!-- <a href="tel:+911352652935">2652935, </a><br> -->
-											</p>
-										</div>
-										<div class="form-group">
-											<i class="fa-solid fa-mobile-button fa-shake"></i>
-											<p class="mb-0">
-												<b>Admission Office</b>
-												<a href="tel:9350808762">+91-9350808762</a>
-											</p>
-											<p>(09:30 AM to 06:00 PM)</p>
-										</div>
-										<!--
-                                            <div class="form-group">
-                                                <i class="las la-print"></i>
-                                                <p>
-                                                    <b>Fax</b>
-                                                    <a href="tel:+911352658605">+91-135-2658605 </a>
-                                                </p>
-                                            </div>-->
-										<div class="form-group">
-											<i class="fa-solid fa-at fa-beat"></i>
-											<p>
-												<b>Email</b>
-												<a href="mailto:scottishinternational@gmail.com" style="font-size: 12px"
-													>scottishinternational@gmail.com</a
-												>
-											</p>
-										</div>
-									</address>
+			<p class="d-inline-flex gap-1 mb-0">
+				<a
+					class="p-color collapseButton fs-4"
+					data-bs-toggle="collapse"
+					href="#collapseBranch1"
+					role="button"
+					aria-expanded="false"
+					aria-controls="collapseExample"
+					style="color: #e2b264"
+				>
+					<span id="collapseIcon" class="me-4 me-md-5 text-danger"> + </span>
+					Sector 16 & 17
+				</a>
+			</p>
+			<div class="collapse my-4" id="collapseBranch1">
+				<div class="">
+					<div class="row justify-content-center">
+						<div class="col-12 col-md-4 m-2 p-0 p-lg-2">
+							<form
+								class="border rounded shadow p-3 p-md-4 p-lg-5"
+								action="/contact-us"
+								method="post"
+								style="background: var(--bs-body-bg)"
+							>
+								<h3 class="text-center mb-3 text-uppercase p-color">Leave a message/Enquiry</h3>
+								<div class="mb-3">
+									<input class="form-control" type="text" name="user[name]" placeholder="Name" />
+								</div>
+								<div class="mb-3">
+									<input class="form-control" type="email" name="user[email]" placeholder="Email" />
+								</div>
+								<div class="mb-3">
+									<input
+										class="form-control"
+										type="number"
+										name="user[mobilenumber]"
+										placeholder="Phone Number"
+									/>
+								</div>
+								<div class="mb-3">
+									<textarea
+										class="form-control"
+										name="user[message]"
+										placeholder="Message"
+										rows="6"
+									></textarea>
+								</div>
+								<div class="mb-3">
+									<button class="btn btn-primary w-100" type="submit">Send</button>
+								</div>
+							</form>
+						</div>
+						<div class="mt-3 mt-md-2 col-12 col-md-7 m-2 p-0 p-lg-2">
+							<iframe
+								class="rounded"
+								style="min-height: 22rem"
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d871.468638064983!2d75.7270787927539!3d29.127879401045508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f14.1!3m3!1m2!1s0x39123345c6b63d4f%3A0x541ada9d1c5f86e3!2sScottish%20International%20School!5e0!3m2!1sen!2sge!4v1740305838725!5m2!1sen!2sge"
+								width="100%"
+								height="100%"
+								style="border: 0"
+								allowfullscreen="true"
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
+							></iframe>
+						</div>
+						<div class="mt-3 mt-md-0 col col-lg-11 m-md-3 p-0" id="address-container">
+							<div
+								class="border rounded shadow p-3 p-md-4 p-lg-5"
+								method="post"
+								style="background: var(--bs-body-bg)"
+							>
+								<div class="row">
+									<div class="col p-0">
+										<address class="address-wrap text-center">
+											<div class="form-group p-0">
+												<i class="fa-solid fa-map-pin"></i>
+												<p>
+													<b>Location</b>
+													<a
+														href="https://maps.app.goo.gl/vJdQzYNjVQKK1eXSA"
+														target="_blank"
+														aria-label="maps link"
+														rel="noopener noreferrer"
+														>Scottish International School <br />Civil Line Police Station Rd,
+														Sector 17, Hisar, Haryana 125005, India
+													</a>
+												</p>
+											</div>
+											<div class="form-group p-0">
+												<i class="fa-solid fa-phone fa-shake"></i>
+												<p>
+													<b>Phone</b>
+													<a href="tel:9315577788">+91-9315577788 </a>
+													<!-- <a href="tel:+911352652935">2652935, </a><br> -->
+												</p>
+											</div>
+											<div class="form-group p-0">
+												<i class="fa-solid fa-mobile-button fa-shake"></i>
+												<p class="mb-0">
+													<b>Admission Office</b>
+													<a href="tel:9315577788">+91-9315577788</a>
+												</p>
+												<p>(09:30 AM to 06:00 PM)</p>
+											</div>
+											<div class="form-group p-0">
+												<i class="fa-solid fa-at fa-beat"></i>
+												<p>
+													<b>Email</b>
+													<a href="mailto:scottishinternational@gmail.com"
+														>scottishinternational@gmail.com</a
+													>
+												</p>
+											</div>
+										</address>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-xl-3 mt-3 mt-md-0">
-					<div>
-						<form
-							class="border rounded shadow p-3 p-md-4 p-lg-5"
-							action="/contact-us"
-							method="post"
-							style="background: var(--bs-body-bg)"
-						>
-							<h3 class="text-center mb-3">Contact us</h3>
-							<div class="mb-3">
-								<input class="form-control" type="text" name="user[name]" placeholder="Name" />
+			</div>
+		</div>
+		<div class="row border-bottom border-2" style="border-color: #421b1d; height: fit-content">
+			<p class="d-inline-flex gap-1 mb-0">
+				<a
+					class="p-color collapseButton fs-4"
+					data-bs-toggle="collapse"
+					href="#collapseBranch2"
+					role="button"
+					aria-expanded="false"
+					aria-controls="collapseExample"
+					style="color: #e2b264"
+				>
+					<span id="collapseIcon" class="me-4 me-md-5 text-danger">+</span> South Bypass Branch
+				</a>
+			</p>
+			<div class="collapse my-4" id="collapseBranch2">
+				<div class="">
+					<div class="row justify-content-center">
+						<div class="col-12 col-md-4 m-2 p-0 p-lg-2">
+							<form
+								class="border rounded shadow p-3 p-md-4 p-lg-5"
+								action="/contact-us"
+								method="post"
+								style="background: var(--bs-body-bg)"
+							>
+								<h3 class="text-center mb-3 text-uppercase p-color">Leave a message/Enquiry</h3>
+								<div class="mb-3">
+									<input class="form-control" type="text" name="user[name]" placeholder="Name" />
+								</div>
+								<div class="mb-3">
+									<input class="form-control" type="email" name="user[email]" placeholder="Email" />
+								</div>
+								<div class="mb-3">
+									<input
+										class="form-control"
+										type="number"
+										name="user[mobilenumber]"
+										placeholder="Phone Number"
+									/>
+								</div>
+								<div class="mb-3">
+									<textarea
+										class="form-control"
+										name="user[message]"
+										placeholder="Message"
+										rows="6"
+									></textarea>
+								</div>
+								<div class="mb-3">
+									<button class="btn btn-primary w-100" type="submit">Send</button>
+								</div>
+							</form>
+						</div>
+						<div class="mt-3 mt-md-2 col-12 col-md-7 m-2 p-0 p-lg-2">
+							<iframe
+								class="rounded"
+								style="min-height: 22rem"
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1953.893533401175!2d75.7592240642523!3d29.11478487957678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f10.1!3m3!1m2!1s0x391235f392de30f3%3A0x4d822866aca9a6de!2sScottish%20International%20School!5e1!3m2!1sen!2sge!4v1740307963106!5m2!1sen!2sge"
+								width="100%"
+								height="100%"
+								style="border: 0"
+								allowfullscreen="true"
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
+							></iframe>
+						</div>
+						<div class="mt-3 mt-md-0 col col-lg-11 m-md-3 p-0" id="address-container">
+							<div
+								class="border rounded shadow p-3 p-md-4 p-lg-5"
+								method="post"
+								style="background: var(--bs-body-bg)"
+							>
+								<div class="row">
+									<div class="col p-0">
+										<address class="address-wrap text-center">
+											<div class="form-group p-0">
+												<i class="fa-solid fa-map-pin"></i>
+												<p>
+													<b>Location</b>
+													<a
+														href="https://maps.app.goo.gl/vJdQzYNjVQKK1eXSA"
+														target="_blank"
+														aria-label="maps link"
+														rel="noopener noreferrer"
+														>Scottish International School <br />Civil Line Police Station Rd,
+														Sector 17, Hisar, Haryana 125005, India
+													</a>
+												</p>
+											</div>
+											<div class="form-group p-0">
+												<i class="fa-solid fa-phone fa-shake"></i>
+												<p>
+													<b>Phone</b>
+													<a href="tel:9315577788">+91-9315577788 </a>
+													<!-- <a href="tel:+911352652935">2652935, </a><br> -->
+												</p>
+											</div>
+											<div class="form-group p-0">
+												<i class="fa-solid fa-mobile-button fa-shake"></i>
+												<p class="mb-0">
+													<b>Admission Office</b>
+													<a href="tel:9315577788">+91-9315577788</a>
+												</p>
+												<p>(09:30 AM to 06:00 PM)</p>
+											</div>
+											<div class="form-group p-0">
+												<i class="fa-solid fa-at fa-beat"></i>
+												<p>
+													<b>Email</b>
+													<a href="mailto:scottishinternational@gmail.com"
+														>scottishinternational@gmail.com</a
+													>
+												</p>
+											</div>
+										</address>
+									</div>
+								</div>
 							</div>
-							<div class="mb-3">
-								<input class="form-control" type="email" name="user[email]" placeholder="Email" />
-							</div>
-							<div class="mb-3">
-								<input
-									class="form-control"
-									type="number"
-									name="user[mobilenumber]"
-									placeholder="Phone Number"
-								/>
-							</div>
-							<div class="mb-3">
-								<textarea
-									class="form-control"
-									name="user[message]"
-									placeholder="Message"
-									rows="6"
-								></textarea>
-							</div>
-							<div class="mb-3">
-								<button class="btn btn-primary w-100" type="submit">Send</button>
-							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>
-<link rel="stylesheet" href="/stylesheets/contact-us.css" />
-<style>
-    a:hover{
-        text-decoration: underline;
-    }
-</style>
+	<link rel="stylesheet" href="/stylesheets/contact-us.css" />
+	<style>
+		.address-wrap {
+			font-size: 2rem;
+		}
+		.address-wrap a {
+			text-decoration: underline;
+		}
+		.address-wrap a:hover {
+			color: #e2b264;
+		}
+	</style>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			document.querySelectorAll(".collapseButton").forEach(function (btn) {
+				btn.addEventListener("click", function (event) {
+					let targetId = this.getAttribute("href");
+					let targetCollapse = document.querySelector(targetId);
+
+					// If the clicked collapse is not open, close all others first
+					if (!targetCollapse.classList.contains("show")) {
+						document.querySelectorAll(".collapse").forEach(function (collapse) {
+							if (collapse !== targetCollapse) {
+								collapse.classList.remove("show");
+								let otherIcon = document.querySelector(`[href="#${collapse.id}"] .text-danger`);
+								if (otherIcon) otherIcon.textContent = "+";
+							}
+						});
+					}
+
+					// Scroll to the clicked section smoothly when opening
+					let offset = this.getBoundingClientRect().top + window.scrollY - 250; // Adjust 250px for better visibility
+					window.scrollTo({ top: offset, behavior: "smooth" });
+				});
+			});
+
+			// Listen for Bootstrap collapse events to toggle icon
+			document.querySelectorAll(".collapse").forEach(function (collapse) {
+				collapse.addEventListener("show.bs.collapse", function () {
+					let btn = document.querySelector(`[href="#${this.id}"] .text-danger`);
+					if (btn) btn.textContent = "-";
+				});
+
+				collapse.addEventListener("hidden.bs.collapse", function () {
+					let btn = document.querySelector(`[href="#${this.id}"] .text-danger`);
+					if (btn) btn.textContent = "+";
+				});
+			});
+		});
+	</script>
+</div>

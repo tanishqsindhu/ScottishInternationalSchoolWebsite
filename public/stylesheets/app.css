@@ -9,6 +9,10 @@ body {
 	background-color: #fff;
 }
 
+.p-color {
+	color: #654f4f;
+}
+
 ul {
 	list-style: none;
 }
