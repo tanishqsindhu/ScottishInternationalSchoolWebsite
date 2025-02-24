@@ -1,220 +1,181 @@
 <% layout('layouts/boilerplate')%>
 
-	<section id="top" class="brand-hero row" style="overflow-x: hidden;">
-		<div class="animate-banner">
-			<picture class="zoom">
-				<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel"
-					data-bs-pause="false">
+<section id="top" class="brand-hero row" style="overflow-x: hidden">
+	<div class="animate-banner">
+		<picture class="zoom">
+			<div
+				id="carouselExampleSlidesOnly"
+				class="carousel slide carousel-fade"
+				data-bs-ride="carousel"
+				data-bs-pause="false"
+			>
+				<div class="carousel-inner">
+					<div class="carousel-item active" data-bs-interval="3000">
+						<img
+							src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+							class="d-block w-100"
+							alt="School Building"
+							style="height: 70vh"
+						/>
+					</div>
+					<div class="carousel-item" data-bs-interval="3000">
+						<img
+							src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+							class="d-block w-100"
+							alt="School Building"
+							style="height: 70vh"
+							loading="lazy"
+						/>
+					</div>
+				</div>
+			</div>
+		</picture>
+	</div>
+	<div class="page-title align-items-start">
+		<div class="container">
+			<div class="banner-content-inner">
+				<h1>
+					Jobs <a href="/"><i class="fa-solid fa-arrow-left" style="color: #eabd57"></i> Home</a>
+				</h1>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container-fuild">
+	<div class="row" data-aos="fade-up">
+		<section class="inner-entry" style="overflow-x: hidden">
+			<div class="container">
+				<div class="mainTitle">
+					<p class="title-branding mb-2">
+						<img class="img-fluid" src="/assets/webp/SISTransparentLogoWhite.webp" alt="Logo" />
+					</p>
+					<h2>Current Job Opening</h2>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row justify-content-center m-5" data-aos="fade-up">
+		<% if (jobs.length === 0||true) { %>
+		<div class="col-12 d-flex justify-content-center" style="height: 100%">
+			<div class="card shadow" data-aos="fade-up">
+				<!-- <img
+					src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+					class="card-img-top"
+					alt="card logo"
+				/> -->
+				<div
+					id="carouselExampleSlidesOnly"
+					class="carousel slide carousel-fade"
+					data-bs-ride="carousel"
+					data-bs-pause="false"
+				>
 					<div class="carousel-inner">
 						<div class="carousel-item active" data-bs-interval="3000">
-							<img src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
-								class="d-block w-100" alt="School Building" style="height: 70vh" />
+							<img
+								src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1683454348/Screenshot_2023-05-07_at_3.41.47_PM_wt8wpn.png"
+								class="d-block w-100 rounded-top carousel-img"
+								alt="School Building"
+							/>
 						</div>
 						<div class="carousel-item" data-bs-interval="3000">
-							<img src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
-								class="d-block w-100" alt="School Building" style="height: 70vh" loading="lazy" />
+							<img
+								src="https://res.cloudinary.com/djfy7fvq1/image/upload//w_1500/q_auto/f_auto/v1679174855/Scottish/qd8pkstxjoq0udwuwoc7.jpg"
+								class="d-block w-100 rounded-top carousel-img"
+								alt="School Building"
+							/>
 						</div>
 					</div>
 				</div>
-			</picture>
-		</div>
-		<div class="page-title align-items-start">
-			<div class="container">
-				<div class="banner-content-inner">
-					<h1>
-						Jobs <a href="/"><i class="fa-solid fa-arrow-left" style="color: #eabd57"></i> Home</a>
-					</h1>
-				</div>
-			</div>
-		</div>
-	</section>
-	<div class="container-fuild">
-		<div class="row" data-aos="fade-up">
-			<section class="inner-entry" style="overflow-x: hidden;">
-				<div class="container wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s" style="
-					visibility: visible;
-					animation-duration: 1.5s;
-					animation-delay: 0.2s;
-					animation-name: fadeInUp;
-				">
-					<div class="mainTitle">
-						<p class="title-branding mb-2">
-							<img class="img-fluid" src="/assets/webp/SISTransparentLogoWhite.webp" alt="Logo" />
-						</p>
-						<h2>Current Job Opening</h2>
-					</div>
-				</div>
-			</section>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row justify-content-center mt-5" data-aos="fade-up">
-			<div class="col-6">
-				<p>
-					<a class="" data-bs-toggle="collapse" style="color: black" href="#hindiTeacher" role="button"
-						aria-expanded="false" aria-controls="hindiTeacher">
-						<h2><i class="fa-solid fa-chevron-down"></i> Hindi Teacher</h2>
-					</a>
-				</p>
-				<div class="collapse" id="hindiTeacher">
-					<div class="">
-						Some placeholder content for the collapse component. This panel is hidden by default but
-						revealed when the user activates the relevant trigger.
-						<br />
-						<h3>Responsibilities:</h3>
-						<ul style="list-style-type: circle">
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-						</ul>
-						<br />
-						<h3>Requirements:</h3>
-						<ul style="list-style-type: circle">
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-						</ul>
-						<br /><a href="" style="font-size: 24px">To apply Click Here</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row justify-content-center mt-5" data-aos="fade-up">
-			<div class="col-6">
-				<p>
-					<a class="" data-bs-toggle="collapse" style="color: black" href="#englishTeacher" role="button"
-						aria-expanded="false" aria-controls="englishTeacher">
-						<h2><i class="fa-solid fa-chevron-down"></i> English Teacher</h2>
-					</a>
-				</p>
-				<div class="collapse" id="englishTeacher">
-					<div class="">
-						Some placeholder content for the collapse component. This panel is hidden by default but
-						revealed when the user activates the relevant trigger.
-						<br />
-						<h3>Responsibilities:</h3>
-						<ul style="list-style-type: circle">
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-						</ul>
-						<br />
-						<h3>Requirements:</h3>
-						<ul style="list-style-type: circle">
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-						</ul>
-						<br /><a href="">To apply Click Here</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row justify-content-center mt-5" data-aos="fade-up">
-			<div class="col-6">
-				<p>
-					<a class="" data-bs-toggle="collapse" style="color: black" href="#computerTeacher" role="button"
-						aria-expanded="false" aria-controls="computerTeacher">
-						<h2><i class="fa-solid fa-chevron-down"></i> Computer Teacher</h2>
-					</a>
-				</p>
-				<div class="collapse" id="computerTeacher">
-					<div class="">
-						Some placeholder content for the collapse component. This panel is hidden by default but
-						revealed when the user activates the relevant trigger.
-						<br />
-						<h3>Responsibilities:</h3>
-						<ul style="list-style-type: circle">
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-						</ul>
-						<br />
-						<h3>Requirements:</h3>
-						<ul style="list-style-type: circle">
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-							<li style="margin-left: 25px">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</li>
-						</ul>
-						<br /><a href="">To apply Click Here</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+				<div class="card-body">
+					<h4 class="card-title text-center fs-2 bold p-color">General Application</h4>
+					<p class="card-text m-3 p-color">
+						Thank you for your interest in joining Scottish International School. Please fill out
+						this application form carefully. Ensure all details are accurate before submission.<br />
+						<!-- <strong>Instructions:<br /></strong>
 
-	<link rel="stylesheet" href="/stylesheets/contact-us.css" />
-	<link rel="stylesheet" href="/stylesheets/page-title.css" />
-	<link rel="stylesheet" href="/stylesheets/about-us.css" />
+						✅ Fill in all required fields accurately.<br />
+						✅ Upload your updated resume/CV.<br />
+						✅ Provide valid contact details (Phone & Email).<br />
+						✅ Mention your qualifications & experience clearly.<br />
+						✅ Only shortlisted candidates will be contacted.<br /> -->
+
+						<strong>Salary no bar for deserving candidates.</strong><br />
+						<strong> Requirements:</strong><br />
+
+						📌 Fluency in English Language should be excellent.<br />
+						📌 Qualifications as per CBSE norms.<br />
+						📌 Teaching experience of 3 To 4 years with adequate computer literacy.<br />
+						📌 Passion for education and student development<br />
+
+						<span class="text-muted">We will review your application and contact you if you are shortlisted.<br />
+
+						For any inquiries, please reach out to info.sis.hsr@gmail.com or +919315577788.</span>
+					</p>
+					<a
+						href="https://forms.gle/DCK6BtgjZSvcsHzs5"
+						target="_blank"
+						class="btn btn-outline-warning w-100"
+						>To Apply Click Here</a
+					>
+				</div>
+			</div>
+			<!-- <iframe
+				src="https://docs.google.com/forms/d/e/1FAIpQLSca-scJ6EO7UDE-QnidPsq72ZA4kcNPhiPttioFwoFjAGwrSA/viewform?embedded=true"
+				width="640"
+				height="1675"
+				frameborder="0"
+				marginheight="0"
+				marginwidth="0"
+				>Loading…</iframe
+			> -->
+		</div>
+		<% } else { %> <% jobs.forEach((job, index) => { %>
+		<div class="col-7">
+			<p>
+				<a
+					class=""
+					data-bs-toggle="collapse"
+					style="color: black"
+					href="#job<%= index %>"
+					role="button"
+					aria-expanded="false"
+					aria-controls="job<%= index %>"
+				>
+					<h2><i class="fa-solid fa-chevron-down"></i> <%= job.title %></h2>
+				</a>
+			</p>
+			<div class="collapse" id="job<%= index %>">
+				<div>
+					<h3>Responsibilities:</h3>
+					<ul style="list-style-type: circle">
+						<% job.responsibilities.forEach(responsibility => { %>
+						<li style="margin-left: 25px"><%= responsibility %></li>
+						<% }) %>
+					</ul>
+					<br />
+					<h3>Requirements:</h3>
+					<ul style="list-style-type: circle">
+						<% job.requirements.forEach(requirement => { %>
+						<li style="margin-left: 25px"><%= requirement %></li>
+						<% }) %>
+					</ul>
+					<br />
+					<a href="<%= job.applyLink %>" style="font-size: 24px">To apply Click Here</a>
+				</div>
+			</div>
+		</div>
+		<% }) %> <% } %>
+	</div>
+</div>
+<style>
+	.carousel-img {
+		height: 300px; /* Adjust height as needed */
+		object-fit: cover; /* Ensures images fit properly without stretching */
+	}
+</style>
+<link rel="stylesheet" href="/stylesheets/contact-us.css" />
+<link rel="stylesheet" href="/stylesheets/page-title.css" />
+<link rel="stylesheet" href="/stylesheets/about-us.css" />
