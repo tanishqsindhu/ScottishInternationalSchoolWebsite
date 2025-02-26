@@ -133,14 +133,14 @@ app
 			const mailOptions = {
 				from: "broadcastscottish@gmail.com",
 				to: "info.sis.hsr@gmail.com",
-				subject: `Requested for contancting by user ${
+				subject: `Requested for contancting on Scottish Website by ${
 					newContact.name
-				} on ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`,
+				} at ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`,
 				html: `<div style="font-family: Arial, sans-serif; max-width: 600px; background: #ffffff; padding: 20px; margin: 20px auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
 							<!-- Header Section with Logo -->
 							<div style="display: flex; justify-content: space-between; align-items: center;">
 								<h2>📩 New Contact Us Form Submission</h2>
-								<img src="https://res.cloudinary.com/djfy7fvq1/image/upload/f_auto,q_auto/v1/Scottish/hkoqggo9z6nyp29xior8" alt="School Logo" style="max-width: 100px; height: auto;">
+								<img src="https://res.cloudinary.com/djfy7fvq1/image/upload/f_auto,q_auto/v1/Scottish/hkoqggo9z6nyp29xior8" alt="School Logo" style="max-width: 100px; height: auto; margin-left:200px">
 							</div>
 							<hr>
 
@@ -149,8 +149,8 @@ app
 							<p><strong>Email:</strong> ${newContact.email}</p>
 							<p><strong>Phone:</strong> ${newContact.phone}</p>
 							<p><strong>Date:</strong> ${newContact.date.toLocaleString("en-IN", {
-									timeZone: "Asia/Kolkata",
-								})}</p>
+								timeZone: "Asia/Kolkata",
+							})}</p>
 							
 							<p><strong>Message:</strong></p>
 							<p>${newContact.message}</p>
@@ -193,6 +193,7 @@ const staticPages = [
 	"principal-message",
 	"director-message",
 	"mandatory-disclosure",
+	"terms-conditions",
 ];
 staticPages.forEach((page) =>
 	app.get(`/${page}`, (req, res) => {

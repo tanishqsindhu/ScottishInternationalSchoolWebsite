@@ -43,18 +43,22 @@
 
 @keyframes backgroundImageColorInverted {
 	0% {
-		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
+		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
+			49px;
 	}
 	100% {
-		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
+		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
+			49px;
 	}
 }
 @keyframes backgroundImageColor {
 	0% {
-		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
+		background: #2e2f90 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
+			49px;
 	}
 	100% {
-		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center / 49px;
+		background: #eabd57 url(/assets/webp/SISTransparentLogoWhite.webp) no-repeat center center /
+			49px;
 	}
 }
 
@@ -1201,4 +1205,11 @@ button:hover {
 }
 .la-arrow-right::before {
 	content: "\f061";
+}
+
+@media (max-width: 550px) {
+	.single_counter div {
+		width: 8rem;
+		height: 8rem;
+	}
 }
