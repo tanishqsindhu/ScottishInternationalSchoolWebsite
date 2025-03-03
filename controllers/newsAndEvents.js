@@ -40,7 +40,6 @@ module.exports.articleEdit = async (req, res) => {
 };
 
 module.exports.articleUpdate = async (req, res) => {
-	const currentPage = "news";
 	const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
 	const newsArticle = await NewsArticles.findByIdAndUpdate(req.params.id, { ...req.body.article });
 	newsArticle.images.push(...imgs);
@@ -53,7 +52,7 @@ module.exports.articleUpdate = async (req, res) => {
 		});
 	}
 	await newsArticle.save();
-	res.redirect(`/news-events/${newsArticle._id}`, { currentPage });
+	res.redirect(`/news-events/${newsArticle._id}`);
 };
 
 module.exports.deleteArticle = async (req, res) => {

@@ -1,4 +1,4 @@
-<% layout('layouts/boilerplate')%> <%- include('./partials/photoSlide')%>
+<% layout('layouts/boilerplate')%> <%- include('./partials/photoSlide')%>	<%- include('./partials/flash')%>
 <div class="container-fluid mt-5 d-flex" style="min-height: 30vh">
 	<div class="row w-100 align-self-center">
 		<div
@@ -16,7 +16,7 @@
 					style="color: #e2b264"
 				>
 					<span id="collapseIcon" class="me-4 me-md-5 text-danger"> + </span>
-					Sector 16 & 17
+					Sector 16 & 17 Branch
 				</a>
 			</p>
 			<div class="collapse my-4" id="collapseBranch1">
@@ -53,11 +53,12 @@
 									<input
 										class="form-control"
 										type="number"
-										name="user[mobilenumber]"
+										name="user[phone]"
 										placeholder="Phone Number"
 										required
 									/>
 								</div>
+								<input type="hidden" name="user[branch]" value="Sector 16 & 17" required />
 								<div class="mb-3">
 									<textarea
 										class="form-control"
@@ -188,10 +189,11 @@
 									<input
 										class="form-control"
 										type="number"
-										name="user[mobilenumber]"
+										name="user[phone]"
 										placeholder="Phone Number"
 										required
 									/>
+									<input type="hidden" name="user[branch]" value="Sector 16 & 17" required />
 								</div>
 								<div class="mb-3">
 									<textarea

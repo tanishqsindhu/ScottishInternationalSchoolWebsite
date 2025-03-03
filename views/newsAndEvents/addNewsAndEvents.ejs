@@ -153,6 +153,11 @@
 							<div class="valid-feedback">Looks good!</div>
 						</div>
 						<div class="mb-3">
+							<label class="form-label" for="title">Title: </label>
+							<input class="form-control" type="text" id="title" name="article[title]" required />
+							<div class="valid-feedback">Looks good!</div>
+						</div>
+						<div class="mb-3">
 							<label class="form-label" for="paragraph1">Paragraph 1: </label>
 							<input
 								class="form-control"
@@ -164,8 +169,18 @@
 							<div class="valid-feedback">Looks good!</div>
 						</div>
 						<div class="mb-3">
+							<label class="form-label" for="title">Paragraph 2 Title(optional): </label>
+							<input class="form-control" type="text" id="title" name="article[paragraph2title]" required />
+							<div class="valid-feedback">Looks good!</div>
+						</div>
+						<div class="mb-3">
 							<label class="form-label" for="paragraph2">Paragraph 2 (optional): </label>
 							<input class="form-control" type="text" id="paragraph2" name="article[paragraph2]" />
+							<div class="valid-feedback">Looks good!</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label" for="title">Paragraph 3 Title(optional): </label>
+							<input class="form-control" type="text" id="title" name="article[paragraph3title]" required />
 							<div class="valid-feedback">Looks good!</div>
 						</div>
 						<div class="mb-3">
@@ -174,8 +189,18 @@
 							<div class="valid-feedback">Looks good!</div>
 						</div>
 						<div class="mb-3">
+							<label class="form-label" for="title">Paragraph 4 Title(optional): </label>
+							<input class="form-control" type="text" id="title" name="article[paragraph4title]" required />
+							<div class="valid-feedback">Looks good!</div>
+						</div>
+						<div class="mb-3">
 							<label class="form-label" for="paragraph4">Paragraph 4 (optional): </label>
 							<input class="form-control" type="text" id="paragraph4" name="article[paragraph4]" />
+							<div class="valid-feedback">Looks good!</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label" for="title">Paragraph 5 Title(optional): </label>
+							<input class="form-control" type="text" id="title" name="article[paragraph5title]" required />
 							<div class="valid-feedback">Looks good!</div>
 						</div>
 						<div class="mb-3">
@@ -183,17 +208,8 @@
 							<input class="form-control" type="text" id="paragraph5" name="article[paragraph5]" />
 							<div class="valid-feedback">Looks good!</div>
 						</div>
-						<!-- <div class="mb-3">
-                                    <div class="form-file custom-file">
-                                        <input type="file" class="form-file-input" id="image" name="image">
-                                        <label class="form-file-label" for="image">
-                                            <span class="form-file-text custom-file-label">Add more image(s)...</span>
-                                            <span class="form-file-button">Browse</span>
-                                        </label>
-                                    </div>
-                                </div> -->
 						<div class="mb-3">
-							<button class="btn btn-success">Add Article</button>
+							<button class="btn btn-outline-success w-100">Add Article</button>
 						</div>
 					</form>
 				</div>
@@ -202,12 +218,5 @@
 	</div>
 	<a href="/news-events" class="btn btn-outline-info col-12">View All News And Events</a>
 </div>
-<div class="container-fuild">
-	<section class="row" style="margin-bottom: 160px">
-		<%- include('../partials/footerBottom')%>
-	</section>
-</div>
 
-<link rel="stylesheet" href="/stylesheets/contact-us.css" />
 <link rel="stylesheet" href="/stylesheets/page-title.css" />
-<link rel="stylesheet" href="/stylesheets/navbottom.css" />

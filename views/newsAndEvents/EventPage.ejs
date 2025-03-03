@@ -25,6 +25,7 @@
                     </div>
                 </picture>
             </div>
+            <%- include('../partials/flash')%>
             <div class="page-title align-items-start">
                 <div class="container">
                     <div class="banner-content-inner">
@@ -98,30 +99,50 @@
                                             <p></p>
 
                                             <div data-aos="fade-up">
-                                                <%=news.paragraph1 %>.
+                                                <%=news.paragraph1 %>
                                             </div>
                                             <div>&nbsp;</div>
+                                            <% if(news.paragraph2title!='' ){ %>
+                                                <div class="section-title"data-aos="fade-up">
+                                                    <h4 class="p-color fs-3"><%=news.paragraph2title %></h4>
+                                                </div>
+                                                <% } %>
                                             <% if(news.paragraph2!='' ){ %>
                                                 <div data-aos="fade-up">
-                                                    <%=news.paragraph2 %>.
+                                                    <%=news.paragraph2 %>
                                                 </div>
                                                 <div>&nbsp;</div>
                                                 <% } %>
+                                                <% if(news.paragraph3title!='' ){ %>
+                                                    <div class="section-title"data-aos="fade-up">
+                                                        <h4 class="p-color fs-3"><%=news.paragraph3title %></h4>
+                                                    </div>
+                                                    <% } %>
                                                     <% if(news.paragraph3!='' ){ %>
                                                         <div data-aos="fade-up">
-                                                            <%=news.paragraph3 %>.
+                                                            <%=news.paragraph3 %>
                                                         </div>
                                                         <div>&nbsp;</div>
                                                         <% } %>
+                                                        <% if(news.paragraph4title!='' ){ %>
+                                                            <div class="section-title"data-aos="fade-up">
+                                                                <h4 class="p-color fs-3"><%=news.paragraph4title %></h4>
+                                                            </div>
+                                                            <% } %>
                                                             <% if(news.paragraph4!='' ){ %>
                                                                 <div data-aos="fade-up">
                                                                     <%=news.paragraph4 %>.&nbsp;
                                                                 </div>
                                                                 <div data-aos="fade-up">&nbsp;</div>
                                                                 <% } %>
+                                                                <% if(news.paragraph5title!='' ){ %>
+                                                                    <div class="section-title"data-aos="fade-up">
+                                                                        <h4 class="p-color fs-3"><%=news.paragraph5title %></h4>
+                                                                    </div>
+                                                                    <% } %>
                                                                     <% if(news.paragraph5!='' ){ %>
                                                                         <div data-aos="fade-up">
-                                                                            <%=news.paragraph5 %>.
+                                                                            <%=news.paragraph5 %>
                                                                         </div>
                                                                         <% } %>
                                                                             <p></p>
@@ -131,14 +152,14 @@
                             </div>
                             <% if(currentUser) {%>
                                 <% if(currentUser.role.includes('articlesEditor')) {%>
-                                    <span>
-                                        <a class="btn btn-outline-info " href="/news-events/<%=news._id%>/edit">Edit</a>
-                                        <form class="d-inline-block" action="/news-events/<%=news._id%>?_method=DELETE"
+                                    <div class="row">
+                                        <a class="btn btn-outline-info w-100 col" href="/news-events/<%=news._id%>/edit">Edit</a>
+                                        <form class="d-inline-block w-100 col" action="/news-events/<%=news._id%>?_method=DELETE"
                                             method="POST">
                                             <button type="submit"
-                                                class="btn btn-block btn-outline-danger col">Delete</button>
+                                                class="btn btn-block btn-outline-danger w-100">Delete</button>
                                         </form>
-                                    </span>
+                                    </div>
                                     <% } %>
                                         <% } %>
                         </div>

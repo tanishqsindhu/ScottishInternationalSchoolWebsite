@@ -135,7 +135,9 @@ app
 				to: "info.sis.hsr@gmail.com",
 				subject: `Requested for contancting on Scottish Website by ${
 					newContact.name
-				} at ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`,
+				} at ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} for ${
+					newContact.branch
+				} Branch`,
 				html: `<div style="font-family: Arial, sans-serif; max-width: 600px; background: #ffffff; padding: 20px; margin: 20px auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
 							<!-- Header Section with Logo -->
 							<div style="display: flex; justify-content: space-between; align-items: center;">
@@ -162,6 +164,7 @@ app
 						`,
 			};
 			sendMail(mailOptions);
+			req.flash("success", "We Have Recieved Your Request and will contact you Shortly");
 			res.redirect("/");
 		} catch (err) {
 			next(err);

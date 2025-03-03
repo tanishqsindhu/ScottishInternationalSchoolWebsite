@@ -68,9 +68,9 @@
 
 				<!-- Conditional Rendering for User Authentication -->
 				<% if(currentUser) { %>
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a class="nav-link" href="dashboard.scottishinternationalschool.com">Dashboard</a>
-					</li>
+					</li> -->
 					<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
 					<% if(currentUser.role.includes('admin')) { %>
 						<li class="nav-item <%= currentPage === 'register' ? 'active' : '' %>"

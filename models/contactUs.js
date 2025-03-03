@@ -6,6 +6,7 @@ const ContactUsSchema=new Schema({
     email:String,
     phone:Number,
     message:String,
+    branch:String,
     date:Date
 })
 

@@ -7,8 +7,8 @@ const users=require('../controllers/user')
 const{isAdmin}=require('../middleware');
 
 router.route('/register')
-    .get( isAdmin,users.renderRegister)
-    .post(isAdmin,catchAsync(users.register));
+    .get( users.renderRegister)
+    .post(catchAsync(users.register));
 
 router.route('/login')
     .get(users.renderLogin)

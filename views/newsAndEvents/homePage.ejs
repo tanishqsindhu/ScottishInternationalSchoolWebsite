@@ -36,6 +36,7 @@
                 </div>
             </div>
         </section>
+        <%- include('../partials/flash')%>
         <div class="container-fuild">
             <div class="row">
                 <section class="inner-entry ">
@@ -52,6 +53,13 @@
         </div>
         <section class="photo-gallery bg-white news-page"style="overflow-x: hidden;">
             <div class="container-fluid">
+                <% if(currentUser) {%>
+                    <% if(currentUser.role.includes('articlesEditor')) {%>
+                    <div class="row justify-content-center mb-5">
+                        <a href="/news-events/add" class="btn btn-outline-primary col-12 col-md-5" style="color: #980505;border-color: #980505;">Add a News Article</a>
+                    </div>
+                    <% } %>
+                    <% } %>
                 <ul class="photoGallery p-0 row">
                     <% for(let i=0;i<news.length;i++){ %>
                         <li class="col-xs-12 col-md-6 col-lg-4 mb-4"  data-aos="fade-up">
@@ -103,13 +111,6 @@
                         </li>
                         <% } %>
                 </ul>
-                <% if(currentUser) {%>
-                <% if(currentUser.role.includes('articlesEditor')) {%>
-                <div class="row justify-content-center">
-                    <a href="/news-events/add" class="btn btn-outline-primary col-5" style="color: #980505;border-color: #980505;">Add a News Article</a>
-                </div>
-                <% } %>
-                <% } %>
             </div>
         </section>
 

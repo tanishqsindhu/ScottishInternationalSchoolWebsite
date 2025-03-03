@@ -14,7 +14,7 @@
                       (max-width: 1000px) 80vw, 
                       50vw" class="d-block w-100" alt="school building" style="height: 500px;">
                     <div class="carousel-caption d-md-block rounded" style="background-color:rgb(66, 39, 26,0.4);">
-                        <h5 style="color: #f0bc1b;">Scottish Academy of Excellence</h5>
+                        <h5 style="color: #f0bc1b;">Scottish International School</h5>
                         <p style="color: #f0bc1b;">Welcome to our school building, a place where learning thrives
                             and futures are shaped! Our school is designed to provide a safe, engaging, and
                             inspiring environment for students to grow academically, socially, and personally.</p>
@@ -60,6 +60,7 @@
             </div>
         </div>
     </section>
+    <%- include('./partials/flash')%>
     <% if(errorMessage=='underConstruction' ) {%>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Error Page is not build Yet!</strong> It is Under Construction.
@@ -92,15 +93,17 @@
                         <div class="col mb-5 d-flex justify-content-center">
                             <div class="rectangle">
                                 <div class="circle">
+                                    <a href="/about-us"aria-label="School's history">
                                     <figure class="d-flex justify-content-center">
                                         <img src="/assets/webp/auditorium.webp" alt="ACADEMICS" width="300px"
                                             height='300px'>
                                     </figure>
+                                </a>
                                 </div>
                                 <div class="item-part-detail text-center"">
                             <h3>Scottish My Home</h3>
                             <hr>
-                            <a href=" /about-us" data-aos="fade-up" class=" btn mt-2" id="btn"
+                            <a href=" /about-us" data-aos="fade-up" class=" btn mt-2" id="btn" aria-label="School's history"
                                     style="color: #980606; border-radius: 0; border-color: #980606;transition: all 1s ease-in-out;">
                                     Explore</a>
                                 </div>
@@ -109,15 +112,17 @@
                         <div class="col mb-5 d-flex justify-content-center">
                             <div class="rectangle-inverted">
                                 <div class="circle-inverted">
+                                    <a href="/beyond-classroom/sports" aria-label="about sports at school">
                                     <figure class="d-flex justify-content-center">
                                         <img src="/assets/webp/girlsrace.webp" alt="ACADEMICS" width="300px"
                                             height='300px'>
                                     </figure>
+                                </a>
                                 </div>
                                 <div class="item-part-detail text-center">
                                     <h3>Sweating It Out</h3>
                                     <hr>
-                                    <a href="/beyond-classroom/sports" id="inverted-btn" class="btn mt-2" data-aos="fade-up"
+                                    <a href="/beyond-classroom/sports" id="inverted-btn" class="btn mt-2" data-aos="fade-up" aria-label="about sports at school"
                                         style="color: white; border-radius: 0; border-color: white; transition: all 1s ease-in-out;">Explore</a>
                                 </div>
                             </div>
@@ -125,15 +130,17 @@
                         <div class="col mb-5 d-flex justify-content-center">
                             <div class="rectangle">
                                 <div class="circle">
+                                    <a href="/news-events/67c54d5de076cb17b2d5793b" aria-label="new branch artitcle">
                                     <figure class="d-flex justify-content-center">
                                         <img src="/assets/webp/scottishBuilding.webp" alt="ACADEMICS" width="300px"
                                             height='300px'>
                                     </figure>
+                                </a>
                                 </div>
                                 <div class="item-part-detail text-center"">
                             <h3>Branching Out</h3>
                             <hr>
-                            <a href="#" class=" btn mt-2" id="btn" data-aos="fade-up"
+                            <a href="/news-events/67c54d5de076cb17b2d5793b" class="btn mt-2" id="btn" data-aos="fade-up" aria-label="new branch artitcle"
                                     style="color: #980606; border-radius: 0; border-color: #980606; transition: all 1s ease-in-out;">
                                     Explore</a>
                                 </div>
@@ -328,13 +335,19 @@
                                                 experience the infrastructure and atmosphere of Scottish, do get in
                                                 touch with us </p>
                                         </div>
-                                        <div class="mb-3"><input class="form-control" type="text" name="user[name]"
+                                        <div class="mb-3"><input class="form-control" type="text" name="user[name]" aria-label="Enter Name"
                                                 placeholder="Name" required></div>
-                                        <div class="mb-3"><input class="form-control" type="email" name="user[email]"
+                                        <div class="mb-3"><input class="form-control" type="email" name="user[email]" aria-label="Enter Email"
                                                 placeholder="Email" required></div>
-                                        <div class="mb-3"><input class="form-control" type="number" name="user[phone]"
+                                        <div class="mb-3"><input class="form-control" type="number" name="user[phone]"aria-label="Enter Phone Number"
                                                 placeholder="Phone Number" required></div>
-                                        <div class="mb-3"><textarea class="form-control" name="user[message]"
+                                                <div class="mb-3"><select class="form-select"name="user[branch]" aria-label="Branch Selection" required>
+                                                    <option selected>Select branch</option>
+                                                    <option value="Sector 16 & 17">Sector 16 & 17</option>
+                                                    <option value="South Bypass">South Bypass</option>
+                                                  </select>
+                                                </div>
+                                        <div class="mb-3"><textarea class="form-control" name="user[message]" aria-label="Enter Your Message"
                                                 placeholder="Message" rows="6"></textarea></div>
                                         <div class="mb-3 row mx-1"><button class="btn btn-outline-secondary btn-lg col"
                                                 type="submit"><i class="fa-solid fa-envelope"
