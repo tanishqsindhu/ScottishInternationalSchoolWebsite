@@ -178,7 +178,16 @@ app.get("/admission", (req, res) => {
 
 app.get("/gallery", async (req, res) => {
 	const currentPage = "gallery";
-	const posts = await require("./models/post").find({}).sort({ _id: -1 });
+	const Post = require("./models/post");
+	const posts = await Post.find({}).sort({ _id: -1 });
+
+	// Check if we have posts - if not, may need to add a flash message
+	if (posts.length === 0) {
+		req.flash(
+			"info",
+			"We're experiencing issues connecting to our Facebook page. Please check back later."
+		);
+	}
 
 	res.render("gallery", { posts, currentPage });
 });
@@ -238,6 +247,12 @@ app.use((err, req, res, next) => {
 		.status(statusCode)
 		.render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
 });
+
+// Initialize Facebook Posts Scheduler
+if (process.env.ENABLE_FACEBOOK_POSTS === "true") {
+	const Scheduler = require("./services/scheduler");
+	Scheduler.startFacebookPostScheduler(process.env.FACEBOOK_UPDATE_INTERVAL || 60);
+}
 
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
