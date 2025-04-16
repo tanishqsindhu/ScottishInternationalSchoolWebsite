@@ -104,10 +104,7 @@ app.get("/", async (req, res, next) => {
 	try {
 		const currentPage = "home";
 		const news = await require("./models/newsAndEvents").find({});
-		news.sort(
-			(a, b) =>
-				new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`)
-		);
+		news.sort((a, b) => new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`));
 		const { parentTestimonial } = await require("./models/home").findOne();
 		res.render("home", { news, parentTestimonial, currentPage });
 	} catch (err) {
@@ -133,11 +130,7 @@ app
 			const mailOptions = {
 				from: "broadcastscottish@gmail.com",
 				to: "info.sis.hsr@gmail.com",
-				subject: `Requested for contancting on Scottish Website by ${
-					newContact.name
-				} at ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} for ${
-					newContact.branch
-				} Branch`,
+				subject: `Requested for contancting on Scottish Website by ${newContact.name} at ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} for ${newContact.branch} Branch`,
 				html: `<div style="font-family: Arial, sans-serif; max-width: 600px; background: #ffffff; padding: 20px; margin: 20px auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
 							<!-- Header Section with Logo -->
 							<div style="display: flex; justify-content: space-between; align-items: center;">
@@ -178,18 +171,9 @@ app.get("/admission", (req, res) => {
 
 app.get("/gallery", async (req, res) => {
 	const currentPage = "gallery";
-	const Post = require("./models/post");
-	const posts = await Post.find({}).sort({ _id: -1 });
 
-	// Check if we have posts - if not, may need to add a flash message
-	if (posts.length === 0) {
-		req.flash(
-			"info",
-			"We're experiencing issues connecting to our Facebook page. Please check back later."
-		);
-	}
-
-	res.render("gallery", { posts, currentPage });
+	// Removed post fetching as we're only using embedded Facebook feed and YouTube
+	res.render("gallery", { currentPage });
 });
 
 app.get("/jobs", async (req, res) => {
@@ -199,14 +183,7 @@ app.get("/jobs", async (req, res) => {
 	res.render("jobs", { jobs, currentPage });
 });
 // Static Page Routes
-const staticPages = [
-	"about-us",
-	"academics",
-	"principal-message",
-	"director-message",
-	"mandatory-disclosure",
-	"terms-conditions",
-];
+const staticPages = ["about-us", "academics", "principal-message", "director-message", "mandatory-disclosure", "terms-conditions"];
 staticPages.forEach((page) =>
 	app.get(`/${page}`, (req, res) => {
 		const currentPage = page;
@@ -243,16 +220,14 @@ app.use((err, req, res, next) => {
 		}
 	}
 	const currentPage = "error";
-	res
-		.status(statusCode)
-		.render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
+	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
 });
 
-// Initialize Facebook Posts Scheduler
-if (process.env.ENABLE_FACEBOOK_POSTS === "true") {
-	const Scheduler = require("./services/scheduler");
-	Scheduler.startFacebookPostScheduler(process.env.FACEBOOK_UPDATE_INTERVAL || 60);
-}
+// // Initialize Facebook Posts Scheduler
+// if (process.env.ENABLE_FACEBOOK_POSTS === "true") {
+// 	const Scheduler = require("./services/scheduler");
+// 	Scheduler.startFacebookPostScheduler(process.env.FACEBOOK_UPDATE_INTERVAL || 60);
+// }
 
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

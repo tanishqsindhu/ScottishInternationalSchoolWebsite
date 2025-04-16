@@ -1,96 +1,207 @@
 <% layout('layouts/boilerplate')%>
-<section id="top" style="overflow: hidden" class="brand-hero row">
-	<!--<iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.1434557992666!2d78.05572211552051!3d30.3184371125311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929b7249d5e1f%3A0x6a0dbc429180e02b!2sWelham%20Boys&#39;%20School!5e0!3m2!1sen!2sin!4v1594274963609!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
-	<div class="animate-banner">
-		<picture class="zoom">
-			<div
-				id="carouselExampleSlidesOnly"
-				class="carousel slide carousel-fade"
-				data-bs-ride="carousel"
-				data-bs-pause="false"
-			>
-				<div class="carousel-inner">
-					<div class="carousel-item active" data-bs-interval="3000">
-						<img
-							src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/f_auto,q_auto/v1/Scottish/me8akbjwzvyuzno4e6zf"
-							class="d-block w-100"
-							alt="School Building"
-							style="height: 70vh"
-						/>
-						<!-- <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div> -->
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+	<!-- IMPORTANT:
+         - Replace v18.0 with the latest stable API version if needed.
+         - For Content Security Policy (CSP), you'd need a server-generated nonce.
+         - You might need to add your Facebook App ID if using other FB features:
+           src="...sdk.js#xfbml=1&version=v18.0&appId=YOUR_APP_ID&autoLogAppEvents=1"
+    -->
+
+	<section id="top" style="overflow: hidden" class="brand-hero row">
+		<!--<iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.1434557992666!2d78.05572211552051!3d30.3184371125311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929b7249d5e1f%3A0x6a0dbc429180e02b!2sWelham%20Boys&#39;%20School!5e0!3m2!1sen!2sin!4v1594274963609!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+		<div class="animate-banner">
+			<picture class="zoom">
+				<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel"
+					data-bs-pause="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active" data-bs-interval="3000">
+							<img src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/f_auto,q_auto/v1/Scottish/me8akbjwzvyuzno4e6zf"
+								class="d-block w-100" alt="School Building" style="height: 70vh" />
+							<!-- <div class="carousel-caption d-none d-md-block">
+								<h5>First slide label</h5>
+								<p>Some representative placeholder content for the first slide.</p>
+							</div> -->
+						</div>
+						<div class="carousel-item" data-bs-interval="3000">
+							<img src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/q_auto/f_auto/v1741596937/naqc1fiijnhbap3jmyr8.webp"
+								class="d-block w-100" alt="School Building" style="height: 70vh" />
+							<!-- <div class="carousel-caption d-none d-md-block">
+								<h5>First slide label</h5>
+								<p>Some representative placeholder content for the first slide.</p>
+							</div> -->
+						</div>
 					</div>
-					<div class="carousel-item" data-bs-interval="3000">
-						<img
-							src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/q_auto/f_auto/v1741596937/naqc1fiijnhbap3jmyr8.webp"
-							class="d-block w-100"
-							alt="School Building"
-							style="height: 70vh"
-						/>
-						<!-- <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div> -->
+				</div>
+			</picture>
+		</div>
+		<%- include('./partials/flash')%>
+			<div class="page-title align-items-start">
+				<div class="container">
+					<div class="banner-content-inner">
+						<h1>
+							Gallery
+							<a href="/"><i class="fa-solid fa-arrow-left" style="color: #eabd57"></i> Home</a>
+						</h1>
 					</div>
 				</div>
 			</div>
-		</picture>
-	</div>
-	<%- include('./partials/flash')%>
-	<div class="page-title align-items-start">
-		<div class="container">
-			<div class="banner-content-inner">
-				<h1>
-					Gallery
-					<a href="/"><i class="fa-solid fa-arrow-left" style="color: #eabd57"></i> Home</a>
-				</h1>
+	</section>
+	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+		<symbol id="info-fill" viewBox="0 0 16 16">
+			<path
+				d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+		</symbol>
+	</svg>
+	<div class="container mt-5">
+		<!-- Social Media Navigation Tabs -->
+		<ul class="nav nav-tabs social-tabs mb-4" id="socialTabs" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="facebook-tab" data-bs-toggle="tab" data-bs-target="#facebook"
+					type="button" role="tab" aria-controls="facebook" aria-selected="true">
+					<i class="fa-brands fa-facebook me-2"></i>Facebook
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="youtube-tab" data-bs-toggle="tab" data-bs-target="#youtube" type="button"
+					role="tab" aria-controls="youtube" aria-selected="false">
+					<i class="fa-brands fa-youtube me-2"></i>YouTube
+				</button>
+			</li>
+		</ul>
+
+		<!-- Tab Content -->
+		<div class="tab-content" id="socialTabsContent">
+			<!-- Facebook Tab -->
+			<div class="tab-pane fade show active" id="facebook" role="tabpanel" aria-labelledby="facebook-tab">
+				<div class="row">
+					<div class="col-12 text-center mb-4">
+						<h2 class="section-title">Our Facebook Updates</h2>
+						<p class="lead">Stay connected with our latest announcements and events</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col mx-auto">
+
+						<div class="facebook-container">
+							<iframe src='https://widgets.sociablekit.com/facebook-profile/iframe/25546811'
+								frameborder='0' width='1000%' height='100%'></iframe>
+						</div>
+
+						<!-- <div class="text-center mt-4">
+							<a href="https://www.facebook.com/scottishinternationalschoolhisar" target="_blank"
+								class="btn btn-primary">
+								<i class="fa-brands fa-facebook me-2"></i>Visit Our Facebook Page
+							</a>
+						</div> -->
+					</div>
+				</div>
+			</div>
+
+			<!-- YouTube Tab -->
+			<div class="tab-pane fade" id="youtube" role="tabpanel" aria-labelledby="youtube-tab">
+				<div class="row">
+					<div class="col-12 text-center mb-4">
+						<h2 class="section-title">Our YouTube Channel</h2>
+						<p class="lead">Watch videos from our school events and activities</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 mx-auto">
+						<div class="youtube-container">
+							<iframe width="100%" height="315"
+								src="https://www.youtube.com/embed/videoseries?si=gYaVKA5hRm8B8jQG&amp;list=PLkLMWLEhe7Ljg28gOsEgBLtc4tEmJquxs"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						</div>
+
+						<div class="text-center mt-4">
+							<a href="https://www.youtube.com/@scottishinternationalhisar" target="_blank"
+								class="btn btn-danger">
+								<i class="fa-brands fa-youtube me-2"></i>Visit Our YouTube Channel
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</section>
-<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-	<symbol id="info-fill" viewBox="0 0 16 16">
-		<path
-			d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-		/>
-	</symbol>
-</svg>
-<div class="container mt-4">
-	<div class="row justify-content-center">
-		<div
-			class="alert alert-info alert-dismissible fade show d-flex align-items-center col-7"
-			role="alert"
-		>
-			<svg class="bi flex-shrink-0 me-2" role="img" width="1rem" height="1rem" aria-label="Info:">
-				<use xlink:href="#info-fill" />
-			</svg>
-			If Posts are not visible try turning off privacy settings or View on Chrome!
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-	</div>
-	<div class="row">
-		<% posts.forEach(post=> { %>
-		<div
-			class="col-12 col-md-6 fb-post-container"
-			data-aos="fade-up"
-			style="max-width: 100%; height: auto; overflow: hidden"
-		>
-			<iframe
-				class="fb-post"
-				src="https://www.facebook.com/plugins/post.php?href=<%=post.url %>&show_text=true"
-				style="border: none; min-width: 100%; height: 100vh; max-height: 100%"
-				scrolling="no"
-				frameborder="0"
-				data-lazy="true"
-				loading="lazy"
-				allowfullscreen="true"
-				allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-			>
-			</iframe>
-		</div>
 
-		<% }); %>
-	</div>
-</div>
+	<style>
+		/* Tab Navigation Styling */
+		.social-tabs {
+			border-bottom: 1px solid #dee2e6;
+			justify-content: center;
+		}
+
+		.social-tabs .nav-link {
+			margin-bottom: -1px;
+			border: 1px solid transparent;
+			border-top-left-radius: 0.25rem;
+			border-top-right-radius: 0.25rem;
+			font-weight: 500;
+			padding: 0.75rem 1.5rem;
+			transition: all 0.3s ease;
+		}
+
+		.social-tabs .nav-link:hover {
+			border-color: #e9ecef #e9ecef #dee2e6;
+		}
+
+		.social-tabs .nav-link.active {
+			color: #495057;
+			background-color: #fff;
+			border-color: #dee2e6 #dee2e6 #fff;
+		}
+
+		/* Facebook Container */
+		.facebook-container {
+			display: flex;
+			justify-content: center;
+			background: white;
+			border-radius: 8px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+			padding: 1rem;
+			min-height: 800px;
+			height: 100%;
+			width: 100%;
+		}
+
+		/* YouTube Container */
+		.youtube-container {
+			position: relative;
+			width: 100%;
+			background: white;
+			border-radius: 8px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+		}
+
+		/* Section Title Styling */
+		.section-title {
+			position: relative;
+			margin-bottom: 1.5rem;
+			color: #333;
+		}
+
+		.section-title:after {
+			content: '';
+			display: block;
+			width: 80px;
+			height: 3px;
+			background: #eabd57;
+			margin: 15px auto 0;
+		}
+
+		@media (max-width: 768px) {
+			.social-tabs .nav-link {
+				padding: 0.5rem 1rem;
+				font-size: 0.9rem;
+			}
+		}
+	</style>
