@@ -89,6 +89,7 @@ app.use((req, res, next) => {
 	res.locals.success = req.flash("success");
 	res.locals.error = req.flash("error");
 	res.locals.errorMessage = "";
+	res.locals.currentPath = req.originalUrl; // Add current path for dynamic canonical URLs
 	next();
 });
 
@@ -104,7 +105,10 @@ app.get("/", async (req, res, next) => {
 	try {
 		const currentPage = "home";
 		const news = await require("./models/newsAndEvents").find({});
-		news.sort((a, b) => new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`));
+		news.sort(
+			(a, b) =>
+				new Date(`${b.year}-${b.month}-${b.date}`) - new Date(`${a.year}-${a.month}-${a.date}`)
+		);
 		const { parentTestimonial } = await require("./models/home").findOne();
 		res.render("home", { news, parentTestimonial, currentPage });
 	} catch (err) {
@@ -130,7 +134,11 @@ app
 			const mailOptions = {
 				from: "broadcastscottish@gmail.com",
 				to: "info.sis.hsr@gmail.com",
-				subject: `Requested for contancting on Scottish Website by ${newContact.name} at ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} for ${newContact.branch} Branch`,
+				subject: `Requested for contancting on Scottish Website by ${
+					newContact.name
+				} at ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} for ${
+					newContact.branch
+				} Branch`,
 				html: `<div style="font-family: Arial, sans-serif; max-width: 600px; background: #ffffff; padding: 20px; margin: 20px auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
 							<!-- Header Section with Logo -->
 							<div style="display: flex; justify-content: space-between; align-items: center;">
@@ -183,7 +191,14 @@ app.get("/jobs", async (req, res) => {
 	res.render("jobs", { jobs, currentPage });
 });
 // Static Page Routes
-const staticPages = ["about-us", "academics", "principal-message", "director-message", "mandatory-disclosure", "terms-conditions"];
+const staticPages = [
+	"about-us",
+	"academics",
+	"principal-message",
+	"director-message",
+	"mandatory-disclosure",
+	"terms-conditions",
+];
 staticPages.forEach((page) =>
 	app.get(`/${page}`, (req, res) => {
 		const currentPage = page;
@@ -220,7 +235,9 @@ app.use((err, req, res, next) => {
 		}
 	}
 	const currentPage = "error";
-	res.status(statusCode).render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
+	res
+		.status(statusCode)
+		.render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
 });
 
 // // Initialize Facebook Posts Scheduler
