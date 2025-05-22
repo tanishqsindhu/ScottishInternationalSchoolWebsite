@@ -66,7 +66,7 @@ module.exports.verifyRecaptcha = async (req, res, next) => {
 
 		// If there's no recaptcha response, show error
 		if (!recaptchaResponse) {
-			req.flash("error", "reCAPTCHA verification failed. Please try again.");
+			req.flash("error", "Please complete the reCAPTCHA verification.");
 			return res.redirect(req.get("referer") || "/");
 		}
 
@@ -82,12 +82,9 @@ module.exports.verifyRecaptcha = async (req, res, next) => {
 			}
 		);
 
-		// For v3, check the score (0.0 to 1.0, where 1.0 is very likely a good interaction)
-		if (
-			!recaptchaVerification.data.success ||
-			recaptchaVerification.data.score < 0.5 // Adjust this threshold as needed
-		) {
-			console.log("reCAPTCHA failed with score:", recaptchaVerification.data.score);
+		// For v2, we just need to check if the verification was successful
+		if (!recaptchaVerification.data.success) {
+			console.log("reCAPTCHA verification failed");
 			req.flash("error", "Security check failed. Please try again.");
 			return res.redirect(req.get("referer") || "/");
 		}

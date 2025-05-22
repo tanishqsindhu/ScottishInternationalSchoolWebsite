@@ -1,11 +1,10 @@
-// reCAPTCHA v3 handler
+// reCAPTCHA v2 handler
 document.addEventListener("DOMContentLoaded", function () {
 	// Home page contact form
 	const contactForm = document.getElementById("contact-us-form");
 	if (contactForm) {
 		contactForm.addEventListener("submit", function (e) {
-			e.preventDefault();
-			executeRecaptcha(contactForm, "contact");
+			// The form will be submitted normally, reCAPTCHA v2 takes care of validation
 		});
 	}
 
@@ -14,8 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	contactForms.forEach((form, index) => {
 		if (form.action.includes("/contact-us")) {
 			form.addEventListener("submit", function (e) {
-				e.preventDefault();
-				executeRecaptcha(form, "contact_" + index);
+				// The form will be submitted normally, reCAPTCHA v2 takes care of validation
 			});
 		}
 	});
@@ -24,28 +22,36 @@ document.addEventListener("DOMContentLoaded", function () {
 	const newsletterForm = document.querySelector('form[action="/newsLetter"]');
 	if (newsletterForm) {
 		newsletterForm.addEventListener("submit", function (e) {
-			e.preventDefault();
-			executeRecaptcha(newsletterForm, "newsletter");
+			// The form will be submitted normally, reCAPTCHA v2 takes care of validation
 		});
 	}
 });
 
-function executeRecaptcha(form, action) {
-	grecaptcha.ready(function () {
-		grecaptcha.execute(recaptchaSiteKey, { action: action }).then(function (token) {
-			// Find the hidden input field for the token
-			let tokenInput = form.querySelector('input[name="g-recaptcha-response"]');
-			if (!tokenInput) {
-				// Create it if it doesn't exist
-				tokenInput = document.createElement("input");
-				tokenInput.type = "hidden";
-				tokenInput.name = "g-recaptcha-response";
-				form.appendChild(tokenInput);
+// Add reCAPTCHA widget to forms when loaded
+document.addEventListener("DOMContentLoaded", function () {
+	// Get all forms that need reCAPTCHA
+	const formsNeedingRecaptcha = document.querySelectorAll(
+		'form.validated-form, form[action="/newsLetter"], #contact-us-form'
+	);
+
+	formsNeedingRecaptcha.forEach((form, index) => {
+		// Find the hidden input field
+		const existingInput = form.querySelector('input[name="g-recaptcha-response"]');
+		if (existingInput) {
+			// Create a div for the reCAPTCHA widget before the submit button
+			const recaptchaDiv = document.createElement("div");
+			recaptchaDiv.className = "g-recaptcha mb-3";
+			recaptchaDiv.setAttribute("data-sitekey", recaptchaSiteKey);
+
+			// Insert the reCAPTCHA div before the submit button
+			const submitButton = form.querySelector('button[type="submit"]');
+			if (submitButton) {
+				const parentElement = submitButton.parentElement;
+				parentElement.parentNode.insertBefore(recaptchaDiv, parentElement);
+			} else {
+				// If no submit button, just append to form
+				form.appendChild(recaptchaDiv);
 			}
-			// Set the token
-			tokenInput.value = token;
-			// Submit the form
-			form.submit();
-		});
+		}
 	});
-}
+});
