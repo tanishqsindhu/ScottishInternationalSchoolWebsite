@@ -12,7 +12,7 @@
                         https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/q_auto/f_auto/v1741596937/naqc1fiijnhbap3jmyr8 1500w
                       " sizes="(max-width: 600px) 100vw, 
                       (max-width: 1000px) 80vw, 
-                      50vw" class="d-block w-100" alt="school building" style="height: 500px;">
+                      50vw" class="d-block w-100" alt="school building" style="height: 700px;">
                     <div class="carousel-caption d-md-block rounded" style="background-color:rgb(66, 39, 26,0.4);">
                         <h5 style="color: #f0bc1b;">Scottish International School - South Bypass Campus</h5>
                         <p style="color: #f0bc1b;">Welcome to our school building, a place where learning thrives
@@ -29,7 +29,7 @@
                         https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/q_auto/f_auto/v1/Scottish/me8akbjwzvyuzno4e6zf 1500w
                       " sizes="(max-width: 600px) 100vw, 
                       (max-width: 1000px) 80vw, 
-                      50vw" class="d-block w-100" alt="school building" style="height: 500px;">
+                      50vw" class="d-block w-100" alt="school building" style="height: 700px;">
                     <div class="carousel-caption d-md-block rounded" style="background-color:rgb(66, 39, 26,0.4);">
                         <h5 style="color: #f0bc1b;">Scottish International School - Sector 16 & 17 Campus</h5>
                         <p style="color: #f0bc1b;;">Welcome to our school building, a place where learning thrives
@@ -47,7 +47,7 @@
                         
                       " sizes="(max-width: 600px) 100vw, 
                       (max-width: 1000px) 80vw, 
-                      50vw" class="d-block w-100" alt="school library" style="height: 500px;">
+                      50vw" class="d-block w-100" alt="school library" style="height: 700px;">
                     <div class="carousel-caption d-md-block rounded" style="background-color:rgb(66, 39, 26,0.4);">
                         <h5 style="color: #f0bc1b;">School's Library</h5>
                         <p style="color: #f0bc1b;">Welcome to our student-focused library, where knowledge meets
@@ -324,7 +324,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <form class="border rounded shadow px-5 contactForm validated-form" novalidate action="/contact-us"
+                                    <form id="contact-us-form" class="border rounded shadow px-5 contactForm validated-form" novalidate action="/contact-us"
                                         method="post" style="background: var(--bs-body-bg);">
                                         <h3 class="text-uppercase mt-4" style="color: black;text-align: left;">
                                             Schedule a campus visit </h3>
@@ -342,14 +342,15 @@
                                         <div class="mb-3"><input class="form-control" type="number" name="user[phone]"aria-label="Enter Phone Number"
                                                 placeholder="Phone Number" required></div>
                                                 <div class="mb-3"><select class="form-select"name="user[branch]" aria-label="Branch Selection" required>
-                                                    <option selected>Select branch</option>
+                                                    <option value="" selected>Select branch</option>
                                                     <option value="Sector 16 & 17">Sector 16 & 17</option>
                                                     <option value="South Bypass">South Bypass</option>
                                                   </select>
                                                 </div>
                                         <div class="mb-3"><textarea class="form-control" name="user[message]" aria-label="Enter Your Message"
-                                                placeholder="Message" rows="6"></textarea></div>
-                                        <div class="mb-3 row mx-1"><button class="btn btn-outline-secondary btn-lg col"
+                                                placeholder="Message" rows="6" required></textarea></div>
+                                        <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
+                                        <div class="mb-3 row mx-1"><button class="btn btn-outline-secondary btn-lg col "
                                                 type="submit"><i class="fa-solid fa-envelope"
                                                     style="color: #bbbbbb;"></i>
                                                 Send
@@ -372,6 +373,7 @@
                                     <div class="m-2"><input class="form-control" type="email" name="email"
                                             placeholder="Your Email" required>
                                     </div>
+                                    <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
                                     <div class="my-2"><button class="btn btn-primary ms-sm-2" type="submit">Subscribe
                                         </button></div>
                                 </form>
@@ -459,7 +461,7 @@
                     <link rel="stylesheet" href="/stylesheets/button.css">
                     <link rel="stylesheet" href="/stylesheets/home.css">
                     <link rel="stylesheet" href="/stylesheets/infinty-carousel.css">
-                    <script src="/javascripts/infinty-carousel.js"></script>
+                    <script src="/javascripts/infinty-carousel.js"></script>               
                     <style>
                         @media (max-width:770px) {
 

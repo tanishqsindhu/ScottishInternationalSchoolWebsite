@@ -1,4 +1,5 @@
-<% layout('layouts/boilerplate')%> <%- include('./partials/photoSlide')%>	<%- include('./partials/flash')%>
+<% layout('layouts/boilerplate')%> <%- include('./partials/photoSlide')%> <%-
+include('./partials/flash')%>
 <div class="container-fluid mt-5 d-flex" style="min-height: 30vh">
 	<div class="row w-100 align-self-center">
 		<div
@@ -65,8 +66,10 @@
 										name="user[message]"
 										placeholder="Message"
 										rows="6"
+										required
 									></textarea>
 								</div>
+								<input type="hidden" name="g-recaptcha-response" id="recaptchaResponse1" />
 								<div class="mb-3">
 									<button class="btn btn-primary w-100" type="submit">Send</button>
 								</div>
@@ -201,8 +204,10 @@
 										name="user[message]"
 										placeholder="Message"
 										rows="6"
+										required
 									></textarea>
 								</div>
+								<input type="hidden" name="g-recaptcha-response" id="recaptchaResponse2" />
 								<div class="mb-3">
 									<button class="btn btn-primary w-100" type="submit">Send</button>
 								</div>

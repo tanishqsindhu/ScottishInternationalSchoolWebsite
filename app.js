@@ -16,6 +16,7 @@ const LocalStrategy = require("passport-local");
 
 const ExpressError = require("./utils/ExpressError");
 const User = require("./models/user");
+const { verifyRecaptcha } = require("./middleware");
 
 // Route Imports
 const beyondClassroomRoute = require("./routes/beyondClassroom");
@@ -123,7 +124,7 @@ app
 		const currentPage = "contactus";
 		res.render("contact-us", { currentPage });
 	})
-	.post(async (req, res, next) => {
+	.post(verifyRecaptcha, async (req, res, next) => {
 		try {
 			const newContact = new (require("./models/contactUs"))({
 				...req.body.user,
