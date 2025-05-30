@@ -65,7 +65,9 @@
 				<li class="nav-item"><a class="nav-link <%= currentPage === 'contactus' ? 'active' : '' %>"
 						<%=currentPage==='contactus' ? 'aria-current="page"' : '' %> href="/contact-us">Contact Us</a>
 				</li>
-
+				<li class="nav-item"><a class="nav-link <%= currentPage === 'mandatory-disclosure' ? 'active' : '' %>"
+					<%=currentPage==='mandatory-disclosure' ? 'aria-current="page"' : '' %> href="/mandatory-disclosure">Mandatory Disclosure</a>
+			</li>
 				<!-- Conditional Rendering for User Authentication -->
 				<% if(currentUser) { %>
 					<!-- <li class="nav-item">
