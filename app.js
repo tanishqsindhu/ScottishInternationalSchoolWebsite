@@ -18,13 +18,6 @@ const ExpressError = require("./utils/ExpressError");
 const User = require("./models/user");
 const { verifyRecaptcha } = require("./middleware");
 
-// PostHog Analytics
-const { PostHog } = require("posthog-node");
-const posthog = new PostHog(
-	process.env.POSTHOG_PROJECT_KEY || "phc_j1o9ZJolv8vEEIC52RL83Exed2Wh5QDsEvPV9sFyvj7",
-	{ host: "https://us.i.posthog.com" }
-);
-
 // Route Imports
 const beyondClassroomRoute = require("./routes/beyondClassroom");
 const accomplishmentsRoute = require("./routes/accomplishments");
@@ -101,36 +94,6 @@ app.use((req, res, next) => {
 	next();
 });
 
-// PostHog Analytics Middleware
-app.use((req, res, next) => {
-	// Track page views server-side
-	if (
-		req.method === "GET" &&
-		!req.originalUrl.includes("assets") &&
-		!req.originalUrl.includes("stylesheets") &&
-		!req.originalUrl.includes("javascripts")
-	) {
-		try {
-			const distinctId = req.sessionID || req.ip;
-			posthog.capture({
-				distinctId: distinctId,
-				event: "page_view",
-				properties: {
-					$current_url: req.originalUrl,
-					$host: req.get("host"),
-					$referrer: req.get("referer"),
-					user_agent: req.get("user-agent"),
-					timestamp: new Date().toISOString(),
-					authenticated: !!req.user,
-				},
-			});
-		} catch (error) {
-			console.error("PostHog tracking error:", error);
-		}
-	}
-	next();
-});
-
 // Routes
 app.use("/beyond-classroom", beyondClassroomRoute);
 app.use("/newsLetter", newsLetterRoute);
@@ -168,24 +131,6 @@ app
 				date: Date.now(),
 			});
 			await newContact.save();
-
-			// Track contact form submission
-			try {
-				posthog.capture({
-					distinctId: newContact.email,
-					event: "contact_form_submitted",
-					properties: {
-						name: newContact.name,
-						email: newContact.email,
-						branch: newContact.branch,
-						message_length: newContact.message.length,
-						timestamp: new Date().toISOString(),
-					},
-				});
-			} catch (error) {
-				console.error("PostHog contact form tracking error:", error);
-			}
-
 			// Define the email options
 			const mailOptions = {
 				from: "broadcastscottish@gmail.com",
@@ -304,16 +249,3 @@ app.use((err, req, res, next) => {
 
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-
-// Graceful shutdown for PostHog
-process.on("SIGINT", async () => {
-	console.log("Shutting down server...");
-	await posthog.shutdownAsync();
-	process.exit(0);
-});
-
-process.on("SIGTERM", async () => {
-	console.log("Shutting down server...");
-	await posthog.shutdownAsync();
-	process.exit(0);
-});
