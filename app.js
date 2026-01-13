@@ -199,6 +199,7 @@ const staticPages = [
 	"director-message",
 	"mandatory-disclosure",
 	"terms-conditions",
+	"magazine",
 ];
 staticPages.forEach((page) =>
 	app.get(`/${page}`, (req, res) => {

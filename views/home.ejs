@@ -267,7 +267,295 @@
                         </div>
                     </div>
             </section>
-            <% if(parentTestimonial&&parentTestimonial.length>0){ %>
+            <!-- School Magazine Section -->
+<section class="magazine-showcase py-5" data-aos="fade-up">
+	<div class="container">
+		<div class="row">
+			<div class="section-title text-center" data-aos="fade-up">
+				<p class="title-branding mb-2">
+					<img class="img-fluid" src="https://res.cloudinary.com/djfy7fvq1/image/upload/f_auto,q_auto/v1/Scottish/hkoqggo9z6nyp29xior8" width="49" height="49" alt="logo">
+				</p>
+				<h2 class="p-color text-uppercase" style="color: #2f3091;">School Magazine</h2>
+			</div>
+		</div>
+		<div class="row align-items-center justify-content-center mt-4">
+			<div class="col-lg-5 col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+				<div class="magazine-book-wrapper">
+					<div class="magazine-book">
+						<div class="magazine-cover">
+							<div class="magazine-spine"></div>
+							<div class="magazine-front">
+								<div class="magazine-content-preview">
+									<img src="https://res.cloudinary.com/djfy7fvq1/image/upload/f_auto,q_auto/v1/Scottish/hkoqggo9z6nyp29xior8" alt="Scottish Logo" class="magazine-logo">
+									<h3>Scottish International School</h3>
+									<p class="magazine-subtitle">Annual Magazine</p>
+									<div class="magazine-decoration">
+										<i class="fa-solid fa-book-open"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="magazine-shadow"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-5 col-md-6" data-aos="fade-left">
+				<div class="magazine-info">
+					<h3 class="magazine-title">Explore Our Journey</h3>
+					<p class="magazine-description">
+						Dive into the vibrant pages of our school magazine featuring student achievements, 
+						creative expressions, memorable events, and inspiring stories from our Scottish family.
+					</p>
+					<ul class="magazine-highlights">
+						<li><i class="fa-solid fa-star"></i> Student Achievements & Awards</li>
+						<li><i class="fa-solid fa-palette"></i> Creative Artwork & Stories</li>
+						<li><i class="fa-solid fa-camera"></i> Event Highlights & Memories</li>
+						<li><i class="fa-solid fa-graduation-cap"></i> Academic Excellence</li>
+					</ul>
+					<div class="magazine-actions">
+						<a href="/magazine" class="btn btn-magazine-view">
+							<i class="fa-solid fa-eye me-2"></i> View Magazine
+						</a>
+						<a href="/assets/pdf/Scottish International SchoolMagazine.pdf" download="Scottish-International-School-Magazine.pdf" class="btn btn-magazine-download">
+							<i class="fa-solid fa-download me-2"></i> Download
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+.magazine-showcase {
+	background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+	position: relative;
+	overflow: hidden;
+}
+
+.magazine-showcase::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -20%;
+	width: 60%;
+	height: 200%;
+	background: radial-gradient(circle, rgba(234, 189, 87, 0.1) 0%, transparent 70%);
+	pointer-events: none;
+}
+
+.magazine-book-wrapper {
+	display: flex;
+	justify-content: center;
+	perspective: 1000px;
+}
+
+.magazine-book {
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 0.5s ease;
+}
+
+.magazine-book:hover {
+	transform: rotateY(-15deg);
+}
+
+.magazine-cover {
+	position: relative;
+	width: 280px;
+	height: 380px;
+	transform-style: preserve-3d;
+}
+
+.magazine-front {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(145deg, #1a365d 0%, #2d4a7c 50%, #1a365d 100%);
+	border-radius: 0 12px 12px 0;
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.magazine-front::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	opacity: 0.5;
+}
+
+.magazine-spine {
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 100%;
+	background: linear-gradient(90deg, #0f2341 0%, #1a365d 100%);
+	border-radius: 4px 0 0 4px;
+	transform: translateX(-18px) rotateY(-90deg);
+	transform-origin: right center;
+}
+
+.magazine-content-preview {
+	text-align: center;
+	color: white;
+	padding: 30px;
+	z-index: 1;
+	position: relative;
+}
+
+.magazine-logo {
+	width: 80px;
+	height: 80px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	background: white;
+	padding: 10px;
+}
+
+.magazine-content-preview h3 {
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.magazine-subtitle {
+	color: #eabd57;
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.magazine-decoration {
+	font-size: 2.5rem;
+	color: #eabd57;
+	opacity: 0.8;
+}
+
+.magazine-shadow {
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 200px;
+	height: 20px;
+	background: radial-gradient(ellipse, rgba(0,0,0,0.3) 0%, transparent 70%);
+}
+
+.magazine-info {
+	padding: 20px;
+}
+
+.magazine-title {
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: #1a365d;
+	margin-bottom: 15px;
+}
+
+.magazine-description {
+	color: #555;
+	line-height: 1.7;
+	margin-bottom: 20px;
+}
+
+.magazine-highlights {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 25px;
+}
+
+.magazine-highlights li {
+	padding: 8px 0;
+	color: #444;
+	font-size: 0.95rem;
+}
+
+.magazine-highlights li i {
+	color: #eabd57;
+	margin-right: 10px;
+	width: 20px;
+}
+
+.magazine-actions {
+	display: flex;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.btn-magazine-view {
+	background: #1a365d;
+	color: white;
+	padding: 12px 25px;
+	border-radius: 8px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+.btn-magazine-view:hover {
+	background: #eabd57;
+	color: #1a365d;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 20px rgba(234, 189, 87, 0.4);
+}
+
+.btn-magazine-download {
+	background: transparent;
+	color: #1a365d;
+	padding: 12px 25px;
+	border: 2px solid #1a365d;
+	border-radius: 8px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+.btn-magazine-download:hover {
+	background: #1a365d;
+	color: white;
+	transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+	.magazine-cover {
+		width: 220px;
+		height: 300px;
+	}
+	
+	.magazine-content-preview h3 {
+		font-size: 1.1rem;
+	}
+	
+	.magazine-logo {
+		width: 60px;
+		height: 60px;
+	}
+	
+	.magazine-title {
+		font-size: 1.5rem;
+	}
+	
+	.magazine-actions {
+		flex-direction: column;
+	}
+	
+	.btn-magazine-view,
+	.btn-magazine-download {
+		text-align: center;
+	}
+}
+</style>
+
+<% if(parentTestimonial&&parentTestimonial.length>0){ %>
                 <section class="pt-5 mb-5" data-aos="fade-up" style="background-color: #f1f1f1;">
                     <div class="Parents-conner container">
                         <div class="row">
