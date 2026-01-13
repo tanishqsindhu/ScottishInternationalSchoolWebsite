@@ -151,8 +151,10 @@
 	}
 
 	#contactUsForm .contactForm {
-		width: 75%;
-		margin: 9%;
+		width: 85%;
+		margin: 5% auto;
+		left: 0;
+		right: 0;
 	}
 	#contactUsForm {
 		height: 60rem;
@@ -176,8 +178,10 @@
 	}
 
 	#contactUsForm .contactForm {
-		width: 75%;
-		margin: 9%;
+		width: 90%;
+		margin: 5%;
+		left: 0;
+		padding: 15px !important;
 	}
 	#contactUsForm {
 		height: 60rem;
