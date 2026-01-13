@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const publication = require('../controllers/publications')
-const multer=require('multer');
-const {storage} = require('../cloudinary')
-const upload=multer({storage});
+const { upload } = require('../cloudinary');
 
 router.route('/')
 .get(publication.home)

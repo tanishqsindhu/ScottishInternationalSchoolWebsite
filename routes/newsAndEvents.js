@@ -4,9 +4,7 @@ const app = express();
 const catchAsync = require('../utils/catchAsync');
 const { isLoggedIn,isArticleEditor, validateStudent,isAdmin } = require('../middleware');
 const newsAndEvents=require('../controllers/newsAndEvents');
-const multer=require('multer');
-const {storage} = require('../cloudinary')
-const upload=multer({storage});
+const { upload } = require('../cloudinary');
 
 router.route('/')
 .get(catchAsync(newsAndEvents.home));

@@ -1,4 +1,5 @@
 const NewsLetter = require("../models/newsLetter");
+const { uploadToCloudinary } = require("../cloudinary");
 
 module.exports.home = (req, res) => {
 	const currentPage = "publications";
@@ -13,7 +14,7 @@ module.exports.renderAddForm = (req, res) => {
 
 module.exports.add = async (req, res) => {
 	const currentPage = "publications";
-	const imgs = { url: req.file.path, filename: req.file.filename };
+	const imgs = await uploadToCloudinary(req.file);
 	const newsLetter = new NewsLetter({ ...req.body.newsLetter });
 	newsLetter.images = imgs;
 	await newsLetter.save();

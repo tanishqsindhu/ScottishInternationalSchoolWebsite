@@ -1,5 +1,5 @@
 const NewsArticles = require("../models/newsAndEvents");
-const { cloudinary } = require("../cloudinary");
+const { cloudinary, uploadMultipleToCloudinary } = require("../cloudinary");
 
 module.exports.home = async (req, res) => {
 	const currentPage = "news";
@@ -15,7 +15,7 @@ module.exports.renderAddForm = (req, res) => {
 
 module.exports.add = async (req, res) => {
 	const currentPage = "news";
-	const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
+	const imgs = await uploadMultipleToCloudinary(req.files);
 	const newsArticle = new NewsArticles({ ...req.body.article });
 	newsArticle.images.push(...imgs);
 	await newsArticle.save();
@@ -40,7 +40,7 @@ module.exports.articleEdit = async (req, res) => {
 };
 
 module.exports.articleUpdate = async (req, res) => {
-	const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
+	const imgs = await uploadMultipleToCloudinary(req.files);
 	const newsArticle = await NewsArticles.findByIdAndUpdate(req.params.id, { ...req.body.article });
 	newsArticle.images.push(...imgs);
 	if (req.body.deleteImages) {
