@@ -17,6 +17,7 @@ const NewsSchema=new Schema({
     month:String,
     year:Number,
     shortDescription:String,
+    content:String,
     paragraph1:String,
     paragraph2title:String,
     paragraph2:String,

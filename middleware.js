@@ -1,4 +1,4 @@
-const { studentSchema, orderSchema } = require("./schemas.js");
+const { studentSchema, orderSchema, articleSchema } = require("./schemas.js");
 const ExpressError = require("./utils/ExpressError");
 
 const User = require("./models/user");
@@ -49,6 +49,16 @@ module.exports.isMess = async (req, res, next) => {
 
 module.exports.validateOrder = (req, res, next) => {
 	const { error } = orderSchema.validate(req.body);
+	if (error) {
+		const msg = error.details.map((el) => el.message).join(",");
+		throw new ExpressError(msg, 400);
+	} else {
+		next();
+	}
+};
+
+module.exports.validateArticle = (req, res, next) => {
+	const { error } = articleSchema.validate(req.body);
 	if (error) {
 		const msg = error.details.map((el) => el.message).join(",");
 		throw new ExpressError(msg, 400);

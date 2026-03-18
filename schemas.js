@@ -17,6 +17,33 @@ const extension = (joi) => ({
                 if (clean !== value) return helpers.error('string.escapeHTML', { value })
                 return clean;
             }
+        },
+        sanitizeHTML: {
+            validate(value, helpers) {
+                const clean = sanitizeHtml(value, {
+                    allowedTags: ['h1','h2','h3','h4','p','br','strong','em','u','s','ol','ul','li','a','blockquote','span'],
+                    allowedAttributes: {
+                        'a': ['href','target','rel'],
+                        'span': ['style'],
+                        'p': ['class','style'],
+                        'h1': ['class','style'],
+                        'h2': ['class','style'],
+                        'h3': ['class','style'],
+                        'h4': ['class','style'],
+                        'li': ['class','style'],
+                        'ol': ['style'],
+                        'ul': ['style'],
+                    },
+                    allowedStyles: {
+                        '*': {
+                            'color': [/^#(0x)?[0-9a-f]+$/i, /^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/],
+                            'background-color': [/^#(0x)?[0-9a-f]+$/i, /^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/],
+                            'text-align': [/^left$/, /^right$/, /^center$/, /^justify$/],
+                        }
+                    }
+                });
+                return clean;
+            }
         }
     }
 });
@@ -42,4 +69,18 @@ module.exports.orderSchema = Joi.object({
         meal: Joi.string().required().escapeHTML(),
         time: Joi.string().required().escapeHTML()
     }).required()
+})
+
+module.exports.articleSchema = Joi.object({
+    article: Joi.object({
+        title: Joi.string().required().escapeHTML(),
+        secondaryTitle: Joi.string().required().escapeHTML(),
+        date: Joi.string().required().escapeHTML(),
+        month: Joi.string().required().escapeHTML(),
+        year: Joi.number().required(),
+        shortDescription: Joi.string().required().escapeHTML(),
+        content: Joi.string().allow('').sanitizeHTML(),
+        author: Joi.string().allow('').escapeHTML(),
+    }).required(),
+    deleteImages: Joi.array()
 })

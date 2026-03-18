@@ -162,7 +162,7 @@
                 <div class="row">
                     <div class="containernews">
                         <div class="carouselNews">
-                            <% for(let i=news.length - 1; i>= news.length - 9; i--) { %>
+                            <% for(let i=0; i<= 8; i++) { %>
                                 <% if(i>= 0) { %>
                                     <article class="carousel__face text-center"
                                         style="background-image: url(<%= news[i].images.length ? news[i].images[0].url : 'https://res.cloudinary.com/dlpq5gl1a/image/upload/w_500/q_auto/f_auto/v1688312952/No_image_Found_ioxitj.png' %>);">
@@ -172,7 +172,7 @@
                                                 <%= news[i].title %>
                                             </h3>
                                             <p class="text-break" style="color: #eabd57;">
-                                                <%= news[i].shortDescription || news[i].paragraph1 %>
+                                                <%= news[i].shortDescription || news[i].secondaryTitle || '' %>
                                             </p>
                                         </a>
                                     </article>
