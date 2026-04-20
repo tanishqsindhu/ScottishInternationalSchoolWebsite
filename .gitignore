@@ -129,3 +129,4 @@ dist
 .pnp.*
 
 original photos
+.DS_Store
