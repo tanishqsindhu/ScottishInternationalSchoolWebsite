@@ -135,7 +135,7 @@ app
 			const mailOptions = {
 				from: "broadcastscottish@gmail.com",
 				to: "info.sis.hsr@gmail.com",
-				subject: `Requested for contancting on Scottish Website by ${
+				subject: `Requested for contancting on The Scotts Website by ${
 					newContact.name
 				} at ${newContact.date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} for ${
 					newContact.branch

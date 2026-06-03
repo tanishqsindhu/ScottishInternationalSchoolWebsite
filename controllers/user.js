@@ -14,7 +14,7 @@ module.exports.register=async(req,res,next)=>{
         user.save();
         req.login(registeredUser,err=>{
             if(err) return next(err);
-            req.flash('success','Welcome to Scottish Mess System');
+            req.flash('success','Welcome to The Scotts Mess System');
             res.redirect('/');
         });
     } catch(e){
