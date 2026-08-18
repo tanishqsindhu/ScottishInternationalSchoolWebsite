@@ -52,7 +52,7 @@ class FacebookService {
 	 * @param {number} limit - Number of posts to fetch
 	 * @returns {Promise<void>}
 	 */
-	async updatePostsDatabase(limit = 10) {
+	async updatePostsDatabase(maxPosts = 200) {
 		try {
 			// If token is already known to be invalid, don't attempt API call
 			if (!this.isTokenValid) {
@@ -60,17 +60,22 @@ class FacebookService {
 				return;
 			}
 
-			const response = await axios.get(`https://graph.facebook.com/${this.apiVersion}/${this.pageId}/posts`, {
-				params: {
-					access_token: this.accessToken,
-					limit,
-					fields: "id,created_time,message,permalink_url,full_picture,attachments{title,type,media,url,target,description,subattachments}",
-					order: "chronological",
-				},
-				timeout: 10000,
-			});
+			// Follow Graph API pagination to collect all posts (up to maxPosts)
+			const posts = [];
+			let nextUrl = `https://graph.facebook.com/${this.apiVersion}/${this.pageId}/posts`;
+			let params = {
+				access_token: this.accessToken,
+				limit: Math.min(100, maxPosts),
+				fields: "id,created_time,message,permalink_url,full_picture,attachments{title,type,media,url,target,description,subattachments{media,type,url,target,description}}",
+			};
 
-			const posts = response.data.data;
+			while (nextUrl && posts.length < maxPosts) {
+				const response = await axios.get(nextUrl, { params, timeout: 15000 });
+				posts.push(...(response.data.data || []));
+				nextUrl = response.data.paging?.next || null;
+				params = undefined; // paging.next already contains all query params
+			}
+			const fetchedFullHistory = nextUrl === null;
 
 			// If no posts were returned, log and return
 			if (!posts || posts.length === 0) {
@@ -79,13 +84,27 @@ class FacebookService {
 			}
 
 			let newPostCount = 0;
+			let skippedCount = 0;
+			const savedIds = [];
 
 			for (const post of posts) {
 				// Extract the image URL using a more comprehensive approach
 				let imageUrl = this.extractBestImageUrl(post);
 
+				// Extract all media items (photos and videos, including albums)
+				const media = this.extractMediaItems(post);
+				const attachmentType = post.attachments?.data?.[0]?.type || null;
+
 				// Get title from post data
 				let title = this.extractPostTitle(post);
+
+				// Skip posts with nothing to display (e.g. unavailable/placeholder template posts)
+				const isUnavailable = (title || "").toLowerCase().includes("content isn't available");
+				if (isUnavailable || (media.length === 0 && !post.message)) {
+					skippedCount++;
+					continue;
+				}
+				savedIds.push(post.id);
 
 				// Check if post exists to track new posts
 				const existingPost = await Post.findOne({ post_id: post.id });
@@ -99,6 +118,8 @@ class FacebookService {
 							created_time: new Date(post.created_time),
 							post_id: post.id,
 							image_url: imageUrl,
+							media: media,
+							attachment_type: attachmentType,
 							message: post.message || null,
 							title: title,
 							addedAt: existingPost ? existingPost.addedAt : new Date(),
@@ -112,7 +133,16 @@ class FacebookService {
 				}
 			}
 
-			console.log(`Successfully processed ${posts.length} Facebook posts (${newPostCount} new)`);
+			// If we fetched the complete post history, remove posts deleted from
+			// Facebook as well as previously-stored unrenderable posts
+			if (fetchedFullHistory) {
+				const removed = await Post.deleteMany({ post_id: { $nin: savedIds } });
+				if (removed.deletedCount > 0) {
+					console.log(`Removed ${removed.deletedCount} posts no longer on the Facebook page (or unrenderable)`);
+				}
+			}
+
+			console.log(`Successfully processed ${posts.length} Facebook posts (${newPostCount} new, ${skippedCount} skipped)`);
 		} catch (error) {
 			// Check if error is related to authentication
 			if (error.response?.status === 400 || error.response?.status === 401 || error.response?.headers?.["www-authenticate"]?.includes("invalid_request")) {
@@ -174,6 +204,54 @@ class FacebookService {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Extract all media items (photos and videos) from a Facebook post,
+	 * including album subattachments and direct video source URLs.
+	 * @param {Object} post - The Facebook post object
+	 * @returns {Array<{type: string, src: string|null, source: string|null}>}
+	 */
+	extractMediaItems(post) {
+		const items = [];
+		const attachment = post.attachments?.data?.[0];
+
+		if (!attachment) {
+			if (post.full_picture) items.push({ type: "photo", src: post.full_picture, source: null });
+			return items;
+		}
+
+		const toItem = (type, media) => {
+			const src = media?.image?.src || null;
+			const source = media?.source || null;
+			const width = media?.image?.width || null;
+			const height = media?.image?.height || null;
+			const isVideo = (type || "").includes("video") || !!source;
+			if (isVideo) return { type: "video", src, source, width, height };
+			return src ? { type: "photo", src, source: null, width, height } : null;
+		};
+
+		// Albums / multi-photo posts carry their media in subattachments
+		const subs = attachment.subattachments?.data;
+		if (subs && subs.length > 0) {
+			for (const sub of subs) {
+				const item = toItem(sub.type, sub.media);
+				if (item) items.push(item);
+			}
+		}
+
+		// Single photo/video posts
+		if (items.length === 0) {
+			const item = toItem(attachment.type, attachment.media);
+			if (item) items.push(item);
+		}
+
+		// Last-resort fallback
+		if (items.length === 0 && post.full_picture) {
+			items.push({ type: "photo", src: post.full_picture, source: null });
+		}
+
+		return items;
 	}
 
 	/**

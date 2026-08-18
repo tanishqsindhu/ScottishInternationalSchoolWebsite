@@ -178,11 +178,14 @@ app.get("/admission", (req, res) => {
 	res.render("admissions", { currentPage });
 });
 
-app.get("/gallery", async (req, res) => {
-	const currentPage = "gallery";
-
-	// Removed post fetching as we're only using embedded Facebook feed and YouTube
-	res.render("gallery", { currentPage });
+app.get("/gallery", async (req, res, next) => {
+	try {
+		const currentPage = "gallery";
+		const posts = await require("./models/post").find({}).sort({ created_time: -1 });
+		res.render("gallery", { currentPage, posts });
+	} catch (err) {
+		next(err);
+	}
 });
 
 app.get("/jobs", async (req, res) => {
@@ -242,11 +245,11 @@ app.use((err, req, res, next) => {
 		.render("error", { err, returnTo: req.session.returnTo || "/", currentPage });
 });
 
-// // Initialize Facebook Posts Scheduler
-// if (process.env.ENABLE_FACEBOOK_POSTS === "true") {
-// 	const Scheduler = require("./services/scheduler");
-// 	Scheduler.startFacebookPostScheduler(process.env.FACEBOOK_UPDATE_INTERVAL || 60);
-// }
+// Initialize Facebook Posts Scheduler
+if (process.env.ENABLE_FACEBOOK_POSTS === "true") {
+	const Scheduler = require("./services/scheduler");
+	Scheduler.startFacebookPostScheduler(process.env.FACEBOOK_UPDATE_INTERVAL || 60);
+}
 
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
