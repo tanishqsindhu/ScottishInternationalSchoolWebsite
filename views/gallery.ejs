@@ -152,7 +152,18 @@
 											<h5 class="card-title"><%= post.title %></h5>
 										<% } %>
 										<% if (post.message) { %>
-											<p class="card-text fb-post-message"><%= post.message %></p>
+											<%
+												// Long descriptions: show only the first third, with a link to the full post
+												const isLong = post.message.length > 150;
+												let shownMessage = post.message;
+												if (isLong) {
+													const third = Math.ceil(post.message.length / 3);
+													const cut = post.message.lastIndexOf(' ', third);
+													shownMessage = post.message.slice(0, cut > 0 ? cut : third).trimEnd();
+												}
+											%>
+											<p class="card-text fb-post-message"><%= shownMessage %><% if (isLong) { %>&hellip;
+												<a href="<%= post.url %>" target="_blank" rel="noopener" class="fb-show-more">Show more</a><% } %></p>
 										<% } %>
 										<div class="mt-auto d-flex justify-content-between align-items-center pt-3">
 											<small class="text-muted">
@@ -381,6 +392,17 @@
 			color: #555;
 			white-space: pre-line; /* keep Facebook line breaks */
 			word-break: break-word;
+		}
+
+		.fb-show-more {
+			color: #1877f2; /* Facebook blue */
+			font-weight: 500;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		.fb-show-more:hover {
+			text-decoration: underline;
 		}
 
 		/* YouTube Container */
