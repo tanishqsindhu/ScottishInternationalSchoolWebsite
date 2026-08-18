@@ -4,7 +4,10 @@
 		<a class="navbar-brand d-flex align-items-center" href="/">
 			<img src="https://res.cloudinary.com/djfy7fvq1/image/upload/f_auto,q_auto/v1/Scottish/hkoqggo9z6nyp29xior8" alt="The Scotts (Formerly Scottish) International School Logo" width="30"
 				height="24" />
-			<span class="ms-2">The Scotts (Formerly Scottish) International School</span>
+			<span class="ms-2 brand-text">
+				<span class="brand-name">The Scotts International School</span>
+				<span class="brand-subtext">(Formerly Scottish)</span>
+			</span>
 		</a>
 
 		<!-- Mobile Toggle Button -->
@@ -95,10 +98,55 @@
 		background-color: rgba(241, 241, 241, 0.8);
 	}
 
-	@media (max-width: 433px) {
+	.custom-navbar .navbar-brand {
+		min-width: 0;
+		flex: 1 1 auto;
+		margin-right: 0.5rem;
+	}
+
+	.custom-navbar .brand-text {
+		display: flex;
+		flex-direction: column;
+		line-height: 1.15;
+		min-width: 0;
+	}
+
+	.custom-navbar .brand-name {
+		white-space: normal;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.custom-navbar .brand-subtext {
+		font-size: 0.7rem;
+		color: #6c757d;
+	}
+
+	/* Scale brand text down on smaller screens */
+	@media (max-width: 991.98px) {
+		.custom-navbar .brand-name {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 575.98px) {
+		.custom-navbar .brand-name {
+			font-size: 0.9rem;
+		}
+	}
+
+	@media (max-width: 400px) {
+		.custom-navbar .brand-name {
+			font-size: 0.8rem;
+		}
+
+		.custom-navbar .brand-subtext {
+			font-size: 0.6rem;
+		}
+
 		.navbar-toggler-icon {
-			width: 0.8em;
-			height: 0.8em;
+			width: 0.9em;
+			height: 0.9em;
 		}
 	}
 </style>
