@@ -99,7 +99,8 @@ class FacebookService {
 				let title = this.extractPostTitle(post);
 
 				// Skip posts with nothing to display (e.g. unavailable/placeholder template posts)
-				const isUnavailable = (title || "").toLowerCase().includes("content isn't available");
+				const rawTitle = post.attachments?.data?.[0]?.title || "";
+				const isUnavailable = rawTitle.toLowerCase().includes("content isn't available");
 				if (isUnavailable || (media.length === 0 && !post.message)) {
 					skippedCount++;
 					continue;
@@ -259,6 +260,27 @@ class FacebookService {
 	 * @param {Object} post - The Facebook post object
 	 * @returns {string|null} - The post title or null
 	 */
+	/**
+	 * Check whether a title is a generic Facebook auto-generated one
+	 * (e.g. "Photos from The Scotts International School's post", "Timeline photos")
+	 * @param {string} title
+	 * @returns {boolean}
+	 */
+	isGenericTitle(title) {
+		if (!title) return true;
+		const t = title.trim().toLowerCase();
+		return (
+			/^(photos|videos) from .*(post|album)$/.test(t) ||
+			t === "the scotts international school - formerly scottish" || // bare page name
+			t === "timeline photos" ||
+			t === "mobile uploads" ||
+			t === "cover photos" ||
+			t === "profile pictures" ||
+			t === "untitled album" ||
+			t.includes("content isn't available")
+		);
+	}
+
 	extractPostTitle(post) {
 		// Try to get a good title
 
@@ -269,13 +291,13 @@ class FacebookService {
 
 		const attachment = post.attachments.data[0];
 
-		// Try attachment title first
-		if (attachment.title) {
+		// Try attachment title first (skip generic auto-generated titles)
+		if (attachment.title && !this.isGenericTitle(attachment.title)) {
 			return attachment.title;
 		}
 
 		// Try attachment description next
-		if (attachment.description) {
+		if (attachment.description && !this.isGenericTitle(attachment.description)) {
 			// Truncate description if it's too long to be a title
 			const desc = attachment.description;
 			return desc.length > 100 ? desc.substring(0, 97) + "..." : desc;
