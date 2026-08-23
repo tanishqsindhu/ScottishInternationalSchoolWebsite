@@ -130,3 +130,40 @@ dist
 
 original photos
 .DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+install-state.gz
+node_modules
+dist
+dist-ssr
+*.local
+.netlify
+*.yarn
+dataExample
+salaryDAta.json
+.pnp.cjs
+.pnp.loader.mjs
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.netlify
+*.env
+migration*
+firebase-admin-key.json
+src/utils/salaryDAta.json
+salaryTransactionsData.txt
