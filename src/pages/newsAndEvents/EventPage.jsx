@@ -24,7 +24,7 @@ function EventBanner() {
 									src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/f_auto,q_auto/v1/Scottish/me8akbjwzvyuzno4e6zf"
 									className="d-block w-100"
 									alt="building picture"
-									style={{ height: "70vh" }}
+									style={{ height: "70vh", objectFit: "cover" }}
 								/>
 							</div>
 							<div className="carousel-item" data-bs-interval="3000">
@@ -32,7 +32,7 @@ function EventBanner() {
 									src="https://res.cloudinary.com/djfy7fvq1/image/upload/w_1500/q_auto/f_auto/v1741596937/naqc1fiijnhbap3jmyr8.webp"
 									className="d-block w-100"
 									alt="building picture"
-									style={{ height: "70vh" }}
+									style={{ height: "70vh", objectFit: "cover" }}
 								/>
 							</div>
 						</div>

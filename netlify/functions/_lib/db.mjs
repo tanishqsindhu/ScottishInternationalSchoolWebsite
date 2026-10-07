@@ -2,13 +2,28 @@ import mongoose from "mongoose";
 
 const DB_URL = process.env.DB_URL;
 
-let cached = globalThis.__mongooseConn;
+// Fail fast instead of buffering queries for 10s when not connected.
+mongoose.set("bufferCommands", false);
+
+// Module-scoped cache: each Netlify function bundle has its own mongoose
+// instance, so the cache must be per-bundle (a globalThis cache would make
+// one function await another bundle's connection while its own mongoose
+// stays disconnected). Reused across warm invocations of the same function.
+let cached = null;
 
 export async function connectDb() {
 	if (!cached) {
-		cached = globalThis.__mongooseConn = mongoose.connect(DB_URL, {
-			serverSelectionTimeoutMS: 8000,
-		});
+		cached = mongoose
+			.connect(DB_URL, {
+				serverSelectionTimeoutMS: 8000, // fail fast if the cluster is unreachable
+				maxPoolSize: 5, // serverless: each function instance keeps a small pool
+				minPoolSize: 0, // don't hold idle connections between invocations
+				maxIdleTimeMS: 30000, // release unused connections quickly
+			})
+			.catch((err) => {
+				cached = null; // allow retry on next invocation instead of caching a rejection
+				throw err;
+			});
 	}
 	await cached;
 	return mongoose;

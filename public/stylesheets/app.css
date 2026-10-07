@@ -25,3 +25,8 @@ ul {
 #carouselExampleSlidesOnly {
 	padding: 0;
 }
+
+/* Links: no underline by default, underline only on hover */
+a:not(:hover) {
+	text-decoration: none;
+}

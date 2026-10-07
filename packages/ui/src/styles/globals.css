@@ -1,9 +1,17 @@
-@import "tailwindcss";
+/* Tailwind WITHOUT preflight (base reset) so it doesn't fight Bootstrap's CSS.
+   Utilities/theme are still generated for the shadcn/ui components. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
 @custom-variant dark (&:is(.dark *));
+
+/* Bootstrap also defines .collapse/.container — never emit the Tailwind versions. */
+@source not inline("collapse");
+@source not inline("container");
 @source "../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";

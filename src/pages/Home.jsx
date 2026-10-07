@@ -204,7 +204,7 @@ export default function Home() {
                       50vw"
 								className="d-block w-100"
 								alt="school building"
-								style={{ height: "700px" }}
+								style={{ height: "700px", objectFit: "cover" }}
 							/>
 							<div
 								className="carousel-caption d-md-block rounded"
@@ -232,7 +232,7 @@ export default function Home() {
                       50vw"
 								className="d-block w-100"
 								alt="school building"
-								style={{ height: "700px" }}
+								style={{ height: "700px", objectFit: "cover" }}
 							/>
 							<div
 								className="carousel-caption d-md-block rounded"
@@ -260,7 +260,7 @@ export default function Home() {
                       50vw"
 								className="d-block w-100"
 								alt="school library"
-								style={{ height: "700px" }}
+								style={{ height: "700px", objectFit: "cover" }}
 							/>
 							<div
 								className="carousel-caption d-md-block rounded"
