@@ -39,12 +39,12 @@ export default function App() {
 				<Route path="/terms-conditions" element={<TermsConditions />} />
 				<Route path="/principal-message" element={<PrincipalMessage />} />
 				<Route path="/director-message" element={<DirectorMessage />} />
-				<Route path="/beyond-classroom" element={<BeyondClassroom />} />
+				{/* <Route path="/beyond-classroom" element={<BeyondClassroom />} /> */}
 				<Route path="/beyond-classroom/sports" element={<BeyondClassroomSports />} />
-				<Route path="/beyond-classroom/co-curricular" element={<BeyondClassroomCoCurricular />} />
+				{/* <Route path="/beyond-classroom/co-curricular" element={<BeyondClassroomCoCurricular />} /> */}
 				<Route path="/accomplishments/academics" element={<AccomplishmentsAcademics />} />
-				<Route path="/accomplishments/sports" element={<AccomplishmentsSports />} />
-				<Route path="/accomplishments/co-curricular" element={<AccomplishmentsCoCurricular />} />
+				{/* <Route path="/accomplishments/sports" element={<AccomplishmentsSports />} /> */}
+				{/* <Route path="/accomplishments/co-curricular" element={<AccomplishmentsCoCurricular />} /> */}
 				<Route path="/news-events" element={<NewsAndEvents />} />
 				<Route path="/news-events/:id" element={<EventPage />} />
 				<Route path="/newsLetter" element={<UnsubscribeEmail />} />

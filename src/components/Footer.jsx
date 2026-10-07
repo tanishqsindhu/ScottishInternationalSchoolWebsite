@@ -71,20 +71,29 @@ export default function Footer() {
 						<div className="col text-lg-start d-flex flex-column footerList mt-2 mt-md-0">
 							<h3>Quick Links</h3>
 							<ul className="list-unstyled">
-								<li>
+								{/* <li>
 									<Link to="/beyond-classroom">Beyond Classroom</Link>
-								</li>
+								</li> */}
 								<li>
 									<Link to="/accomplishments/academics">Academic Accomplishments</Link>
 								</li>
-								<li>
+								{/* <li>
 									<Link to="/accomplishments/sports">Sports Accomplishments</Link>
-								</li>
-								<li>
+								</li> */}
+								{/* <li>
 									<Link to="/accomplishments/co-curricular">Co-Curricular Accomplishments</Link>
-								</li>
+								</li> */}
 								<li>
 									<Link to="/news-events">News And Events</Link>
+								</li>
+																<li>
+									<Link to="/jobs">Job openings</Link>
+								</li>
+								<li>
+									<Link to="/magazine">Magazine</Link>
+								</li>
+								<li>
+									<Link to="/gallery">Galleries</Link>
 								</li>
 							</ul>
 						</div>
@@ -99,15 +108,6 @@ export default function Footer() {
 								</li>
 								<li>
 									<Link to="/academics">Academics</Link>
-								</li>
-								<li>
-									<Link to="/jobs">Job openings</Link>
-								</li>
-								<li>
-									<Link to="/magazine">Magazine</Link>
-								</li>
-								<li>
-									<Link to="/gallery">Galleries</Link>
 								</li>
 								<li>
 									<Link to="/mandatory-disclosure">Mandatory Disclosure</Link>
