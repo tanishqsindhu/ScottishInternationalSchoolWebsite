@@ -24,7 +24,7 @@ function FooterBottom() {
 export default function Footer() {
 	return (
 		<>
-			<section className="row" style={{ marginBottom: "160px" }}>
+			<section className="row mx-0" style={{ marginBottom: "160px" }}>
 				<FooterBottom />
 			</section>
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // Replaces views/partials/photoSlide.ejs - hero banner with page title.
 export default function PageBanner({ title }) {
 	return (
-		<section id="top" className="brand-hero row" style={{ overflowX: "hidden" }}>
+		<section id="top" className="brand-hero row mx-0" style={{ overflowX: "hidden" }}>
 			<div className="animate-banner">
 				<picture className="zoom">
 					<div

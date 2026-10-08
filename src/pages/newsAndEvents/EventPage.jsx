@@ -9,7 +9,7 @@ const FALLBACK_IMAGE =
 // Banner matches photoSlide.ejs but links back to the news list instead of home.
 function EventBanner() {
 	return (
-		<section id="top" className="brand-hero row" style={{ overflowX: "hidden" }}>
+		<section id="top" className="brand-hero row mx-0" style={{ overflowX: "hidden" }}>
 			<div className="animate-banner">
 				<picture className="zoom">
 					<div

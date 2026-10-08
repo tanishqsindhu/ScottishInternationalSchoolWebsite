@@ -30,3 +30,14 @@ ul {
 a:not(:hover) {
 	text-decoration: none;
 }
+
+/* Prevent horizontal overflow: Bootstrap .row has negative margins, and several
+   pages use the (non-existent) "container-fuild" class around rows. */
+.container-fuild > .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+html,
+body {
+	overflow-x: clip;
+}
